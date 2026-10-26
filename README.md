@@ -19,6 +19,12 @@ npm install
 npm run check
 ```
 
+运行 27 格构筑矩阵并生成数据表：
+
+```bash
+npm run matrix
+```
+
 ## 文档
 
 - [策划书 V1.8](docs/design/wulin-self-created-arts-v1.8.md)：当前正式版本
@@ -26,4 +32,5 @@ npm run check
 - [改进方案 V1.0](docs/proposals/wulin-improvement-proposal-v1.0.md)：对 V1.7 的评审与提案
 - [V1.8 修订指令](docs/proposals/wulin-v1.8-revision-instructions.md)：已采纳的 D1–D3 规则修订
 - [Phase 1 实现说明](docs/engine/phase1-implementation-notes.md)
+- [Phase 1 构筑矩阵模拟报告](docs/reports/phase1-matrix-report.md)
 - [进度与决策记录](PROGRESS.md)
