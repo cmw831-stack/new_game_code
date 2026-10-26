@@ -38,10 +38,10 @@ test('战斗细则 V1.2 §4.1：敌方本轮意图为出招时敌方先手，玩
   assert.equal(state.enemy.hp, 26);
 });
 
-test('敌人细则 V1.2 §4.1：高架势守卫与蓄震守卫的基础出招气血 +3，均衡武者不变', () => {
+test('敌人细则 V1.3 §4.1：高架势守卫 52 血、基础出招 6；蓄震守卫 48 血、基础出招 16；均衡武者不变', () => {
   const mk = (id: string) => createBattle({ seed: 1, player: player([]), enemy: { config: id } }).enemy;
-  assert.deepEqual([mk('guard_standard').hpMax, mk('guard_standard').weapon.base.hp], [43, 6]);
-  assert.deepEqual([mk('resonance_standard').hpMax, mk('resonance_standard').weapon.base.hp], [40, 7]);
+  assert.deepEqual([mk('guard_standard').hpMax, mk('guard_standard').weapon.base.hp], [52, 6]);
+  assert.deepEqual([mk('resonance_standard').hpMax, mk('resonance_standard').weapon.base.hp], [48, 16]);
   assert.deepEqual([mk('balanced_standard').hpMax, mk('balanced_standard').weapon.base.hp], [39, 4]);
 });
 

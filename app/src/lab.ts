@@ -26,9 +26,9 @@ export interface EnemyOption {
 
 export const ENEMY_OPTIONS: EnemyOption[] = [
   { id: 'balanced_tutorial', name: '均衡武者（引导）', note: '低压练习对手，只循环一个段落' },
-  { id: 'balanced_standard', name: '均衡武者', note: '先学会读节奏：出招、架招、调息交替' },
-  { id: 'guard_standard', name: '高架势守卫', note: '架势高，架招时会借力反击' },
-  { id: 'resonance_standard', name: '蓄震守卫', note: '多段主招打中它两次以上会被反震' },
+  { id: 'balanced_standard', name: '均衡武者', note: '教学对手：先学会读节奏，一直出招也能赢' },
+  { id: 'guard_standard', name: '高架势守卫', note: '架招时会借力反击，硬攻会被打穿；等它调息再出手' },
+  { id: 'resonance_standard', name: '蓄震守卫', note: '出招很重，要架招；多段主招打中它两次以上会被反震' },
 ];
 
 export interface Setup {

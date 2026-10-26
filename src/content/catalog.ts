@@ -1,10 +1,10 @@
 // 内容目录：十二门预设、敌方专用武学、兵器与敌人配置。
-// 数据来源：docs/design 中的组件细则 V1.2 第六、十章，敌人细则 V1.2，成长经济细则 V1.4（策划书 V1.9）。
+// 数据来源：docs/design 中的组件细则 V1.2 第六、十章，敌人细则 V1.3，成长经济细则 V1.4（策划书 V1.9.1）。
 
 import type { ArtDef, EnemyConfig, IntentItem, Segment, Stance, Weapon } from '../rules/types.ts';
 import { compileArt, type ArtSpec } from './components.ts';
 
-export const CONTENT_VERSION = 'design-v1.9';
+export const CONTENT_VERSION = 'design-v1.9.1';
 
 // ---------- 十二门预设（组件细则第六章） ----------
 
@@ -128,7 +128,7 @@ const ENEMIES: EnemyConfig[] = [
   },
   {
     id: 'guard_standard', templateId: 'guard', name: '高架势守卫',
-    hpMax: 43, qi: 10, qiMax: 20, postureMax: 28, weaponId: 'iron_staff', basePowerBonus: { hp: 3, posture: 0 },
+    hpMax: 52, qi: 10, qiMax: 20, postureMax: 28, weaponId: 'iron_staff', basePowerBonus: { hp: 3, posture: 0 },
     artIds: ['return_breath', 'borrow_force', 'break_strike'], fixedSegment: false,
     segments: [
       seg('A', '守势', [item(GRD), item(ATK), item(BRT)]),
@@ -137,7 +137,7 @@ const ENEMIES: EnemyConfig[] = [
   },
   {
     id: 'resonance_standard', templateId: 'resonance', name: '蓄震守卫',
-    hpMax: 40, qi: 8, qiMax: 20, postureMax: 20, weaponId: 'iron_sword', basePowerBonus: { hp: 3, posture: 0 },
+    hpMax: 48, qi: 8, qiMax: 20, postureMax: 20, weaponId: 'iron_sword', basePowerBonus: { hp: 12, posture: 0 },
     artIds: ['return_breath', 'npc_resonance'], fixedSegment: false,
     segments: [
       seg('A', '蓄震', [item(GRD), item(ATK), item(BRT)]),
