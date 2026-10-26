@@ -9,7 +9,8 @@
 
 ## 文档
 
-- [策划书 V1.7](docs/design/wulin-self-created-arts-v1.7.md)：当前正式版本
+- [策划书 V1.8](docs/design/wulin-self-created-arts-v1.8.md)：当前正式版本
+- [V1.8 冲突报告](docs/design/wulin-v1.8-conflicts.md)：修订中的取舍与待决问题
 - [改进方案 V1.0](docs/proposals/wulin-improvement-proposal-v1.0.md)：对 V1.7 的评审与提案
 - [V1.8 修订指令](docs/proposals/wulin-v1.8-revision-instructions.md)：已采纳的 D1–D3 规则修订
 - [进度与决策记录](PROGRESS.md)
