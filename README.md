@@ -1,0 +1,15 @@
+# 武林·自创绝学
+
+> 习百家武学，悟万般变化。
+> 不求天下第一秘籍，只创属于自己的绝世武功。
+
+一款 PC 单机独立游戏：玩家继承一部写满失败的武学手稿，拆解百家招式，重组成自己的绝学，再用它救人、铸剑、被人记住。
+
+**当前状态：** 策划阶段，尚无可运行的游戏。
+
+## 文档
+
+- [策划书 V1.7](docs/design/wulin-self-created-arts-v1.7.md)：当前正式版本
+- [改进方案 V1.0](docs/proposals/wulin-improvement-proposal-v1.0.md)：对 V1.7 的评审与提案
+- [V1.8 修订指令](docs/proposals/wulin-v1.8-revision-instructions.md)：已采纳的 D1–D3 规则修订
+- [进度与决策记录](PROGRESS.md)
