@@ -5,7 +5,19 @@
 
 一款 PC 单机独立游戏：玩家继承一部写满失败的武学手稿，拆解百家招式，重组成自己的绝学，再用它救人、铸剑、被人记住。
 
-**当前状态：** 策划阶段，尚无可运行的游戏。
+**当前状态：** Phase 1 进行中。已有无界面的 TypeScript 规则引擎和验收测试，尚无可玩的界面。
+
+## 运行测试
+
+需要 Node 24 或更高版本。
+
+```bash
+npm install
+```
+
+```bash
+npm run check
+```
 
 ## 文档
 
@@ -13,4 +25,5 @@
 - [V1.8 冲突报告](docs/design/wulin-v1.8-conflicts.md)：修订中的取舍与待决问题
 - [改进方案 V1.0](docs/proposals/wulin-improvement-proposal-v1.0.md)：对 V1.7 的评审与提案
 - [V1.8 修订指令](docs/proposals/wulin-v1.8-revision-instructions.md)：已采纳的 D1–D3 规则修订
+- [Phase 1 实现说明](docs/engine/phase1-implementation-notes.md)
 - [进度与决策记录](PROGRESS.md)

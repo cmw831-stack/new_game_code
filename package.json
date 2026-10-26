@@ -1,0 +1,19 @@
+{
+  "name": "wulin-self-created-arts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "《武林·自创绝学》规则引擎与无界面模拟器",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json",
+    "check": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  }
+}
