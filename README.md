@@ -33,4 +33,5 @@ npm run matrix
 - [V1.8 修订指令](docs/proposals/wulin-v1.8-revision-instructions.md)：已采纳的 D1–D3 规则修订
 - [Phase 1 实现说明](docs/engine/phase1-implementation-notes.md)
 - [Phase 1 构筑矩阵模拟报告](docs/reports/phase1-matrix-report.md)
+- [Phase 1 调参实验 1 报告](docs/reports/phase1-experiment-1-report.md)
 - [进度与决策记录](PROGRESS.md)

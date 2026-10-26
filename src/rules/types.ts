@@ -117,6 +117,8 @@ export interface WardState {
   expiresRound: number;
   /** 已锁定的敌方主招施放 ID。 */
   lockedCast: number | null;
+  /** 规则参数 wardScope 为 chain 时，基础架招护势锁定的敌方根连锁 ID。 */
+  lockedRoot: number | null;
 }
 
 export interface StatusState {
@@ -172,6 +174,17 @@ export interface ScriptState {
   /** 已抽定的下一段落。 */
   nextSegIndex: number | null;
   fixed: boolean;
+}
+
+/**
+ * 可调的规则参数，默认值即策划书 V1.8 的规则。只用于调参实验；
+ * 改默认值等于改规则，必须先改策划文档。
+ */
+export interface RuleParams {
+  /** 基础架招的护势保护范围：main＝只保护第一门敌方主招（V1.8）；chain＝保护敌方整条根连锁。 */
+  wardScope: 'main' | 'chain';
+  /** 基础行动先后：player＝始终玩家先手（V1.8）；enemyOnAttack＝敌方本轮意图为出招时敌方先手，并已在意图中公开。 */
+  initiative: 'player' | 'enemyOnAttack';
 }
 
 export interface Limits {
@@ -230,6 +243,7 @@ export interface BattleState {
   intent: RoundIntent | null;
   over: BattleOutcome | null;
   limits: Limits;
+  rules: RuleParams;
 }
 
 // ---------- 决策 ----------

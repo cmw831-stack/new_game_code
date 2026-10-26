@@ -3,7 +3,7 @@
 
 import { compileArt, specProblems, type ArtSpec } from '../content/components.ts';
 import { CONTENT_VERSION, findArt, findEnemy, findWeapon } from '../content/catalog.ts';
-import type { ArtDef, ArtInstance, BattleState, EnemyConfig, FighterState, Limits, Side, StatusState, Weapon } from '../rules/types.ts';
+import type { ArtDef, ArtInstance, BattleState, EnemyConfig, FighterState, Limits, RuleParams, Side, StatusState, Weapon } from '../rules/types.ts';
 
 export const RULES_VERSION = 'rules-v1.8-phase1';
 
@@ -17,6 +17,14 @@ export const DEFAULT_LIMITS: Limits = {
   maxDepth: 16,
   maxRounds: 100,
 };
+
+export const DEFAULT_RULES: RuleParams = {
+  wardScope: 'main',
+  initiative: 'player',
+};
+
+/** 调参实验用：覆盖目录武学的部分字段（双方共用），例如费用或打击威力。 */
+export type ArtOverrides = Record<string, Partial<Omit<ArtDef, 'id'>>>;
 
 export interface FighterInput {
   name?: string;
@@ -55,6 +63,10 @@ export interface BattleInput {
   player: FighterInput;
   enemy: EnemyInput;
   limits?: Partial<Limits>;
+  /** 调参实验用的规则参数；省略即 V1.8 规则。 */
+  rules?: Partial<RuleParams>;
+  /** 调参实验用的武学覆盖；省略即内容目录原值。 */
+  artOverrides?: ArtOverrides;
 }
 
 export class ValidationError extends Error {
@@ -94,7 +106,7 @@ function isSwordOnly(art: ArtDef): boolean {
   return (art.action.kind === 'attack' && art.action.swordOnly) || (art.followup?.swordOnly ?? false);
 }
 
-function resolveArts(label: string, entries: (string | ArtSpec)[], weapon: Weapon | undefined, problems: string[]): ArtInstance[] {
+function resolveArts(label: string, entries: (string | ArtSpec)[], weapon: Weapon | undefined, problems: string[], overrides: ArtOverrides = {}): ArtInstance[] {
   const out: ArtInstance[] = [];
   if (entries.length > MAX_ARTS) problems.push(`${label}最多装备 ${MAX_ARTS} 门武学，当前 ${entries.length} 门`);
   const seen = new Set<string>();
@@ -103,6 +115,7 @@ function resolveArts(label: string, entries: (string | ArtSpec)[], weapon: Weapo
     if (typeof entry === 'string') {
       art = findArt(entry);
       if (!art) problems.push(`${label}未知内容 ID：${entry}`);
+      else if (overrides[entry]) art = { ...art, ...structuredClone(overrides[entry]), id: art.id };
     } else {
       const ps = specProblems(entry, weapon?.weaponClass);
       if (ps.length > 0) problems.push(...ps.map((x) => `${label}${entry.name}：${x}`));
@@ -142,6 +155,8 @@ function fighter(side: Side, name: string, r: { hp: number; hpMax: number; qi: n
 
 export function createBattle(input: BattleInput): BattleState {
   const problems: string[] = [];
+  const overrides = input.artOverrides ?? {};
+  for (const id of Object.keys(overrides)) if (!findArt(id)) problems.push(`覆盖了不存在的武学：${id}`);
   if (!Number.isInteger(input.seed) || input.seed < 0 || input.seed > 0xffffffff) problems.push('种子必须是 0–4294967295 的整数');
 
   // 玩家
@@ -151,7 +166,7 @@ export function createBattle(input: BattleInput): BattleState {
   checkResources('玩家', pi, problems);
   const reserve = pi.reserve ?? 0;
   if (!Number.isInteger(reserve) || reserve < 0) problems.push('留力必须是非负整数');
-  const pArts = resolveArts('玩家', pi.arts, pWeapon, problems);
+  const pArts = resolveArts('玩家', pi.arts, pWeapon, problems, overrides);
 
   // 敌人
   const ei = input.enemy;
@@ -163,7 +178,7 @@ export function createBattle(input: BattleInput): BattleState {
   if (config) {
     eWeapon = ei.weapon ? structuredClone(ei.weapon) : findWeapon(config.weaponId);
     if (!eWeapon) problems.push(`敌人未知兵器 ID：${config.weaponId}`);
-    eArts = resolveArts('敌人', config.artIds, eWeapon, problems);
+    eArts = resolveArts('敌人', config.artIds, eWeapon, problems, overrides);
     eRes = {
       hp: ei.hp ?? config.hpMax,
       hpMax: config.hpMax,
@@ -209,5 +224,6 @@ export function createBattle(input: BattleInput): BattleState {
     intent: null,
     over: null,
     limits,
+    rules: { ...DEFAULT_RULES, ...input.rules },
   };
 }

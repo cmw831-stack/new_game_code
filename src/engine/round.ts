@@ -126,6 +126,14 @@ class RoundContext {
   }
 
   private endRoot(): void {
+    // wardScope 为 chain 时，基础架招护势在被锁定的敌方根连锁结束后消费。
+    for (const side of SIDES) {
+      const w = this.f(side).status.ward;
+      if (w && this.root !== null && w.lockedRoot === this.root) {
+        this.f(side).status.ward = null;
+        this.emit('wardConsumed', side, null, { scope: 'chain' });
+      }
+    }
     this.root = null;
   }
 
@@ -241,9 +249,16 @@ class RoundContext {
       }
       const ward = t.status.ward;
       let blocked = false;
-      if (ward && (ward.lockedCast === null || ward.lockedCast === o.castId)) {
-        ward.lockedCast = o.castId;
-        blocked = t.posture > 0 && !t.status.crashedThisRound;
+      if (ward) {
+        const chain = ward.source === 'basic' && this.s.rules.wardScope === 'chain';
+        const free = chain
+          ? ward.lockedRoot === null || ward.lockedRoot === this.root
+          : ward.lockedCast === null || ward.lockedCast === o.castId;
+        if (free) {
+          if (chain) ward.lockedRoot = this.root;
+          else ward.lockedCast = o.castId;
+          blocked = t.posture > 0 && !t.status.crashedThisRound;
+        }
       }
       const hpLoss = Math.min(blocked ? hp >> 1 : hp, t.hp);
       const postureBefore = t.posture;
@@ -400,7 +415,7 @@ class RoundContext {
       if (fu && (fu.kind === 'onHpDamage' ? res.hpDamage > 0 : res.froze)) this.followup(side, c.inst, fu.hits, fu.cost, depth);
       if (art.recovery?.kind === 'qiOnHpDamage' && res.hpDamage > 0) this.gainQi(side, art.recovery.amount, art.id, castId, depth);
     } else if (act.kind === 'ward') {
-      f.status.ward = { source: 'skill', expiresRound: this.s.round + 1, lockedCast: null };
+      f.status.ward = { source: 'skill', expiresRound: this.s.round + 1, lockedCast: null, lockedRoot: null };
       this.emit('ward', side, art.id, { source: 'skill', expiresRound: this.s.round + 1 }, castId, depth);
     } else if (act.kind === 'step') {
       f.status.step = { expiresRound: this.s.round + 1 };
@@ -481,7 +496,7 @@ class RoundContext {
       const f = this.f(side);
       const before = f.posture;
       f.posture = Math.min(f.postureMax, f.posture + GUARD_POSTURE);
-      if (!f.status.ward) f.status.ward = { source: 'basic', expiresRound: s.round, lockedCast: null };
+      if (!f.status.ward) f.status.ward = { source: 'basic', expiresRound: s.round, lockedCast: null, lockedRoot: null };
       guards.push({ side, before });
     }
     for (const { side, before } of guards) {
@@ -514,9 +529,10 @@ class RoundContext {
       this.endRoot();
     }
 
-    // 基础行动：玩家先手。执行前再次检查最新冻结。
+    // 基础行动：默认玩家先手。执行前再次检查最新冻结。
     this.phase = 'action';
-    for (const side of SIDES) {
+    const order: Side[] = s.rules.initiative === 'enemyOnAttack' && s.intent!.stance === 'attack' ? ['enemy', 'player'] : SIDES;
+    for (const side of order) {
       const f = this.f(side);
       if (f.basicUsedThisRound) continue;
       const stance = this.stance(side, decision);

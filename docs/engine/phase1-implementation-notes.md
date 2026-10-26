@@ -61,11 +61,23 @@ npm run check
 | 11 | 段落抽取 | `mulberry32 值 % 段落数`；段落数很小，取模偏差可忽略，且结果确定 |
 | 12 | 资源与伤害 | 全部为整数；格挡减半向下取整，崩溃恢复按上限的 40% 向下取整 |
 
-## 五、批量模拟
+## 五、调参实验用的开关
 
-`src/sim/strategies.ts` 定义三套先行构筑与三份公开决策策略，`src/sim/matrix.ts` 运行 27 格矩阵与段落可行性检查。`npm run matrix` 生成 `docs/reports/phase1-matrix-data.*`；`npm run explore` 只在内存里临时改敌人数值做探索，不写回内容目录。结论见 [模拟报告](../reports/phase1-matrix-report.md)。
+`BattleInput.rules` 与 `BattleInput.artOverrides` 只供调参实验使用，省略时就是 V1.8 规则与内容目录原值：
 
-## 六、Phase 1 还差什么
+| 参数 | 默认（V1.8） | 实验取值 |
+| --- | --- | --- |
+| `rules.wardScope` | `main`：基础架招护势只保护第一门敌方主招 | `chain`：保护敌方整条根连锁 |
+| `rules.initiative` | `player`：始终玩家先手 | `enemyOnAttack`：敌方本轮意图为出招时敌方先手 |
+| `artOverrides` | 无 | 覆盖目录武学的部分字段，双方共用 |
+
+改默认值等于改规则，必须先改策划文档。
+
+## 六、批量模拟
+
+`src/sim/strategies.ts` 定义三套先行构筑与三份公开决策策略，`src/sim/matrix.ts` 运行 27 格矩阵与段落可行性检查。`npm run matrix` 生成 `docs/reports/phase1-matrix-data.*`；`npm run explore` 只在内存里临时改敌人数值做探索，不写回内容目录。`npm run experiment` 运行调参实验 1 的 9 个变体。结论见 [模拟报告](../reports/phase1-matrix-report.md) 与 [实验 1 报告](../reports/phase1-experiment-1-report.md)。
+
+## 七、Phase 1 还差什么
 
 - 完成标准中的“在干净环境执行”：需要在另一台机器或干净目录按第二节复现一次。
 - 模拟报告指出的数值问题需要负责人决定是否进入下一轮调参实验。

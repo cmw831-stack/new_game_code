@@ -1,9 +1,10 @@
 // 批量模拟：27 格构筑矩阵（执行契约 V1.1 第五章）与段落资源可行性检查。
 // 普通模拟没有研究、银两或材料结算。
 
-import { createBattle } from '../engine/setup.ts';
+import { createBattle, type ArtOverrides, type BattleInput } from '../engine/setup.ts';
+import { findEnemy, findWeapon } from '../content/catalog.ts';
 import { runBattle } from '../engine/round.ts';
-import type { BattleEvent, EndReason } from '../rules/types.ts';
+import type { BattleEvent, EndReason, RuleParams } from '../rules/types.ts';
 import { BUILDS, STRATEGIES, type Build, type Strategy } from './strategies.ts';
 
 /** 预先固定的种子组（首轮提案每格 20 个），在运行前写定，不事后挑选。 */
@@ -12,6 +13,40 @@ export const SEEDS: number[] = Array.from({ length: 20 }, (_, i) => 1001 + i);
 export const MATRIX_ENEMIES = ['balanced_standard', 'guard_standard', 'resonance_standard'];
 
 const START = { hp: 30, qi: 20, posture: 20 };
+
+/** 调参实验的一组改动；全部只在内存中生效，不写回内容目录。 */
+export interface Variant {
+  id: string;
+  name: string;
+  /** 敌人气血上限倍率，四舍五入。 */
+  enemyHpMul: number;
+  /** 敌人兵器基础出招的气血威力增量。 */
+  enemyBaseHp: number;
+  artOverrides: ArtOverrides;
+  rules: Partial<RuleParams>;
+  /** 玩家开场内力；省略为 20。 */
+  playerQi?: number;
+}
+
+export const BASELINE: Variant = { id: 'V0', name: '基线（V1.8）', enemyHpMul: 1, enemyBaseHp: 0, artOverrides: {}, rules: {} };
+
+export function battleInput(build: Build, enemy: string, seed: number, v: Variant = BASELINE): BattleInput {
+  const config = findEnemy(enemy)!;
+  config.hpMax = Math.round(config.hpMax * v.enemyHpMul);
+  const weapon = findWeapon(config.weaponId)!;
+  weapon.base.hp += v.enemyBaseHp;
+  return {
+    battleId: `${v.id}/${build.id}/${enemy}/${seed}`,
+    seed,
+    player: {
+      hp: START.hp, hpMax: 30, qi: v.playerQi ?? START.qi, qiMax: 20, posture: START.posture, postureMax: 20,
+      weaponId: 'iron_sword', arts: build.arts, reserve: 0,
+    },
+    enemy: { config, weapon },
+    artOverrides: v.artOverrides,
+    rules: v.rules,
+  };
+}
 
 export interface BattleMetrics {
   seed: number;
@@ -47,7 +82,7 @@ export interface CellResult {
   segmentSequences: number;
 }
 
-function metrics(seed: number, events: BattleEvent[], reason: EndReason, rounds: number, hpEnd: number, qiEnd: number): BattleMetrics {
+function metrics(seed: number, events: BattleEvent[], reason: EndReason, rounds: number, hpEnd: number, qiEnd: number, qiStart: number): BattleMetrics {
   let hpMin = START.hp;
   const damageBySource: Record<string, number> = {};
   let enemyStarved = 0;
@@ -66,28 +101,20 @@ function metrics(seed: number, events: BattleEvent[], reason: EndReason, rounds:
       lastSeg = seg;
     }
   }
-  return { seed, reason, rounds, hpEnd, hpMin, qiNet: qiEnd - START.qi, damageBySource, enemyStarved, segments: segs.join('-') };
+  return { seed, reason, rounds, hpEnd, hpMin, qiNet: qiEnd - qiStart, damageBySource, enemyStarved, segments: segs.join('-') };
 }
 
-export function runOne(build: Build, enemy: string, strategy: Strategy, seed: number): BattleMetrics {
-  const s0 = createBattle({
-    battleId: `${build.id}/${enemy}/${strategy.id}/${seed}`,
-    seed,
-    player: {
-      hp: START.hp, hpMax: 30, qi: START.qi, qiMax: 20, posture: START.posture, postureMax: 20,
-      weaponId: 'iron_sword', arts: build.arts, reserve: 0,
-    },
-    enemy: { config: enemy },
-  });
+export function runOne(build: Build, enemy: string, strategy: Strategy, seed: number, v: Variant = BASELINE): BattleMetrics {
+  const s0 = createBattle(battleInput(build, enemy, seed, v));
   const run = runBattle(s0, strategy.decide);
   const over = run.state.over!;
-  return metrics(seed, run.events, over.reason, run.rounds, run.state.player.hp, run.state.player.qi);
+  return metrics(seed, run.events, over.reason, run.rounds, run.state.player.hp, run.state.player.qi, s0.player.qi);
 }
 
 const avg = (xs: number[]): number => (xs.length === 0 ? 0 : xs.reduce((a, b) => a + b, 0) / xs.length);
 
-export function runCell(build: Build, enemy: string, strategy: Strategy, seeds: number[] = SEEDS): CellResult {
-  const battles = seeds.map((seed) => runOne(build, enemy, strategy, seed));
+export function runCell(build: Build, enemy: string, strategy: Strategy, seeds: number[] = SEEDS, v: Variant = BASELINE): CellResult {
+  const battles = seeds.map((seed) => runOne(build, enemy, strategy, seed, v));
   const wins = battles.filter((b) => b.reason === 'victory');
   const defeats = battles.filter((b) => b.reason === 'defeat').length;
   const total: Record<string, number> = {};
@@ -115,10 +142,68 @@ export function runCell(build: Build, enemy: string, strategy: Strategy, seeds: 
   };
 }
 
-export function runMatrix(seeds: number[] = SEEDS): CellResult[] {
+export function runMatrix(seeds: number[] = SEEDS, v: Variant = BASELINE): CellResult[] {
   const out: CellResult[] = [];
-  for (const build of BUILDS) for (const enemy of MATRIX_ENEMIES) for (const strategy of STRATEGIES) out.push(runCell(build, enemy, strategy, seeds));
+  for (const build of BUILDS) for (const enemy of MATRIX_ENEMIES) for (const strategy of STRATEGIES) out.push(runCell(build, enemy, strategy, seeds, v));
   return out;
+}
+
+// ---------- 设计目标核对 ----------
+
+const byQuality = (a: CellResult, b: CellResult): number =>
+  b.winRate - a.winRate || (a.avgRoundsWin ?? 99) - (b.avgRoundsWin ?? 99) || (b.avgHpEndWin ?? 0) - (a.avgHpEndWin ?? 0);
+
+/** 某构筑面对某敌人时三种打法中最好的一格：胜率高者优先，再比胜场轮数少、剩血多。 */
+export function bestCell(cells: CellResult[], build: string, enemy: string): CellResult {
+  return cells.filter((c) => c.build === build && c.enemy === enemy).sort(byQuality)[0]!;
+}
+
+/** 各敌人面前的构筑排名（按各自最佳打法）。 */
+export function rankings(cells: CellResult[]): Record<string, string[]> {
+  const out: Record<string, string[]> = {};
+  for (const enemy of MATRIX_ENEMIES) out[enemy] = BUILDS.map((b) => bestCell(cells, b.id, enemy)).sort(byQuality).map((c) => c.build);
+  return out;
+}
+
+export interface TargetCheck {
+  /** 每套构筑在几类敌人上有胜利。 */
+  enemiesWon: Record<string, number>;
+  rankSwap: boolean;
+  /** 最佳打法的胜场平均轮数落在 6–10 轮的组合数（共 9 个）。 */
+  inRoundRange: number;
+  /** “读窗口”胜率更高、或胜率相同而剩血更多于“始终出招”的构筑×敌人组合。 */
+  readBeatsAttack: string[];
+  /** 最佳打法不是“始终出招”的组合。 */
+  bestNotAttack: string[];
+  abnormal: number;
+}
+
+export function checkTargets(cells: CellResult[]): TargetCheck {
+  const enemiesWon: Record<string, number> = {};
+  const readBeatsAttack: string[] = [];
+  const bestNotAttack: string[] = [];
+  let inRoundRange = 0;
+  for (const b of BUILDS) {
+    enemiesWon[b.id] = MATRIX_ENEMIES.filter((e) => cells.some((c) => c.build === b.id && c.enemy === e && c.wins > 0)).length;
+    for (const e of MATRIX_ENEMIES) {
+      const get = (s: string) => cells.find((c) => c.build === b.id && c.enemy === e && c.strategy === s)!;
+      const aa = get('always_attack');
+      const rw = get('read_windows');
+      if (rw.winRate > aa.winRate || (rw.winRate === aa.winRate && rw.winRate > 0 && (rw.avgHpEndWin ?? 0) > (aa.avgHpEndWin ?? 0))) readBeatsAttack.push(`${b.id}/${e}`);
+      const best = bestCell(cells, b.id, e);
+      if (best.strategy !== 'always_attack') bestNotAttack.push(`${b.id}/${e}`);
+      if (best.avgRoundsWin !== null && best.avgRoundsWin >= 6 && best.avgRoundsWin <= 10) inRoundRange += 1;
+    }
+  }
+  const r = rankings(cells);
+  return {
+    enemiesWon,
+    rankSwap: new Set(MATRIX_ENEMIES.map((e) => r[e]!.join('>'))).size > 1,
+    inRoundRange,
+    readBeatsAttack,
+    bestNotAttack,
+    abnormal: cells.reduce((n, c) => n + c.other, 0),
+  };
 }
 
 // ---------- 段落资源可行性 ----------
