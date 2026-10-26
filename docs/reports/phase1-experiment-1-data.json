@@ -1,0 +1,5658 @@
+{
+ "rulesVersion": "rules-v1.8-phase1",
+ "commit": "162601c",
+ "seeds": [
+  1001,
+  1002,
+  1003,
+  1004,
+  1005,
+  1006,
+  1007,
+  1008,
+  1009,
+  1010,
+  1011,
+  1012,
+  1013,
+  1014,
+  1015,
+  1016,
+  1017,
+  1018,
+  1019,
+  1020
+ ],
+ "results": [
+  {
+   "variant": {
+    "id": "V0",
+    "name": "基线（V1.8）",
+    "enemyHpMul": 1,
+    "enemyBaseHp": 0,
+    "artOverrides": {},
+    "rules": {}
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": false,
+    "inRoundRange": 2,
+    "readBeatsAttack": [],
+    "bestNotAttack": [],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 2,
+     "avgRoundsWin": 2,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.23076923076923078,
+      "cold_sword": 0.6923076923076923,
+      "break_chase": 0.07692307692307693
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 26,
+     "avgHpMin": 26,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.23076923076923078,
+      "cold_sword": 0.6923076923076923,
+      "break_chase": 0.07692307692307693
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 21.3,
+     "avgHpMin": 21.3,
+     "avgQiNet": -4,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.6923076923076923
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 24,
+     "avgHpMin": 24,
+     "avgQiNet": -8,
+     "damageShare": {
+      "basic": 0.29411764705882354,
+      "cold_sword": 0.7058823529411765
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4.35,
+     "avgRoundsWin": 4.35,
+     "avgHpEndWin": 16.95,
+     "avgHpMin": 16.95,
+     "avgQiNet": -5.3,
+     "damageShare": {
+      "basic": 0.23529411764705882,
+      "cold_sword": 0.7647058823529411
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.7,
+     "avgRoundsWin": 9.7,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -4,
+     "damageShare": {
+      "basic": 0.35294117647058826,
+      "cold_sword": 0.6470588235294118
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 18,
+     "avgHpMin": 18,
+     "avgQiNet": -5,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.5625,
+      "break_chase": 0.1875
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4.35,
+     "avgRoundsWin": 4.35,
+     "avgHpEndWin": 17.3,
+     "avgHpMin": 17.3,
+     "avgQiNet": -1.95,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.5625,
+      "break_chase": 0.1875
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.7,
+     "avgRoundsWin": 9.7,
+     "avgHpEndWin": 12,
+     "avgHpMin": 12,
+     "avgQiNet": -4,
+     "damageShare": {
+      "basic": 0.375,
+      "cold_sword": 0.625
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.6923076923076923,
+      "break_strike": 0.3076923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 22,
+     "avgHpMin": 22,
+     "avgQiNet": -7.6,
+     "damageShare": {
+      "borrow_force": 0.5153846153846153,
+      "basic": 0.28076923076923077,
+      "break_strike": 0.20384615384615384
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.95,
+     "avgRoundsWin": 9.95,
+     "avgHpEndWin": 23,
+     "avgHpMin": 23,
+     "avgQiNet": -1.4,
+     "damageShare": {
+      "borrow_force": 0.38846153846153847,
+      "basic": 0.4230769230769231,
+      "break_strike": 0.18846153846153846
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 5
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6.35,
+     "avgRoundsWin": 6.35,
+     "avgHpEndWin": 21.9,
+     "avgHpMin": 21.9,
+     "avgQiNet": -15.3,
+     "damageShare": {
+      "basic": 0.6661764705882353,
+      "break_strike": 0.3338235294117647
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 10.1,
+     "avgRoundsWin": 10.1,
+     "avgHpEndWin": 16.65,
+     "avgHpMin": 16.65,
+     "avgQiNet": -12.5,
+     "damageShare": {
+      "basic": 0.6176470588235294,
+      "break_strike": 0.3558823529411765,
+      "borrow_force": 0.026470588235294117
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 5
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 11.6,
+     "avgRoundsWin": 11.6,
+     "avgHpEndWin": 22.6,
+     "avgHpMin": 22.6,
+     "avgQiNet": -1.15,
+     "damageShare": {
+      "borrow_force": 0.4470588235294118,
+      "basic": 0.4,
+      "break_strike": 0.15294117647058825
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 7
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.6875,
+      "break_strike": 0.3125
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.05,
+     "avgRoundsWin": 8.05,
+     "avgHpEndWin": 28.7,
+     "avgHpMin": 28.7,
+     "avgQiNet": -10,
+     "damageShare": {
+      "basic": 0.54375,
+      "break_strike": 0.334375,
+      "borrow_force": 0.121875
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 11.6,
+     "avgRoundsWin": 11.6,
+     "avgHpEndWin": 24.8,
+     "avgHpMin": 24.8,
+     "avgQiNet": -1.15,
+     "damageShare": {
+      "borrow_force": 0.4625,
+      "basic": 0.375,
+      "break_strike": 0.1625
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 7
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 24,
+     "avgHpMin": 24,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.38461538461538464,
+      "break_strike": 0.23076923076923078,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5.35,
+     "avgRoundsWin": 5.35,
+     "avgHpEndWin": 21.3,
+     "avgHpMin": 21.3,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.3346153846153846,
+      "break_strike": 0.23076923076923078,
+      "break_chase": 0.4346153846153846
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 16.6,
+     "avgHpMin": 16.6,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.46153846153846156,
+      "break_strike": 0.23076923076923078,
+      "break_chase": 0.3076923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4.65,
+     "avgRoundsWin": 4.65,
+     "avgHpEndWin": 15.1,
+     "avgHpMin": 15.1,
+     "avgQiNet": -10.65,
+     "damageShare": {
+      "basic": 0.45,
+      "break_strike": 0.2735294117647059,
+      "break_chase": 0.27647058823529413
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7.2,
+     "avgHpEndWin": 9.3,
+     "avgHpMin": 9.3,
+     "avgQiNet": -4.05,
+     "damageShare": {
+      "basic": 0.4117647058823529,
+      "break_strike": 0.25588235294117645,
+      "break_chase": 0.3323529411764706
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.7,
+     "avgRoundsWin": 16.7,
+     "avgHpEndWin": 15,
+     "avgHpMin": 15,
+     "avgQiNet": -0.3,
+     "damageShare": {
+      "basic": 0.5882352941176471,
+      "break_strike": 0.23823529411764705,
+      "break_chase": 0.17352941176470588
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 26,
+     "avgHpMin": 26,
+     "avgQiNet": -6.95,
+     "damageShare": {
+      "basic": 0.396875,
+      "break_strike": 0.228125,
+      "break_chase": 0.375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 26,
+     "avgHpMin": 26,
+     "avgQiNet": -4.75,
+     "damageShare": {
+      "basic": 0.353125,
+      "break_strike": 0.25,
+      "break_chase": 0.396875
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.75,
+     "avgRoundsWin": 13.75,
+     "avgHpEndWin": 21.7,
+     "avgHpMin": 21.7,
+     "avgQiNet": -2.4,
+     "damageShare": {
+      "basic": 0.48125,
+      "break_strike": 0.221875,
+      "break_chase": 0.296875
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 9
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V1",
+    "name": "X1：敌人气血 ×1.5",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 0,
+    "artOverrides": {},
+    "rules": {}
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": false,
+    "inRoundRange": 4,
+    "readBeatsAttack": [
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.2564102564102564,
+      "cold_sword": 0.5897435897435898,
+      "break_chase": 0.15384615384615385
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5.35,
+     "avgRoundsWin": 5.35,
+     "avgHpEndWin": 21.3,
+     "avgHpMin": 21.3,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.2230769230769231,
+      "cold_sword": 0.6230769230769231,
+      "break_chase": 0.15384615384615385
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 16.6,
+     "avgHpMin": 16.6,
+     "avgQiNet": -4,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.5384615384615384,
+      "break_chase": 0.15384615384615385
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 20.1,
+     "avgHpMin": 20.1,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.24901960784313726,
+      "cold_sword": 0.6333333333333333,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 16.95,
+     "avgHpMin": 16.95,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.23529411764705882,
+      "cold_sword": 0.7058823529411765,
+      "break_chase": 0.058823529411764705
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.25,
+     "avgRoundsWin": 13.25,
+     "avgHpEndWin": 18,
+     "avgHpMin": 18,
+     "avgQiNet": -4,
+     "damageShare": {
+      "basic": 0.3137254901960784,
+      "cold_sword": 0.6862745098039216
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 12,
+     "avgHpMin": 12,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.20833333333333334,
+      "cold_sword": 0.5625,
+      "break_chase": 0.22916666666666666
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 11.3,
+     "avgHpMin": 11.3,
+     "avgQiNet": -6.65,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.625,
+      "break_chase": 0.125
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.25,
+     "avgRoundsWin": 13.25,
+     "avgHpEndWin": 4,
+     "avgHpMin": 4,
+     "avgQiNet": -2.2,
+     "damageShare": {
+      "basic": 0.32395833333333335,
+      "cold_sword": 0.6197916666666666,
+      "break_chase": 0.05625
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -14.95,
+     "damageShare": {
+      "basic": 0.7102564102564103,
+      "break_strike": 0.28974358974358977
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.55,
+     "avgRoundsWin": 7.55,
+     "avgHpEndWin": 19.7,
+     "avgHpMin": 19.7,
+     "avgQiNet": -8,
+     "damageShare": {
+      "borrow_force": 0.4641025641025641,
+      "basic": 0.3384615384615385,
+      "break_strike": 0.19743589743589743
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 20,
+     "avgHpMin": 20,
+     "avgQiNet": -1.05,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.4,
+     "avgRoundsWin": 9.4,
+     "avgHpEndWin": 19.5,
+     "avgHpMin": 19.5,
+     "avgQiNet": -17.6,
+     "damageShare": {
+      "basic": 0.6862745098039216,
+      "break_strike": 0.3137254901960784
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 19,
+     "defeats": 1,
+     "other": 0,
+     "winRate": 0.95,
+     "avgRounds": 15,
+     "avgRoundsWin": 14.947368421052632,
+     "avgHpEndWin": 12.31578947368421,
+     "avgHpMin": 11.7,
+     "avgQiNet": -13.75,
+     "damageShare": {
+      "basic": 0.5801376597836775,
+      "break_strike": 0.35496558505408066,
+      "borrow_force": 0.06489675516224189
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 11
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 19.55,
+     "avgHpMin": 19.55,
+     "avgQiNet": -1.1,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8,
+     "avgRoundsWin": 8,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -15.6,
+     "damageShare": {
+      "basic": 0.7041666666666667,
+      "break_strike": 0.29583333333333334
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 11.35,
+     "avgRoundsWin": 11.35,
+     "avgHpEndWin": 27.2,
+     "avgHpMin": 27.2,
+     "avgQiNet": -13.6,
+     "damageShare": {
+      "basic": 0.5197916666666667,
+      "break_strike": 0.309375,
+      "borrow_force": 0.17083333333333334
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 23.2,
+     "avgHpMin": 23.2,
+     "avgQiNet": -4.75,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 24,
+     "avgHpMin": 24,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4358974358974359
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 16.6,
+     "avgHpMin": 16.6,
+     "avgQiNet": -1.3,
+     "damageShare": {
+      "basic": 0.3371794871794872,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4576923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 11.5,
+     "avgHpMin": 11.5,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 5.9,
+     "avgHpMin": 5.9,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.4117647058823529,
+      "break_strike": 0.23529411764705882,
+      "break_chase": 0.35294117647058826
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 9.25,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -1.75,
+     "damageShare": {
+      "basic": 0.40326340326340326,
+      "break_strike": 0.2540792540792541,
+      "break_chase": 0.34265734265734266
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 5
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 23.8,
+     "avgRoundsWin": 23.8,
+     "avgHpEndWin": 8.85,
+     "avgHpMin": 8.85,
+     "avgQiNet": -0.3,
+     "damageShare": {
+      "basic": 0.5343137254901961,
+      "break_strike": 0.23921568627450981,
+      "break_chase": 0.22647058823529412
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 18
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 24.6,
+     "avgHpMin": 24.6,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3333333333333333,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.4583333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7.2,
+     "avgHpEndWin": 25.6,
+     "avgHpMin": 25.6,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.2916666666666667,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 19.5,
+     "avgHpMin": 19.5,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V2",
+    "name": "X1＋X2：再加敌人基础出招气血 +3",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 3,
+    "artOverrides": {},
+    "rules": {}
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": true,
+    "inRoundRange": 4,
+    "readBeatsAttack": [
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_counter",
+     "guard_break"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.2564102564102564,
+      "cold_sword": 0.5897435897435898,
+      "break_chase": 0.15384615384615385
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5.35,
+     "avgRoundsWin": 5.35,
+     "avgHpEndWin": 18.95,
+     "avgHpMin": 18.95,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.2230769230769231,
+      "cold_sword": 0.6230769230769231,
+      "break_chase": 0.15384615384615385
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -4,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.5384615384615384,
+      "break_chase": 0.15384615384615385
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 20.1,
+     "avgHpMin": 20.1,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.24901960784313726,
+      "cold_sword": 0.6333333333333333,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 16.25,
+     "avgHpMin": 16.25,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.23529411764705882,
+      "cold_sword": 0.7058823529411765,
+      "break_chase": 0.058823529411764705
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.25,
+     "avgRoundsWin": 13.25,
+     "avgHpEndWin": 10,
+     "avgHpMin": 10,
+     "avgQiNet": -4,
+     "damageShare": {
+      "basic": 0.3137254901960784,
+      "cold_sword": 0.6862745098039216
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 12,
+     "avgHpMin": 12,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.20833333333333334,
+      "cold_sword": 0.5625,
+      "break_chase": 0.22916666666666666
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 10.95,
+     "avgHpMin": 10.95,
+     "avgQiNet": -6.65,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.625,
+      "break_chase": 0.125
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 11.15,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -1.55,
+     "damageShare": {
+      "basic": 0.28776978417266186,
+      "cold_sword": 0.6474820143884892,
+      "break_chase": 0.06474820143884892
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -14.95,
+     "damageShare": {
+      "basic": 0.7102564102564103,
+      "break_strike": 0.28974358974358977
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.55,
+     "avgRoundsWin": 7.55,
+     "avgHpEndWin": 16.55,
+     "avgHpMin": 16.55,
+     "avgQiNet": -8,
+     "damageShare": {
+      "borrow_force": 0.4641025641025641,
+      "basic": 0.3384615384615385,
+      "break_strike": 0.19743589743589743
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 17.4,
+     "avgHpMin": 17.4,
+     "avgQiNet": -1.05,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.4,
+     "avgRoundsWin": 9.4,
+     "avgHpEndWin": 19.5,
+     "avgHpMin": 19.5,
+     "avgQiNet": -17.6,
+     "damageShare": {
+      "basic": 0.6862745098039216,
+      "break_strike": 0.3137254901960784
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 19,
+     "defeats": 1,
+     "other": 0,
+     "winRate": 0.95,
+     "avgRounds": 15,
+     "avgRoundsWin": 14.947368421052632,
+     "avgHpEndWin": 11.052631578947368,
+     "avgHpMin": 10.5,
+     "avgQiNet": -13.75,
+     "damageShare": {
+      "basic": 0.5801376597836775,
+      "break_strike": 0.35496558505408066,
+      "borrow_force": 0.06489675516224189
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 11
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 12.25,
+     "avgHpMin": 12.25,
+     "avgQiNet": -1.1,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8,
+     "avgRoundsWin": 8,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -15.6,
+     "damageShare": {
+      "basic": 0.7041666666666667,
+      "break_strike": 0.29583333333333334
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 11.35,
+     "avgRoundsWin": 11.35,
+     "avgHpEndWin": 25.8,
+     "avgHpMin": 25.8,
+     "avgQiNet": -13.6,
+     "damageShare": {
+      "basic": 0.5197916666666667,
+      "break_strike": 0.309375,
+      "borrow_force": 0.17083333333333334
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": -4.75,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4358974358974359
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -1.3,
+     "damageShare": {
+      "basic": 0.3371794871794872,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4576923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 6.25,
+     "avgHpMin": 6.25,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 13,
+     "defeats": 7,
+     "other": 0,
+     "winRate": 0.65,
+     "avgRounds": 6.65,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 2,
+     "avgHpMin": 1.3,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.42311770943796395,
+      "break_strike": 0.23966065747614,
+      "break_chase": 0.3372216330858961
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 8,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -3.1,
+     "damageShare": {
+      "basic": 0.4,
+      "break_strike": 0.26666666666666666,
+      "break_chase": 0.3333333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 18.25,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 0,
+     "damageShare": {
+      "basic": 0.5249343832020997,
+      "break_strike": 0.26246719160104987,
+      "break_chase": 0.2125984251968504
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 16
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 20.55,
+     "avgHpMin": 20.55,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3333333333333333,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.4583333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7.2,
+     "avgHpEndWin": 23.4,
+     "avgHpMin": 23.4,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.2916666666666667,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 14.25,
+     "avgHpMin": 14.25,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V3",
+    "name": "X1＋X2＋X3：再把叠寒剑每段 3／2 改为 2／2",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 3,
+    "artOverrides": {
+     "cold_sword": {
+      "action": {
+       "kind": "attack",
+       "type": "combo",
+       "hits": [
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        }
+       ],
+       "swordOnly": true
+      }
+     }
+    },
+    "rules": {}
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": true,
+    "inRoundRange": 4,
+    "readBeatsAttack": [
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_counter",
+     "guard_break"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.2564102564102564,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.28205128205128205
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 18.95,
+     "avgHpMin": 18.95,
+     "avgQiNet": -5.05,
+     "damageShare": {
+      "basic": 0.23974358974358975,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.2987179487179487
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -7,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 18,
+     "avgHpMin": 18,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3137254901960784,
+      "cold_sword": 0.5686274509803921,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.3,
+     "avgRoundsWin": 8.3,
+     "avgHpEndWin": 11.35,
+     "avgHpMin": 11.35,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.30098039215686273,
+      "cold_sword": 0.5813725490196079,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 9,
+     "defeats": 11,
+     "other": 0,
+     "winRate": 0.45,
+     "avgRounds": 17.6,
+     "avgRoundsWin": 16,
+     "avgHpEndWin": 5,
+     "avgHpMin": 2.25,
+     "avgQiNet": -2.55,
+     "damageShare": {
+      "basic": 0.39643211100099107,
+      "cold_sword": 0.574826560951437,
+      "break_chase": 0.028741328047571853
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 12,
+     "avgHpMin": 12,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.26458333333333334,
+      "cold_sword": 0.48541666666666666,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 4.95,
+     "avgHpMin": 4.95,
+     "avgQiNet": -9.65,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.5,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 11.15,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -1.55,
+     "damageShare": {
+      "basic": 0.3669724770642202,
+      "cold_sword": 0.5504587155963303,
+      "break_chase": 0.08256880733944955
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -14.95,
+     "damageShare": {
+      "basic": 0.7102564102564103,
+      "break_strike": 0.28974358974358977
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.55,
+     "avgRoundsWin": 7.55,
+     "avgHpEndWin": 16.55,
+     "avgHpMin": 16.55,
+     "avgQiNet": -8,
+     "damageShare": {
+      "borrow_force": 0.4641025641025641,
+      "basic": 0.3384615384615385,
+      "break_strike": 0.19743589743589743
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 17.4,
+     "avgHpMin": 17.4,
+     "avgQiNet": -1.05,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.4,
+     "avgRoundsWin": 9.4,
+     "avgHpEndWin": 19.5,
+     "avgHpMin": 19.5,
+     "avgQiNet": -17.6,
+     "damageShare": {
+      "basic": 0.6862745098039216,
+      "break_strike": 0.3137254901960784
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 19,
+     "defeats": 1,
+     "other": 0,
+     "winRate": 0.95,
+     "avgRounds": 15,
+     "avgRoundsWin": 14.947368421052632,
+     "avgHpEndWin": 11.052631578947368,
+     "avgHpMin": 10.5,
+     "avgQiNet": -13.75,
+     "damageShare": {
+      "basic": 0.5801376597836775,
+      "break_strike": 0.35496558505408066,
+      "borrow_force": 0.06489675516224189
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 11
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 12.25,
+     "avgHpMin": 12.25,
+     "avgQiNet": -1.1,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8,
+     "avgRoundsWin": 8,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -15.6,
+     "damageShare": {
+      "basic": 0.7041666666666667,
+      "break_strike": 0.29583333333333334
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 11.35,
+     "avgRoundsWin": 11.35,
+     "avgHpEndWin": 25.8,
+     "avgHpMin": 25.8,
+     "avgQiNet": -13.6,
+     "damageShare": {
+      "basic": 0.5197916666666667,
+      "break_strike": 0.309375,
+      "borrow_force": 0.17083333333333334
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": -4.75,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4358974358974359
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -1.3,
+     "damageShare": {
+      "basic": 0.3371794871794872,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4576923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 6.25,
+     "avgHpMin": 6.25,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 13,
+     "defeats": 7,
+     "other": 0,
+     "winRate": 0.65,
+     "avgRounds": 6.65,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 2,
+     "avgHpMin": 1.3,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.42311770943796395,
+      "break_strike": 0.23966065747614,
+      "break_chase": 0.3372216330858961
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 8,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -3.1,
+     "damageShare": {
+      "basic": 0.4,
+      "break_strike": 0.26666666666666666,
+      "break_chase": 0.3333333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 18.25,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 0,
+     "damageShare": {
+      "basic": 0.5249343832020997,
+      "break_strike": 0.26246719160104987,
+      "break_chase": 0.2125984251968504
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 16
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 20.55,
+     "avgHpMin": 20.55,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3333333333333333,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.4583333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7.2,
+     "avgHpEndWin": 23.4,
+     "avgHpMin": 23.4,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.2916666666666667,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 14.25,
+     "avgHpMin": 14.25,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V4",
+    "name": "X1＋X2＋X3＋X4：再把踏风步费用 2 改为 3",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 3,
+    "artOverrides": {
+     "cold_sword": {
+      "action": {
+       "kind": "attack",
+       "type": "combo",
+       "hits": [
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        }
+       ],
+       "swordOnly": true
+      }
+     },
+     "wind_step": {
+      "cost": 3
+     }
+    },
+    "rules": {}
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": true,
+    "inRoundRange": 3,
+    "readBeatsAttack": [
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_counter",
+     "guard_break"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.2564102564102564,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.28205128205128205
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 18.95,
+     "avgHpMin": 18.95,
+     "avgQiNet": -5.05,
+     "damageShare": {
+      "basic": 0.23974358974358975,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.2987179487179487
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -7,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 18,
+     "avgHpMin": 18,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3137254901960784,
+      "cold_sword": 0.5686274509803921,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.3,
+     "avgRoundsWin": 8.3,
+     "avgHpEndWin": 11.35,
+     "avgHpMin": 11.35,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.30098039215686273,
+      "cold_sword": 0.5813725490196079,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 9,
+     "defeats": 11,
+     "other": 0,
+     "winRate": 0.45,
+     "avgRounds": 17.6,
+     "avgRoundsWin": 16,
+     "avgHpEndWin": 5,
+     "avgHpMin": 2.25,
+     "avgQiNet": -2.55,
+     "damageShare": {
+      "basic": 0.39643211100099107,
+      "cold_sword": 0.574826560951437,
+      "break_chase": 0.028741328047571853
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 12,
+     "avgHpMin": 12,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.26458333333333334,
+      "cold_sword": 0.48541666666666666,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 4.95,
+     "avgHpMin": 4.95,
+     "avgQiNet": -9.65,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.5,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 11.15,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -1.55,
+     "damageShare": {
+      "basic": 0.3669724770642202,
+      "cold_sword": 0.5504587155963303,
+      "break_chase": 0.08256880733944955
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -18.95,
+     "damageShare": {
+      "basic": 0.7102564102564103,
+      "break_strike": 0.28974358974358977
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.55,
+     "avgRoundsWin": 7.55,
+     "avgHpEndWin": 16.55,
+     "avgHpMin": 16.55,
+     "avgQiNet": -10.2,
+     "damageShare": {
+      "borrow_force": 0.4641025641025641,
+      "basic": 0.3384615384615385,
+      "break_strike": 0.19743589743589743
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 17.4,
+     "avgHpMin": 17.4,
+     "avgQiNet": -2,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 10.8,
+     "avgRoundsWin": 10.8,
+     "avgHpEndWin": 18.6,
+     "avgHpMin": 18.6,
+     "avgQiNet": -16.4,
+     "damageShare": {
+      "basic": 0.7568627450980392,
+      "break_strike": 0.24313725490196078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 6
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 15.75,
+     "avgRoundsWin": 15.75,
+     "avgHpEndWin": 9.2,
+     "avgHpMin": 9.2,
+     "avgQiNet": -12.6,
+     "damageShare": {
+      "basic": 0.5529411764705883,
+      "break_strike": 0.33137254901960783,
+      "borrow_force": 0.11568627450980393
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 11
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 12.25,
+     "avgHpMin": 12.25,
+     "avgQiNet": -2.1,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.85,
+     "avgRoundsWin": 8.85,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -17.3,
+     "damageShare": {
+      "basic": 0.7354166666666667,
+      "break_strike": 0.26458333333333334
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12.25,
+     "avgRoundsWin": 12.25,
+     "avgHpEndWin": 24.6,
+     "avgHpMin": 24.6,
+     "avgQiNet": -13.45,
+     "damageShare": {
+      "basic": 0.4947916666666667,
+      "break_strike": 0.3,
+      "borrow_force": 0.20520833333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": -6.4,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4358974358974359
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -1.3,
+     "damageShare": {
+      "basic": 0.3371794871794872,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4576923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 6.25,
+     "avgHpMin": 6.25,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 13,
+     "defeats": 7,
+     "other": 0,
+     "winRate": 0.65,
+     "avgRounds": 6.65,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 2,
+     "avgHpMin": 1.3,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.42311770943796395,
+      "break_strike": 0.23966065747614,
+      "break_chase": 0.3372216330858961
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 8,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -3.1,
+     "damageShare": {
+      "basic": 0.4,
+      "break_strike": 0.26666666666666666,
+      "break_chase": 0.3333333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 18.25,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 0,
+     "damageShare": {
+      "basic": 0.5249343832020997,
+      "break_strike": 0.26246719160104987,
+      "break_chase": 0.2125984251968504
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 16
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 20.55,
+     "avgHpMin": 20.55,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3333333333333333,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.4583333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7.2,
+     "avgHpEndWin": 23.4,
+     "avgHpMin": 23.4,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.2916666666666667,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 14.25,
+     "avgHpMin": 14.25,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V5",
+    "name": "V4＋X5：基础架招护势保护敌人整条攻击链",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 3,
+    "artOverrides": {
+     "cold_sword": {
+      "action": {
+       "kind": "attack",
+       "type": "combo",
+       "hits": [
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        }
+       ],
+       "swordOnly": true
+      }
+     },
+     "wind_step": {
+      "cost": 3
+     }
+    },
+    "rules": {
+     "wardScope": "chain"
+    }
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": true,
+    "inRoundRange": 2,
+    "readBeatsAttack": [
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [
+     "guard_break/guard_standard"
+    ],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_counter",
+     "guard_break"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -8,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.38461538461538464,
+      "break_chase": 0.3076923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6.85,
+     "avgRoundsWin": 6.85,
+     "avgHpEndWin": 19.1,
+     "avgHpMin": 19.1,
+     "avgQiNet": -5.2,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.38461538461538464,
+      "break_chase": 0.3076923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 15.9,
+     "avgHpMin": 15.9,
+     "avgQiNet": -7,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 18,
+     "avgHpMin": 18,
+     "avgQiNet": -16,
+     "damageShare": {
+      "basic": 0.3137254901960784,
+      "cold_sword": 0.4843137254901961,
+      "break_chase": 0.2019607843137255
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.8,
+     "avgRoundsWin": 8.8,
+     "avgHpEndWin": 9.2,
+     "avgHpMin": 9.2,
+     "avgQiNet": -8.7,
+     "damageShare": {
+      "basic": 0.35294117647058826,
+      "cold_sword": 0.5294117647058824,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.55,
+     "avgRoundsWin": 18.55,
+     "avgHpEndWin": 7.8,
+     "avgHpMin": 7.8,
+     "avgQiNet": -2.55,
+     "damageShare": {
+      "basic": 0.40294117647058825,
+      "cold_sword": 0.5686274509803921,
+      "break_chase": 0.028431372549019607
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4.65,
+     "avgRoundsWin": 4.65,
+     "avgHpEndWin": 6,
+     "avgHpMin": 6,
+     "avgQiNet": -14.35,
+     "damageShare": {
+      "basic": 0.31875,
+      "cold_sword": 0.4239583333333333,
+      "break_chase": 0.25729166666666664
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 7,
+     "defeats": 13,
+     "other": 0,
+     "winRate": 0.35,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 3,
+     "avgHpMin": 1.05,
+     "avgQiNet": -8.85,
+     "damageShare": {
+      "basic": 0.31045406546990495,
+      "cold_sword": 0.43611404435058077,
+      "break_chase": 0.25343189017951423
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 11.15,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -1.55,
+     "damageShare": {
+      "basic": 0.3669724770642202,
+      "cold_sword": 0.5504587155963303,
+      "break_chase": 0.08256880733944955
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6.65,
+     "avgRoundsWin": 6.65,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -17.65,
+     "damageShare": {
+      "basic": 0.7525641025641026,
+      "break_strike": 0.24743589743589745
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.2,
+     "avgRoundsWin": 8.2,
+     "avgHpEndWin": 17.5,
+     "avgHpMin": 17.5,
+     "avgQiNet": -8.1,
+     "damageShare": {
+      "borrow_force": 0.4897435897435897,
+      "basic": 0.36025641025641025,
+      "break_strike": 0.15
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": -2,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 11.4,
+     "avgRoundsWin": 11.4,
+     "avgHpEndWin": 18.3,
+     "avgHpMin": 18.3,
+     "avgQiNet": -16.4,
+     "damageShare": {
+      "basic": 0.8029411764705883,
+      "break_strike": 0.19705882352941176
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 19,
+     "defeats": 1,
+     "other": 0,
+     "winRate": 0.95,
+     "avgRounds": 17.05,
+     "avgRoundsWin": 17.05263157894737,
+     "avgHpEndWin": 9.736842105263158,
+     "avgHpMin": 9.25,
+     "avgQiNet": -12.6,
+     "damageShare": {
+      "basic": 0.5970443349753695,
+      "break_strike": 0.27192118226600986,
+      "borrow_force": 0.1310344827586207
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 15.65,
+     "avgHpMin": 15.65,
+     "avgQiNet": -1.75,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -17.6,
+     "damageShare": {
+      "basic": 0.784375,
+      "break_strike": 0.215625
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.45,
+     "avgRoundsWin": 13.45,
+     "avgHpEndWin": 24.6,
+     "avgHpMin": 24.6,
+     "avgQiNet": -10.5,
+     "damageShare": {
+      "basic": 0.5552083333333333,
+      "break_strike": 0.21979166666666666,
+      "borrow_force": 0.225
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": -6.4,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.1794871794871795,
+      "break_chase": 0.46153846153846156
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 15.9,
+     "avgHpMin": 15.9,
+     "avgQiNet": -2.65,
+     "damageShare": {
+      "basic": 0.36923076923076925,
+      "break_strike": 0.16923076923076924,
+      "break_chase": 0.46153846153846156
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 10.25,
+     "avgHpMin": 10.25,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 4,
+     "defeats": 16,
+     "other": 0,
+     "winRate": 0.2,
+     "avgRounds": 6.65,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 2,
+     "avgHpMin": 0.4,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.45217391304347826,
+      "break_strike": 0.20217391304347826,
+      "break_chase": 0.3456521739130435
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 8,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -1.9,
+     "damageShare": {
+      "basic": 0.43373493975903615,
+      "break_strike": 0.20481927710843373,
+      "break_chase": 0.3614457831325301
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 19,
+     "defeats": 1,
+     "other": 0,
+     "winRate": 0.95,
+     "avgRounds": 23.75,
+     "avgRoundsWin": 23.526315789473685,
+     "avgHpEndWin": 2,
+     "avgHpMin": 1.9,
+     "avgQiNet": -0.3,
+     "damageShare": {
+      "basic": 0.5329400196656834,
+      "break_strike": 0.23992133726647,
+      "break_chase": 0.22713864306784662
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 18
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 20.55,
+     "avgHpMin": 20.55,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3333333333333333,
+      "break_strike": 0.16666666666666666,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.8,
+     "avgRoundsWin": 8.8,
+     "avgHpEndWin": 21.6,
+     "avgHpMin": 21.6,
+     "avgQiNet": -3.55,
+     "damageShare": {
+      "basic": 0.34270833333333334,
+      "break_strike": 0.15729166666666666,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 14.25,
+     "avgHpMin": 14.25,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V6",
+    "name": "V4＋S1：玩家开场内力 20 改为 10",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 3,
+    "artOverrides": {
+     "cold_sword": {
+      "action": {
+       "kind": "attack",
+       "type": "combo",
+       "hits": [
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        }
+       ],
+       "swordOnly": true
+      }
+     },
+     "wind_step": {
+      "cost": 3
+     }
+    },
+    "rules": {},
+    "playerQi": 10
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": true,
+    "inRoundRange": 5,
+    "readBeatsAttack": [
+     "guard_counter/guard_standard",
+     "guard_counter/resonance_standard",
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [
+     "guard_counter/balanced_standard",
+     "guard_counter/guard_standard"
+    ],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_counter",
+     "guard_break"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 30,
+     "avgHpMin": 30,
+     "avgQiNet": -10,
+     "damageShare": {
+      "basic": 0.2564102564102564,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.28205128205128205
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 18.95,
+     "avgHpMin": 18.95,
+     "avgQiNet": 2,
+     "damageShare": {
+      "basic": 0.23974358974358975,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.2987179487179487
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": 3,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 15.9,
+     "avgHpMin": 15.9,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.3784313725490196,
+      "cold_sword": 0.503921568627451,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.3,
+     "avgRoundsWin": 8.3,
+     "avgHpEndWin": 11.8,
+     "avgHpMin": 11.8,
+     "avgQiNet": -0.6,
+     "damageShare": {
+      "basic": 0.30980392156862746,
+      "cold_sword": 0.5725490196078431,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 9,
+     "defeats": 11,
+     "other": 0,
+     "winRate": 0.45,
+     "avgRounds": 17.6,
+     "avgRoundsWin": 16,
+     "avgHpEndWin": 5,
+     "avgHpMin": 2.25,
+     "avgQiNet": 7.45,
+     "damageShare": {
+      "basic": 0.39643211100099107,
+      "cold_sword": 0.574826560951437,
+      "break_chase": 0.028741328047571853
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 12,
+     "avgHpMin": 12,
+     "avgQiNet": -10,
+     "damageShare": {
+      "basic": 0.26458333333333334,
+      "cold_sword": 0.48541666666666666,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 4.95,
+     "avgHpMin": 4.95,
+     "avgQiNet": -7.3,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.5,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 11.15,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 8.45,
+     "damageShare": {
+      "basic": 0.3669724770642202,
+      "cold_sword": 0.5504587155963303,
+      "break_chase": 0.08256880733944955
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.65,
+     "avgRoundsWin": 7.65,
+     "avgHpEndWin": 26.85,
+     "avgHpMin": 26.85,
+     "avgQiNet": -8.7,
+     "damageShare": {
+      "basic": 0.8038461538461539,
+      "break_strike": 0.19615384615384615
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.55,
+     "avgRoundsWin": 7.55,
+     "avgHpEndWin": 16.55,
+     "avgHpMin": 16.55,
+     "avgQiNet": -6.2,
+     "damageShare": {
+      "borrow_force": 0.4641025641025641,
+      "basic": 0.3384615384615385,
+      "break_strike": 0.19743589743589743
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 17.4,
+     "avgHpMin": 17.4,
+     "avgQiNet": 3,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 17,
+     "defeats": 3,
+     "other": 0,
+     "winRate": 0.85,
+     "avgRounds": 12,
+     "avgRoundsWin": 12.529411764705882,
+     "avgHpEndWin": 11.647058823529411,
+     "avgHpMin": 9.9,
+     "avgQiNet": -6.45,
+     "damageShare": {
+      "basic": 0.8253012048192772,
+      "break_strike": 0.1746987951807229
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 7
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.6,
+     "avgRoundsWin": 16.6,
+     "avgHpEndWin": 6.65,
+     "avgHpMin": 6.65,
+     "avgQiNet": -0.6,
+     "damageShare": {
+      "basic": 0.5225490196078432,
+      "break_strike": 0.2950980392156863,
+      "borrow_force": 0.18235294117647058
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 12.25,
+     "avgHpMin": 12.25,
+     "avgQiNet": 5.55,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.55,
+     "avgRoundsWin": 9.55,
+     "avgHpEndWin": 21.25,
+     "avgHpMin": 21.25,
+     "avgQiNet": -7,
+     "damageShare": {
+      "basic": 0.7885416666666667,
+      "break_strike": 0.21145833333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 14.3,
+     "avgRoundsWin": 14.3,
+     "avgHpEndWin": 23.85,
+     "avgHpMin": 23.85,
+     "avgQiNet": -1.95,
+     "damageShare": {
+      "basic": 0.4864583333333333,
+      "break_strike": 0.2833333333333333,
+      "borrow_force": 0.23020833333333332
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": 1,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4358974358974359
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": 7.35,
+     "damageShare": {
+      "basic": 0.3371794871794872,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4576923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 6.25,
+     "avgHpMin": 6.25,
+     "avgQiNet": 4,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 4,
+     "defeats": 16,
+     "other": 0,
+     "winRate": 0.2,
+     "avgRounds": 6.65,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 2,
+     "avgHpMin": 0.4,
+     "avgQiNet": -6.25,
+     "damageShare": {
+      "basic": 0.48180815876515987,
+      "break_strike": 0.2535832414553473,
+      "break_chase": 0.26460859977949286
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 8,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 4,
+     "damageShare": {
+      "basic": 0.4,
+      "break_strike": 0.26666666666666666,
+      "break_chase": 0.3333333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 18.25,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 10,
+     "damageShare": {
+      "basic": 0.5249343832020997,
+      "break_strike": 0.26246719160104987,
+      "break_chase": 0.2125984251968504
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 16
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 16,
+     "avgHpMin": 16,
+     "avgQiNet": -7.05,
+     "damageShare": {
+      "basic": 0.409375,
+      "break_strike": 0.215625,
+      "break_chase": 0.375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7.2,
+     "avgHpEndWin": 23.4,
+     "avgHpMin": 23.4,
+     "avgQiNet": -2.2,
+     "damageShare": {
+      "basic": 0.2916666666666667,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 14.25,
+     "avgHpMin": 14.25,
+     "avgQiNet": 5.35,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V7",
+    "name": "V4＋S2：敌方意图为出招时敌方先手",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 3,
+    "artOverrides": {
+     "cold_sword": {
+      "action": {
+       "kind": "attack",
+       "type": "combo",
+       "hits": [
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        }
+       ],
+       "swordOnly": true
+      }
+     },
+     "wind_step": {
+      "cost": 3
+     }
+    },
+    "rules": {
+     "initiative": "enemyOnAttack"
+    }
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": true,
+    "inRoundRange": 3,
+    "readBeatsAttack": [
+     "guard_counter/guard_standard",
+     "guard_counter/resonance_standard",
+     "guard_break/balanced_standard",
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [
+     "guard_counter/guard_standard"
+    ],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_counter",
+     "guard_break"
+    ],
+    "resonance_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 18.95,
+     "avgHpMin": 18.95,
+     "avgQiNet": -5.05,
+     "damageShare": {
+      "basic": 0.23974358974358975,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.2987179487179487
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -7,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 17.3,
+     "avgHpMin": 17.3,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.32745098039215687,
+      "cold_sword": 0.5549019607843138,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.3,
+     "avgRoundsWin": 8.3,
+     "avgHpEndWin": 11.35,
+     "avgHpMin": 11.35,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.30098039215686273,
+      "cold_sword": 0.5813725490196079,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 9,
+     "defeats": 11,
+     "other": 0,
+     "winRate": 0.45,
+     "avgRounds": 17.6,
+     "avgRoundsWin": 16,
+     "avgHpEndWin": 5,
+     "avgHpMin": 2.25,
+     "avgQiNet": -2.55,
+     "damageShare": {
+      "basic": 0.39643211100099107,
+      "cold_sword": 0.574826560951437,
+      "break_chase": 0.028741328047571853
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 9.55,
+     "avgHpMin": 9.55,
+     "avgQiNet": -12,
+     "damageShare": {
+      "basic": 0.26458333333333334,
+      "cold_sword": 0.48541666666666666,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 4.95,
+     "avgHpMin": 4.95,
+     "avgQiNet": -9.65,
+     "damageShare": {
+      "basic": 0.25,
+      "cold_sword": 0.5,
+      "break_chase": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 11.15,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -1.55,
+     "damageShare": {
+      "basic": 0.3669724770642202,
+      "cold_sword": 0.5504587155963303,
+      "break_chase": 0.08256880733944955
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -18.95,
+     "damageShare": {
+      "basic": 0.7102564102564103,
+      "break_strike": 0.28974358974358977
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.55,
+     "avgRoundsWin": 7.55,
+     "avgHpEndWin": 16.55,
+     "avgHpMin": 16.55,
+     "avgQiNet": -10.2,
+     "damageShare": {
+      "borrow_force": 0.4641025641025641,
+      "basic": 0.3384615384615385,
+      "break_strike": 0.19743589743589743
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 17.4,
+     "avgHpMin": 17.4,
+     "avgQiNet": -2,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 12,
+     "defeats": 8,
+     "other": 0,
+     "winRate": 0.6,
+     "avgRounds": 10.9,
+     "avgRoundsWin": 11.25,
+     "avgHpEndWin": 4.666666666666667,
+     "avgHpMin": 2.8,
+     "avgQiNet": -17.25,
+     "damageShare": {
+      "basic": 0.7557557557557557,
+      "break_strike": 0.24424424424424424
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 15.75,
+     "avgRoundsWin": 15.75,
+     "avgHpEndWin": 9.2,
+     "avgHpMin": 9.2,
+     "avgQiNet": -12.6,
+     "damageShare": {
+      "basic": 0.5529411764705883,
+      "break_strike": 0.33137254901960783,
+      "borrow_force": 0.11568627450980393
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 11
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 12.25,
+     "avgHpMin": 12.25,
+     "avgQiNet": -2.1,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 21.95,
+     "avgHpMin": 21.95,
+     "avgQiNet": -17,
+     "damageShare": {
+      "basic": 0.75,
+      "break_strike": 0.25
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12.25,
+     "avgRoundsWin": 12.25,
+     "avgHpEndWin": 24.6,
+     "avgHpMin": 24.6,
+     "avgQiNet": -13.45,
+     "damageShare": {
+      "basic": 0.4947916666666667,
+      "break_strike": 0.3,
+      "borrow_force": 0.20520833333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": -6.4,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 12.7,
+     "avgHpMin": 12.7,
+     "avgQiNet": -11,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4358974358974359
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 12.9,
+     "avgHpMin": 12.9,
+     "avgQiNet": -1.3,
+     "damageShare": {
+      "basic": 0.3371794871794872,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.4576923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 6.25,
+     "avgHpMin": 6.25,
+     "avgQiNet": -6,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 9,
+     "defeats": 11,
+     "other": 0,
+     "winRate": 0.45,
+     "avgRounds": 6.65,
+     "avgRoundsWin": 7,
+     "avgHpEndWin": 2,
+     "avgHpMin": 0.9,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.4206602768903088,
+      "break_strike": 0.24068157614483493,
+      "break_chase": 0.33865814696485624
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 8,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -3.1,
+     "damageShare": {
+      "basic": 0.4,
+      "break_strike": 0.26666666666666666,
+      "break_chase": 0.3333333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 18.25,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 0,
+     "damageShare": {
+      "basic": 0.5249343832020997,
+      "break_strike": 0.26246719160104987,
+      "break_chase": 0.2125984251968504
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 16
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 5,
+     "avgRoundsWin": 5,
+     "avgHpEndWin": 16,
+     "avgHpMin": 16,
+     "avgQiNet": -13,
+     "damageShare": {
+      "basic": 0.3333333333333333,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.4583333333333333
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 7.2,
+     "avgRoundsWin": 7.2,
+     "avgHpEndWin": 23.4,
+     "avgHpMin": 23.4,
+     "avgQiNet": -8.3,
+     "damageShare": {
+      "basic": 0.2916666666666667,
+      "break_strike": 0.20833333333333334,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 14.25,
+     "avgHpMin": 14.25,
+     "avgQiNet": -4.65,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  },
+  {
+   "variant": {
+    "id": "V8",
+    "name": "V4＋S1＋S2＋X5",
+    "enemyHpMul": 1.5,
+    "enemyBaseHp": 3,
+    "artOverrides": {
+     "cold_sword": {
+      "action": {
+       "kind": "attack",
+       "type": "combo",
+       "hits": [
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        },
+        {
+         "hp": 2,
+         "posture": 2
+        }
+       ],
+       "swordOnly": true
+      }
+     },
+     "wind_step": {
+      "cost": 3
+     }
+    },
+    "rules": {
+     "wardScope": "chain",
+     "initiative": "enemyOnAttack"
+    },
+    "playerQi": 10
+   },
+   "targets": {
+    "enemiesWon": {
+     "cold_chain": 3,
+     "guard_counter": 3,
+     "guard_break": 3
+    },
+    "rankSwap": true,
+    "inRoundRange": 4,
+    "readBeatsAttack": [
+     "cold_chain/resonance_standard",
+     "guard_counter/guard_standard",
+     "guard_counter/resonance_standard",
+     "guard_break/balanced_standard",
+     "guard_break/resonance_standard"
+    ],
+    "bestNotAttack": [
+     "cold_chain/resonance_standard",
+     "guard_counter/guard_standard",
+     "guard_break/guard_standard"
+    ],
+    "abnormal": 0
+   },
+   "rankings": {
+    "balanced_standard": [
+     "cold_chain",
+     "guard_break",
+     "guard_counter"
+    ],
+    "guard_standard": [
+     "cold_chain",
+     "guard_counter",
+     "guard_break"
+    ],
+    "resonance_standard": [
+     "guard_break",
+     "guard_counter",
+     "cold_chain"
+    ]
+   },
+   "cells": [
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 3,
+     "avgRoundsWin": 3,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -10,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 1
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6.85,
+     "avgRoundsWin": 6.85,
+     "avgHpEndWin": 19.1,
+     "avgHpMin": 19.1,
+     "avgQiNet": 2.2,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.38461538461538464,
+      "break_chase": 0.3076923076923077
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9,
+     "avgRoundsWin": 9,
+     "avgHpEndWin": 15.9,
+     "avgHpMin": 15.9,
+     "avgQiNet": 3,
+     "damageShare": {
+      "basic": 0.3076923076923077,
+      "cold_sword": 0.46153846153846156,
+      "break_chase": 0.23076923076923078
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6.3,
+     "avgRoundsWin": 6.3,
+     "avgHpEndWin": 15.7,
+     "avgHpMin": 15.7,
+     "avgQiNet": -8.05,
+     "damageShare": {
+      "basic": 0.3911764705882353,
+      "cold_sword": 0.45,
+      "break_chase": 0.1588235294117647
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 9.9,
+     "avgRoundsWin": 9.9,
+     "avgHpEndWin": 6.8,
+     "avgHpMin": 6.8,
+     "avgQiNet": 0.6,
+     "damageShare": {
+      "basic": 0.3607843137254902,
+      "cold_sword": 0.5215686274509804,
+      "break_chase": 0.11764705882352941
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 5
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.55,
+     "avgRoundsWin": 18.55,
+     "avgHpEndWin": 7.8,
+     "avgHpMin": 7.8,
+     "avgQiNet": 7.45,
+     "damageShare": {
+      "basic": 0.40294117647058825,
+      "cold_sword": 0.5686274509803921,
+      "break_chase": 0.028431372549019607
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 13,
+     "defeats": 7,
+     "other": 0,
+     "winRate": 0.65,
+     "avgRounds": 5.3,
+     "avgRoundsWin": 6,
+     "avgHpEndWin": 6,
+     "avgHpMin": 3.9,
+     "avgQiNet": -7.4,
+     "damageShare": {
+      "basic": 0.3483735571878279,
+      "cold_sword": 0.39979013641133265,
+      "break_chase": 0.2518363064008394
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 16,
+     "defeats": 4,
+     "other": 0,
+     "winRate": 0.8,
+     "avgRounds": 8.1,
+     "avgRoundsWin": 8.125,
+     "avgHpEndWin": 3,
+     "avgHpMin": 2.4,
+     "avgQiNet": -2,
+     "damageShare": {
+      "basic": 0.3263598326359833,
+      "cold_sword": 0.4225941422594142,
+      "break_chase": 0.2510460251046025
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "cold_chain",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 11.15,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 8.45,
+     "damageShare": {
+      "basic": 0.3669724770642202,
+      "cold_sword": 0.5504587155963303,
+      "break_chase": 0.08256880733944955
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.45,
+     "avgRoundsWin": 8.45,
+     "avgHpEndWin": 21,
+     "avgHpMin": 21,
+     "avgQiNet": -7.1,
+     "damageShare": {
+      "basic": 0.8717948717948718,
+      "break_strike": 0.1282051282051282
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.65,
+     "avgRoundsWin": 8.65,
+     "avgHpEndWin": 17.5,
+     "avgHpMin": 17.5,
+     "avgQiNet": -2.4,
+     "damageShare": {
+      "borrow_force": 0.4897435897435897,
+      "basic": 0.36025641025641025,
+      "break_strike": 0.15
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 13.6,
+     "avgRoundsWin": 13.6,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": 3,
+     "damageShare": {
+      "borrow_force": 0.38461538461538464,
+      "basic": 0.4307692307692308,
+      "break_strike": 0.18461538461538463
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 10
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 9,
+     "defeats": 11,
+     "other": 0,
+     "winRate": 0.45,
+     "avgRounds": 11.4,
+     "avgRoundsWin": 13,
+     "avgHpEndWin": 14.666666666666666,
+     "avgHpMin": 6.6,
+     "avgQiNet": -7.2,
+     "damageShare": {
+      "basic": 0.8593576965669989,
+      "break_strike": 0.1406423034330011
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 6
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 19,
+     "defeats": 1,
+     "other": 0,
+     "winRate": 0.95,
+     "avgRounds": 17.5,
+     "avgRoundsWin": 17.36842105263158,
+     "avgHpEndWin": 7.105263157894737,
+     "avgHpMin": 6.75,
+     "avgQiNet": -3,
+     "damageShare": {
+      "basic": 0.5544651619234544,
+      "break_strike": 0.25318940137389595,
+      "borrow_force": 0.19234543670264967
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 13
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 18.5,
+     "avgRoundsWin": 18.5,
+     "avgHpEndWin": 15.65,
+     "avgHpMin": 15.65,
+     "avgQiNet": 5.55,
+     "damageShare": {
+      "borrow_force": 0.4147058823529412,
+      "basic": 0.40490196078431373,
+      "break_strike": 0.1803921568627451
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 14
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 10.8,
+     "avgRoundsWin": 10.8,
+     "avgHpEndWin": 18.45,
+     "avgHpMin": 18.45,
+     "avgQiNet": -7.65,
+     "damageShare": {
+      "basic": 0.8479166666666667,
+      "break_strike": 0.15208333333333332
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 7
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 14.9,
+     "avgRoundsWin": 14.9,
+     "avgHpEndWin": 23.25,
+     "avgHpMin": 23.25,
+     "avgQiNet": -2.45,
+     "damageShare": {
+      "basic": 0.5052083333333334,
+      "break_strike": 0.23541666666666666,
+      "borrow_force": 0.259375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_counter",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 16.05,
+     "avgRoundsWin": 16.05,
+     "avgHpEndWin": 19.8,
+     "avgHpMin": 19.8,
+     "avgQiNet": 1,
+     "damageShare": {
+      "borrow_force": 0.425,
+      "basic": 0.38333333333333336,
+      "break_strike": 0.19166666666666668
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 4,
+     "avgRoundsWin": 4,
+     "avgHpEndWin": 12.7,
+     "avgHpMin": 12.7,
+     "avgQiNet": -9,
+     "damageShare": {
+      "basic": 0.358974358974359,
+      "break_strike": 0.1794871794871795,
+      "break_chase": 0.46153846153846156
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.55,
+     "avgRoundsWin": 8.55,
+     "avgHpEndWin": 15.9,
+     "avgHpMin": 15.9,
+     "avgQiNet": 6,
+     "damageShare": {
+      "basic": 0.36923076923076925,
+      "break_strike": 0.16923076923076924,
+      "break_chase": 0.46153846153846156
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "balanced_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 12,
+     "avgRoundsWin": 12,
+     "avgHpEndWin": 10.25,
+     "avgHpMin": 10.25,
+     "avgQiNet": 4,
+     "damageShare": {
+      "basic": 0.41025641025641024,
+      "break_strike": 0.20512820512820512,
+      "break_chase": 0.38461538461538464
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 8
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "always_attack",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 6.65,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": -5.65,
+     "damageShare": {
+      "basic": 0.4922526817640048,
+      "break_strike": 0.22169249106078665,
+      "break_chase": 0.2860548271752086
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 3
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "read_windows",
+     "wins": 0,
+     "defeats": 20,
+     "other": 0,
+     "winRate": 0,
+     "avgRounds": 8,
+     "avgRoundsWin": null,
+     "avgHpEndWin": null,
+     "avgHpMin": 0,
+     "avgQiNet": 5.2,
+     "damageShare": {
+      "basic": 0.43373493975903615,
+      "break_strike": 0.20481927710843373,
+      "break_chase": 0.3614457831325301
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "guard_standard",
+     "strategy": "guard_first",
+     "wins": 19,
+     "defeats": 1,
+     "other": 0,
+     "winRate": 0.95,
+     "avgRounds": 23.75,
+     "avgRoundsWin": 23.526315789473685,
+     "avgHpEndWin": 2,
+     "avgHpMin": 1.9,
+     "avgQiNet": 9.7,
+     "damageShare": {
+      "basic": 0.5329400196656834,
+      "break_strike": 0.23992133726647,
+      "break_chase": 0.22713864306784662
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 18
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "always_attack",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 6.35,
+     "avgRoundsWin": 6.35,
+     "avgHpEndWin": 16,
+     "avgHpMin": 16,
+     "avgQiNet": -6.35,
+     "damageShare": {
+      "basic": 0.4510416666666667,
+      "break_strike": 0.17395833333333333,
+      "break_chase": 0.375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 2
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "read_windows",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 8.8,
+     "avgRoundsWin": 8.8,
+     "avgHpEndWin": 21.6,
+     "avgHpMin": 21.6,
+     "avgQiNet": 2.55,
+     "damageShare": {
+      "basic": 0.34270833333333334,
+      "break_strike": 0.15729166666666666,
+      "break_chase": 0.5
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 4
+    },
+    {
+     "build": "guard_break",
+     "enemy": "resonance_standard",
+     "strategy": "guard_first",
+     "wins": 20,
+     "defeats": 0,
+     "other": 0,
+     "winRate": 1,
+     "avgRounds": 17.55,
+     "avgRoundsWin": 17.55,
+     "avgHpEndWin": 14.25,
+     "avgHpMin": 14.25,
+     "avgQiNet": 5.35,
+     "damageShare": {
+      "basic": 0.4375,
+      "break_strike": 0.21875,
+      "break_chase": 0.34375
+     },
+     "enemyStarvedPerBattle": 0,
+     "segmentSequences": 12
+    }
+   ]
+  }
+ ]
+}
