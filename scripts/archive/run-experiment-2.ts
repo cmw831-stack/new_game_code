@@ -1,12 +1,14 @@
+// 历史脚本（策划书 V1.8 阶段的调参实验）。它依赖当时的默认规则与内容数值；
+// 在 V1.9 之后直接运行会得到不同结果。复现原始数据请检出提交 0a98212 后运行。
 // 调参实验 2：以实验 1 的 V8 为起点，做小幅参数网格，按预先写定的通过标准筛选。
 // 全部改动只在内存中生效，不修改内容目录。用法：npm run experiment2
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { execSync } from 'node:child_process';
-import { findEnemy } from '../src/content/catalog.ts';
-import { RULES_VERSION, type ArtOverrides } from '../src/engine/setup.ts';
-import { bestCell, BASELINE, checkTargets, MATRIX_ENEMIES, rankings, runMatrix, SEEDS, type CellResult, type TargetCheck, type Variant } from '../src/sim/matrix.ts';
-import { BUILDS, STRATEGIES } from '../src/sim/strategies.ts';
+import { findEnemy } from '../../src/content/catalog.ts';
+import { RULES_VERSION, type ArtOverrides } from '../../src/engine/setup.ts';
+import { bestCell, BASELINE, checkTargets, MATRIX_ENEMIES, rankings, runMatrix, SEEDS, type CellResult, type TargetCheck, type Variant } from '../../src/sim/matrix.ts';
+import { BUILDS, STRATEGIES } from '../../src/sim/strategies.ts';
 
 /** 通过标准（实验 1 报告第七节），运行前写定。 */
 export const PASS = {

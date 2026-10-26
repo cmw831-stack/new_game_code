@@ -4,7 +4,7 @@
 
 **规则：** 策划书 V1.8 及其配套资料；引擎 `rules-v1.8-phase1`
 
-**原始数据：** [27 格数据表](phase1-matrix-data.md)（`npm run matrix` 生成）、[探索性扫描](phase1-explore-variants.md)（`npm run explore` 生成）
+**原始数据：** [27 格数据表](phase1-matrix-v1.8-data.md)、[探索性扫描](phase1-explore-variants.md)。两份数据都在策划书 V1.8 阶段生成，生成它们的代码见提交 b786553
 
 ## 一句话结论
 
@@ -110,6 +110,8 @@
 
 ## 复现
 
+检出提交 `b786553` 后运行：
+
 ```bash
 npm run matrix
 ```
@@ -118,4 +120,4 @@ npm run matrix
 npm run explore
 ```
 
-两个命令都只读内容目录、不写回任何规则数据，同一代码版本下结果完全相同。
+V1.9 之后默认规则与数值已经改变，在新版本上运行 `npm run matrix` 得到的是 V1.9 的矩阵，见 [V1.9 矩阵数据](phase1-matrix-v1.9-data.md)。

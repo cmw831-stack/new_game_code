@@ -4,11 +4,12 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { allEnemyIds, CONTENT_VERSION, findArt, findEnemy } from '../src/content/catalog.ts';
-import { RULES_VERSION } from '../src/engine/setup.ts';
+import { OPENING_QI_CAP, RULES_VERSION } from '../src/engine/setup.ts';
 import { MATRIX_ENEMIES, runMatrix, SEEDS, segmentFeasibility, type CellResult } from '../src/sim/matrix.ts';
 import { BUILDS, STRATEGIES } from '../src/sim/strategies.ts';
 
 const OUT_DIR = 'docs/reports';
+const TAG = CONTENT_VERSION.replace('design-', '');
 const started = Date.now();
 const cells = runMatrix();
 const feasibility = segmentFeasibility(allEnemyIds().filter((id) => !findEnemy(id)!.fixedSegment));
@@ -32,7 +33,7 @@ const num = (x: number | null): string => (x === null ? '—' : x.toFixed(1));
 const lines: string[] = [];
 lines.push('# Phase 1 构筑矩阵：原始数据表', '');
 lines.push(`由 \`npm run matrix\` 自动生成，请勿手改。规则 ${RULES_VERSION}，内容 ${CONTENT_VERSION}，代码提交 ${commit}。`, '');
-lines.push(`种子：${SEEDS[0]}–${SEEDS.at(-1)}，每格 ${SEEDS.length} 场，共 ${cells.length} 格 ${cells.length * SEEDS.length} 场；耗时 ${elapsedMs} ms。玩家统一为铁剑、30／20／20、留力 0。`, '');
+lines.push(`种子：${SEEDS[0]}–${SEEDS.at(-1)}，每格 ${SEEDS.length} 场，共 ${cells.length} 格 ${cells.length * SEEDS.length} 场。玩家统一为铁剑、气血 30、架势 20、开场内力 ${OPENING_QI_CAP}（上限 20）、留力 0。`, '');
 
 lines.push('## 一、策略', '');
 lines.push('| 策略 | 规则 |', '| --- | --- |');
@@ -97,6 +98,6 @@ for (const f of feasibility) lines.push(`| ${enemyName(f.enemy)} | ${f.probe} | 
 lines.push('');
 
 mkdirSync(OUT_DIR, { recursive: true });
-writeFileSync(`${OUT_DIR}/phase1-matrix-data.md`, lines.join('\n'), 'utf8');
-writeFileSync(`${OUT_DIR}/phase1-matrix-data.json`, JSON.stringify({ rulesVersion: RULES_VERSION, contentVersion: CONTENT_VERSION, commit, seeds: SEEDS, cells, feasibility, rankings }, null, 1), 'utf8');
-console.log(`wrote ${OUT_DIR}/phase1-matrix-data.md and .json (${cells.length} cells, ${elapsedMs} ms)`);
+writeFileSync(`${OUT_DIR}/phase1-matrix-${TAG}-data.md`, lines.join('\n'), 'utf8');
+writeFileSync(`${OUT_DIR}/phase1-matrix-${TAG}-data.json`, JSON.stringify({ rulesVersion: RULES_VERSION, contentVersion: CONTENT_VERSION, commit, seeds: SEEDS, cells, feasibility, rankings }, null, 1), 'utf8');
+console.log(`wrote ${OUT_DIR}/phase1-matrix-${TAG}-data.md and .json (${cells.length} cells, ${elapsedMs} ms)`);

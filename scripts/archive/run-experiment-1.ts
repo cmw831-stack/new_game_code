@@ -1,13 +1,15 @@
+// 历史脚本（策划书 V1.8 阶段的调参实验）。它依赖当时的默认规则与内容数值；
+// 在 V1.9 之后直接运行会得到不同结果。复现原始数据请检出提交 0a98212 后运行。
 // 调参实验 1：按模拟报告第五节逐项叠加 X1–X4，并加试规则改动 X5。
 // 全部改动只在内存中生效，不修改内容目录。用法：npm run experiment
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { execSync } from 'node:child_process';
-import { findEnemy } from '../src/content/catalog.ts';
-import { RULES_VERSION } from '../src/engine/setup.ts';
-import { BASELINE, bestCell, checkTargets, MATRIX_ENEMIES, rankings, runMatrix, SEEDS, type CellResult, type Variant } from '../src/sim/matrix.ts';
-import { BUILDS, STRATEGIES } from '../src/sim/strategies.ts';
-import type { ArtOverrides } from '../src/engine/setup.ts';
+import { findEnemy } from '../../src/content/catalog.ts';
+import { RULES_VERSION } from '../../src/engine/setup.ts';
+import { BASELINE, bestCell, checkTargets, MATRIX_ENEMIES, rankings, runMatrix, SEEDS, type CellResult, type Variant } from '../../src/sim/matrix.ts';
+import { BUILDS, STRATEGIES } from '../../src/sim/strategies.ts';
+import type { ArtOverrides } from '../../src/engine/setup.ts';
 
 const COLD_2_2: ArtOverrides = {
   cold_sword: { action: { kind: 'attack', type: 'combo', hits: [{ hp: 2, posture: 2 }, { hp: 2, posture: 2 }, { hp: 2, posture: 2 }], swordOnly: true } },

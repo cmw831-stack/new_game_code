@@ -6,7 +6,7 @@ import { allEnemyIds, findArt, findEnemy, PAGE_SPECS, TEMPLATE_SPECS, TEMPLATE_T
 import { createBattle } from '../src/engine/setup.ts';
 import { player } from './helpers.ts';
 
-test('十二门预设逐项相加等于组件细则第六章的总价', () => {
+test('十二门预设逐项相加等于组件细则 V1.2 第六章的总价（V1.9）', () => {
   assert.equal(TEMPLATE_SPECS.length, 12);
   for (const spec of TEMPLATE_SPECS) {
     const art = findArt(spec.id)!;

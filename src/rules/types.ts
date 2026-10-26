@@ -101,6 +101,8 @@ export interface EnemyConfig {
   qiMax: number;
   postureMax: number;
   weaponId: string;
+  /** 在兵器基础出招威力之上的配置加成（V1.9：高架势守卫、蓄震守卫气血 +3）。 */
+  basePowerBonus?: Power;
   /** 优先级顺序，靠前先结算。 */
   artIds: string[];
   /** segments[0] 为开场段落 A。 */

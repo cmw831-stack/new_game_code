@@ -1,10 +1,10 @@
 // 内容目录：十二门预设、敌方专用武学、兵器与敌人配置。
-// 数据来源：docs/design 中的组件细则 V1.1 第六、十章，敌人细则 V1.1，成长经济细则 V1.3。
+// 数据来源：docs/design 中的组件细则 V1.2 第六、十章，敌人细则 V1.2，成长经济细则 V1.4（策划书 V1.9）。
 
 import type { ArtDef, EnemyConfig, IntentItem, Segment, Stance, Weapon } from '../rules/types.ts';
 import { compileArt, type ArtSpec } from './components.ts';
 
-export const CONTENT_VERSION = 'design-v1.8';
+export const CONTENT_VERSION = 'design-v1.9';
 
 // ---------- 十二门预设（组件细则第六章） ----------
 
@@ -25,7 +25,7 @@ export const TEMPLATE_SPECS: ArtSpec[] = [
 
 /** 组件细则第六章列出的十二门总价，用于复算测试。 */
 export const TEMPLATE_TOTALS: Record<string, { cost: number; capacity: number }> = {
-  cold_sword: { cost: 4, capacity: 6 },
+  cold_sword: { cost: 5, capacity: 6 },
   break_strike: { cost: 3, capacity: 4 },
   break_chase: { cost: 3, capacity: 4 },
   shadow_thrust: { cost: 2, capacity: 3 },
@@ -33,8 +33,8 @@ export const TEMPLATE_TOTALS: Record<string, { cost: number; capacity: number }>
   channel: { cost: 0, capacity: 2 },
   gather_origin: { cost: 0, capacity: 2 },
   nourish: { cost: 0, capacity: 3 },
-  wind_step: { cost: 2, capacity: 3 },
-  turn_step: { cost: 1, capacity: 3 },
+  wind_step: { cost: 3, capacity: 3 },
+  turn_step: { cost: 2, capacity: 3 },
   borrow_force: { cost: 3, capacity: 3 },
   guard_humble: { cost: 2, capacity: 3 },
 };
@@ -119,7 +119,7 @@ const ENEMIES: EnemyConfig[] = [
   },
   {
     id: 'balanced_standard', templateId: 'balanced', name: '均衡武者',
-    hpMax: 26, qi: 8, qiMax: 20, postureMax: 16, weaponId: 'iron_sword',
+    hpMax: 39, qi: 8, qiMax: 20, postureMax: 16, weaponId: 'iron_sword',
     artIds: ['return_breath', 'break_strike'], fixedSegment: false,
     segments: [
       seg('A', '读节奏', [item(ATK), item(GRD), item(BRT)]),
@@ -128,7 +128,7 @@ const ENEMIES: EnemyConfig[] = [
   },
   {
     id: 'guard_standard', templateId: 'guard', name: '高架势守卫',
-    hpMax: 34, qi: 10, qiMax: 20, postureMax: 28, weaponId: 'iron_staff',
+    hpMax: 43, qi: 10, qiMax: 20, postureMax: 28, weaponId: 'iron_staff', basePowerBonus: { hp: 3, posture: 0 },
     artIds: ['return_breath', 'borrow_force', 'break_strike'], fixedSegment: false,
     segments: [
       seg('A', '守势', [item(GRD), item(ATK), item(BRT)]),
@@ -137,7 +137,7 @@ const ENEMIES: EnemyConfig[] = [
   },
   {
     id: 'resonance_standard', templateId: 'resonance', name: '蓄震守卫',
-    hpMax: 32, qi: 8, qiMax: 20, postureMax: 20, weaponId: 'iron_sword',
+    hpMax: 40, qi: 8, qiMax: 20, postureMax: 20, weaponId: 'iron_sword', basePowerBonus: { hp: 3, posture: 0 },
     artIds: ['return_breath', 'npc_resonance'], fixedSegment: false,
     segments: [
       seg('A', '蓄震', [item(GRD), item(ATK), item(BRT)]),

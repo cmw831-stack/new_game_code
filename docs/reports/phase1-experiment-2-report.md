@@ -4,7 +4,7 @@
 
 **依据：** [实验 1 报告](phase1-experiment-1-report.md) 第七节
 
-**原始数据：** [实验 2 数据表](phase1-experiment-2-data.md)（`npm run experiment2` 生成）
+**原始数据：** [实验 2 数据表](phase1-experiment-2-data.md)，由提交 `550e050` 的实验脚本生成（现存于 `scripts/archive/run-experiment-2.ts`）
 
 所有改动只在内存中生效，没有修改内容目录或策划文档。
 

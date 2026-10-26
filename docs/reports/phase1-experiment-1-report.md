@@ -4,7 +4,7 @@
 
 **依据：** [构筑矩阵模拟报告](phase1-matrix-report.md) 第五节的 X1–X4
 
-**原始数据：** [实验 1 数据表](phase1-experiment-1-data.md)（`npm run experiment` 生成）
+**原始数据：** [实验 1 数据表](phase1-experiment-1-data.md)，由提交 `162601c` 的实验脚本生成（现存于 `scripts/archive/run-experiment-1.ts`）
 
 所有改动只在内存中生效，没有修改内容目录或策划文档。
 

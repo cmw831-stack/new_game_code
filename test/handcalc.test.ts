@@ -1,16 +1,15 @@
-// 策划文档中的其他逐项手算。出处写在每个用例的名称里。
+// 策划文档（V1.8）中的其他逐项手算，统一用 V1.8 规则与数值复现。出处写在每个用例的名称里。
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createBattle } from '../src/engine/setup.ts';
 import { runBattle } from '../src/engine/round.ts';
 import type { ArtSpec } from '../src/content/components.ts';
-import { battle, damageBy, of, player, round, rootOf } from './helpers.ts';
+import { battle18 as battle, damageBy, of, player, round, rootOf } from './helpers.ts';
 
 test('奖励经济细则 5.3：初始两门始终出招，四轮击败均衡武者，玩家剩 24 气血／14 内力', () => {
   // 第 4 轮无论抽到段落 A 还是 B，玩家都先手击败对手，所以结果与种子无关。
   for (let seed = 0; seed < 20; seed++) {
-    const s0 = createBattle({ seed, player: player(['break_strike', 'return_breath']), enemy: { config: 'balanced_standard' } });
+    const s0 = battle(player(['break_strike', 'return_breath']), { config: 'balanced_standard' }, seed);
     const run = runBattle(s0, () => ({ stance: 'attack' }));
     assert.equal(run.state.over?.reason, 'victory', `seed ${seed}`);
     assert.equal(run.rounds, 4, `seed ${seed}`);
@@ -20,7 +19,7 @@ test('奖励经济细则 5.3：初始两门始终出招，四轮击败均衡武�
 });
 
 test('奖励经济细则 5.3：逐轮账本与表格一致', () => {
-  let s = createBattle({ seed: 1, player: player(['break_strike', 'return_breath']), enemy: { config: 'balanced_standard' } });
+  let s = battle(player(['break_strike', 'return_breath']), { config: 'balanced_standard' });
   const expected = [
     { php: 24, pqi: 17, ehp: 20, eposture: 4, pposture: 8 },
     { php: 24, pqi: 16, ehp: 16, eposture: 6 },

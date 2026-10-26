@@ -1,7 +1,7 @@
 // 批量模拟：27 格构筑矩阵（执行契约 V1.1 第五章）与段落资源可行性检查。
 // 普通模拟没有研究、银两或材料结算。
 
-import { createBattle, type ArtOverrides, type BattleInput } from '../engine/setup.ts';
+import { createBattle, OPENING_QI_CAP, type ArtOverrides, type BattleInput } from '../engine/setup.ts';
 import { findEnemy, findWeapon } from '../content/catalog.ts';
 import { runBattle } from '../engine/round.ts';
 import type { BattleEvent, EndReason, RuleParams } from '../rules/types.ts';
@@ -12,7 +12,8 @@ export const SEEDS: number[] = Array.from({ length: 20 }, (_, i) => 1001 + i);
 
 export const MATRIX_ENEMIES = ['balanced_standard', 'guard_standard', 'resonance_standard'];
 
-const START = { hp: 30, qi: 20, posture: 20 };
+/** 模拟中每场遭遇的玩家开场资源：满气血、满架势，内力按 V1.9 开场上限 10。 */
+const START = { hp: 30, qi: OPENING_QI_CAP, posture: 20 };
 
 /** 调参实验的一组改动；全部只在内存中生效，不写回内容目录。 */
 export interface Variant {
@@ -28,15 +29,18 @@ export interface Variant {
   playerQi?: number;
   /** 按敌人配置单独指定的气血倍率，优先于 enemyHpMul。 */
   enemyHpMulBy?: Record<string, number>;
+  /** 按敌人配置单独指定的基础出招气血增量，优先于 enemyBaseHp。 */
+  enemyBaseHpBy?: Record<string, number>;
 }
 
-export const BASELINE: Variant = { id: 'V0', name: '基线（V1.8）', enemyHpMul: 1, enemyBaseHp: 0, artOverrides: {}, rules: {} };
+export const BASELINE: Variant = { id: 'V0', name: '基线（V1.9）', enemyHpMul: 1, enemyBaseHp: 0, artOverrides: {}, rules: {} };
 
 export function battleInput(build: Build, enemy: string, seed: number, v: Variant = BASELINE): BattleInput {
   const config = findEnemy(enemy)!;
   config.hpMax = Math.round(config.hpMax * (v.enemyHpMulBy?.[enemy] ?? v.enemyHpMul));
   const weapon = findWeapon(config.weaponId)!;
-  weapon.base.hp += v.enemyBaseHp;
+  weapon.base.hp += (config.basePowerBonus?.hp ?? 0) + (v.enemyBaseHpBy?.[enemy] ?? v.enemyBaseHp);
+  weapon.base.posture += config.basePowerBonus?.posture ?? 0;
   return {
     battleId: `${v.id}/${build.id}/${enemy}/${seed}`,
     seed,

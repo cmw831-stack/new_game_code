@@ -1,11 +1,12 @@
-// 执行契约 V1.1 第四章的验收案例。每条预期都来自契约或战斗细则的手算，
+// 执行契约第四章的验收案例。每条预期都来自契约或战斗细则（V1.8）的手算，
 // 注释里注明出处；不以被测函数的当前输出作为“正确答案”。
+// 这些用例检验结算机制，统一用 battle18() 按 V1.8 规则与数值复现。
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createBattle, ValidationError } from '../src/engine/setup.ts';
 import { runBattle, runRound } from '../src/engine/round.ts';
-import { battle, damageBy, fixture, items, of, player, round, rootOf } from './helpers.ts';
+import { battle18 as battle, damageBy, fixture, items, of, player, round, rootOf } from './helpers.ts';
 
 // ---------- 寒霜破势同根（战斗细则 11.1） ----------
 

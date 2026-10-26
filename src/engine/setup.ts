@@ -5,7 +5,7 @@ import { compileArt, specProblems, type ArtSpec } from '../content/components.ts
 import { CONTENT_VERSION, findArt, findEnemy, findWeapon } from '../content/catalog.ts';
 import type { ArtDef, ArtInstance, BattleState, EnemyConfig, FighterState, Limits, RuleParams, Side, StatusState, Weapon } from '../rules/types.ts';
 
-export const RULES_VERSION = 'rules-v1.8-phase1';
+export const RULES_VERSION = 'rules-v1.9-phase1';
 
 export const MAX_ARTS = 4;
 export const MAX_CAPACITY = 12;
@@ -18,11 +18,26 @@ export const DEFAULT_LIMITS: Limits = {
   maxRounds: 100,
 };
 
+/** V1.9 规则（策划书 V1.9 第四章）。V1.8 的取值见 V18_RULES。 */
 export const DEFAULT_RULES: RuleParams = {
+  wardScope: 'chain',
+  initiative: 'enemyOnAttack',
+  freezeThreshold: 3,
+};
+
+/** V1.8 规则：只用于复现 V1.8 文档中的手算与历史实验。 */
+export const V18_RULES: RuleParams = {
   wardScope: 'main',
   initiative: 'player',
   freezeThreshold: 3,
 };
+
+/** 每场遭遇开场内力不超过此值（策划书 V1.9 第 4.2 节）；由路线层在建立战斗输入时应用。 */
+export const OPENING_QI_CAP = 10;
+
+export function encounterOpeningQi(carried: number): number {
+  return Math.min(carried, OPENING_QI_CAP);
+}
 
 /** 调参实验用：覆盖目录武学的部分字段（双方共用），例如费用或打击威力。 */
 export type ArtOverrides = Record<string, Partial<Omit<ArtDef, 'id'>>>;
@@ -179,6 +194,9 @@ export function createBattle(input: BattleInput): BattleState {
   if (config) {
     eWeapon = ei.weapon ? structuredClone(ei.weapon) : findWeapon(config.weaponId);
     if (!eWeapon) problems.push(`敌人未知兵器 ID：${config.weaponId}`);
+    else if (!ei.weapon && config.basePowerBonus) {
+      eWeapon.base = { hp: eWeapon.base.hp + config.basePowerBonus.hp, posture: eWeapon.base.posture + config.basePowerBonus.posture };
+    }
     eArts = resolveArts('敌人', config.artIds, eWeapon, problems, overrides);
     eRes = {
       hp: ei.hp ?? config.hpMax,

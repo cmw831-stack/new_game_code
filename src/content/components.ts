@@ -1,4 +1,4 @@
-// 五槽组件价表与编译。数据来源：docs/design/wulin-components-v1.1.md 第一至五章。
+// 五槽组件价表与编译。数据来源：docs/design/wulin-components-v1.2.md 第一至五章（V1.9）。
 
 import type { ActionDef, ArtCategory, ArtDef, FollowupDef, ModifierId, Power, RecoveryDef, TriggerDef, WeaponClass } from '../rules/types.ts';
 
@@ -59,7 +59,8 @@ export const ACTIONS: Record<ActionId, ActionComponent> = {
     kind: 'attack', attackType: 'combo', swordOnly: true,
     tiers: {
       甲: { cost: 2, capacity: 3, hits: [p(2, 1), p(2, 1)] },
-      乙: { cost: 3, capacity: 4, hits: [p(3, 2), p(3, 2), p(3, 2)] },
+      // V1.9：乙档每击 3／2 → 2／2，费用 3 → 4（调参实验 1、2）。
+      乙: { cost: 4, capacity: 4, hits: [p(2, 2), p(2, 2), p(2, 2)] },
     },
   },
   A_heavy: {
@@ -71,7 +72,8 @@ export const ACTIONS: Record<ActionId, ActionComponent> = {
     tiers: { 甲: { cost: 3, capacity: 4, hits: [p(2, 8)] }, 乙: { cost: 3, capacity: 4, hits: [p(3, 6)] } },
   },
   A_ward: { kind: 'ward', swordOnly: false, tiers: { 甲: { cost: 2, capacity: 3 } } },
-  A_step: { kind: 'step', swordOnly: false, tiers: { 甲: { cost: 2, capacity: 3 } } },
+  // V1.9：费用 2 → 3（调参实验 1、2）。
+  A_step: { kind: 'step', swordOnly: false, tiers: { 甲: { cost: 3, capacity: 3 } } },
   A_qi: {
     kind: 'qi', swordOnly: false,
     tiers: { 甲: { cost: 0, capacity: 2, amount: 1 }, 乙: { cost: 1, capacity: 2, amount: 2 } },
