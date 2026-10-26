@@ -44,4 +44,5 @@ npm run matrix
 - [Phase 1 调参实验 1 报告](docs/reports/phase1-experiment-1-report.md)
 - [Phase 1 调参实验 2 报告](docs/reports/phase1-experiment-2-report.md)
 - [Phase 2 构筑实验室：范围与技术方案](docs/plans/phase2-lab-plan.md)
+- [Phase 2 调参实验 3 报告](docs/reports/phase2-experiment-3-report.md)
 - [进度与决策记录](PROGRESS.md)

@@ -31,13 +31,16 @@ export interface Variant {
   enemyHpMulBy?: Record<string, number>;
   /** 按敌人配置单独指定的基础出招气血增量，优先于 enemyBaseHp。 */
   enemyBaseHpBy?: Record<string, number>;
+  /** 按敌人配置追加的武学（排在原有武学之后）。 */
+  enemyArtsAdd?: Record<string, string[]>;
 }
 
 export const BASELINE: Variant = { id: 'V0', name: '基线（V1.9）', enemyHpMul: 1, enemyBaseHp: 0, artOverrides: {}, rules: {} };
 
-export function battleInput(build: Build, enemy: string, seed: number, v: Variant = BASELINE): BattleInput {
+export function battleInput(build: Pick<Build, 'id' | 'arts'>, enemy: string, seed: number, v: Variant = BASELINE): BattleInput {
   const config = findEnemy(enemy)!;
   config.hpMax = Math.round(config.hpMax * (v.enemyHpMulBy?.[enemy] ?? v.enemyHpMul));
+  config.artIds.push(...(v.enemyArtsAdd?.[enemy] ?? []));
   const weapon = findWeapon(config.weaponId)!;
   weapon.base.hp += (config.basePowerBonus?.hp ?? 0) + (v.enemyBaseHpBy?.[enemy] ?? v.enemyBaseHp);
   weapon.base.posture += config.basePowerBonus?.posture ?? 0;
@@ -110,7 +113,7 @@ function metrics(seed: number, events: BattleEvent[], reason: EndReason, rounds:
   return { seed, reason, rounds, hpEnd, hpMin, qiNet: qiEnd - qiStart, damageBySource, enemyStarved, segments: segs.join('-') };
 }
 
-export function runOne(build: Build, enemy: string, strategy: Strategy, seed: number, v: Variant = BASELINE): BattleMetrics {
+export function runOne(build: Pick<Build, 'id' | 'arts'>, enemy: string, strategy: Pick<Strategy, 'decide'>, seed: number, v: Variant = BASELINE): BattleMetrics {
   const s0 = createBattle(battleInput(build, enemy, seed, v));
   const run = runBattle(s0, strategy.decide);
   const over = run.state.over!;
