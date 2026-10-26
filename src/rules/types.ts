@@ -185,6 +185,8 @@ export interface RuleParams {
   wardScope: 'main' | 'chain';
   /** 基础行动先后：player＝始终玩家先手（V1.8）；enemyOnAttack＝敌方本轮意图为出招时敌方先手，并已在意图中公开。 */
   initiative: 'player' | 'enemyOnAttack';
+  /** 冻结阈值与寒意正常上限（V1.8 为 3）；冻结保护期上限为阈值减 1。双方共用。 */
+  freezeThreshold: number;
 }
 
 export interface Limits {

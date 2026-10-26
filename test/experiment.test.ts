@@ -3,10 +3,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createBattle, DEFAULT_RULES, ValidationError } from '../src/engine/setup.ts';
-import { battle, of, player, round } from './helpers.ts';
+import { battle, fixture, of, player, round } from './helpers.ts';
 
 test('默认规则参数即 V1.8：护势只保护第一门主招，玩家始终先手', () => {
-  assert.deepEqual(DEFAULT_RULES, { wardScope: 'main', initiative: 'player' });
+  assert.deepEqual(DEFAULT_RULES, { wardScope: 'main', initiative: 'player', freezeThreshold: 3 });
   const s = createBattle({ seed: 1, player: player([]), enemy: { config: 'balanced_standard' } });
   assert.deepEqual(s.rules, DEFAULT_RULES);
 });
@@ -38,4 +38,12 @@ test('武学覆盖：只改指定字段，双方共用；覆盖不存在的武�
     () => createBattle({ seed: 1, player: player([]), enemy: { config: 'balanced_standard' }, artOverrides: { nope: { cost: 1 } } }),
     ValidationError,
   );
+});
+
+test('冻结阈值（实验开关）：阈值 4 时叠寒剑一次三段只积寒 3，不冻结；阈值不足 2 会被拒绝', () => {
+  const s0 = battle(player(['cold_sword']), { config: fixture({ hpMax: 60, postureMax: 40 }) }, 1, { rules: { freezeThreshold: 4 } });
+  const { state, events } = round(s0);
+  assert.equal(of(events, 'freeze').length, 0);
+  assert.equal(state.enemy.status.cold, 3);
+  assert.throws(() => battle(player([]), { config: fixture() }, 1, { rules: { freezeThreshold: 1 } }), ValidationError);
 });

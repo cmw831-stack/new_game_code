@@ -21,6 +21,7 @@ export const DEFAULT_LIMITS: Limits = {
 export const DEFAULT_RULES: RuleParams = {
   wardScope: 'main',
   initiative: 'player',
+  freezeThreshold: 3,
 };
 
 /** 调参实验用：覆盖目录武学的部分字段（双方共用），例如费用或打击威力。 */
@@ -132,7 +133,7 @@ function resolveArts(label: string, entries: (string | ArtSpec)[], weapon: Weapo
   return out;
 }
 
-function fighter(side: Side, name: string, r: { hp: number; hpMax: number; qi: number; qiMax: number; posture: number; postureMax: number }, weapon: Weapon, arts: ArtInstance[], reserve: number, status: Partial<StatusState> | undefined): FighterState {
+function fighter(side: Side, name: string, r: { hp: number; hpMax: number; qi: number; qiMax: number; posture: number; postureMax: number }, weapon: Weapon, arts: ArtInstance[], reserve: number, status: Partial<StatusState> | undefined, freezeThreshold: number): FighterState {
   return {
     side,
     name,
@@ -148,8 +149,8 @@ function fighter(side: Side, name: string, r: { hp: number; hpMax: number; qi: n
     status: { ...emptyStatus(), ...status },
     actionSeq: 0,
     basicUsedThisRound: false,
-    coldThreshold: 3,
-    coldCapProtected: 2,
+    coldThreshold: freezeThreshold,
+    coldCapProtected: freezeThreshold - 1,
   };
 }
 
@@ -194,6 +195,9 @@ export function createBattle(input: BattleInput): BattleState {
     if (first && (!Number.isInteger(startItem) || startItem < 0 || startItem >= first.items.length)) problems.push('敌人起始项超出开场段落范围');
   }
 
+  const rules: RuleParams = { ...DEFAULT_RULES, ...input.rules };
+  if (!Number.isInteger(rules.freezeThreshold) || rules.freezeThreshold < 2) problems.push('冻结阈值必须是不小于 2 的整数');
+
   if (problems.length > 0 || !pWeapon || !config || !eWeapon) throw new ValidationError(problems);
 
   const limits: Limits = { ...DEFAULT_LIMITS, ...input.limits };
@@ -202,8 +206,8 @@ export function createBattle(input: BattleInput): BattleState {
     contentVersion: CONTENT_VERSION,
     battleId: input.battleId ?? `battle-${input.seed}`,
     round: 1,
-    player: fighter('player', pi.name ?? '玩家', pi, pWeapon, pArts, reserve, pi.status),
-    enemy: fighter('enemy', config.name, eRes, eWeapon, eArts, 0, ei.status),
+    player: fighter('player', pi.name ?? '玩家', pi, pWeapon, pArts, reserve, pi.status, rules.freezeThreshold),
+    enemy: fighter('enemy', config.name, eRes, eWeapon, eArts, 0, ei.status, rules.freezeThreshold),
     script: {
       configId: config.id,
       segments: config.segments,
@@ -224,6 +228,6 @@ export function createBattle(input: BattleInput): BattleState {
     intent: null,
     over: null,
     limits,
-    rules: { ...DEFAULT_RULES, ...input.rules },
+    rules,
   };
 }

@@ -69,13 +69,14 @@ npm run check
 | --- | --- | --- |
 | `rules.wardScope` | `main`：基础架招护势只保护第一门敌方主招 | `chain`：保护敌方整条根连锁 |
 | `rules.initiative` | `player`：始终玩家先手 | `enemyOnAttack`：敌方本轮意图为出招时敌方先手 |
+| `rules.freezeThreshold` | `3` | 冻结阈值与寒意正常上限；保护期上限为阈值减 1 |
 | `artOverrides` | 无 | 覆盖目录武学的部分字段，双方共用 |
 
 改默认值等于改规则，必须先改策划文档。
 
 ## 六、批量模拟
 
-`src/sim/strategies.ts` 定义三套先行构筑与三份公开决策策略，`src/sim/matrix.ts` 运行 27 格矩阵与段落可行性检查。`npm run matrix` 生成 `docs/reports/phase1-matrix-data.*`；`npm run explore` 只在内存里临时改敌人数值做探索，不写回内容目录。`npm run experiment` 运行调参实验 1 的 9 个变体。结论见 [模拟报告](../reports/phase1-matrix-report.md) 与 [实验 1 报告](../reports/phase1-experiment-1-report.md)。
+`src/sim/strategies.ts` 定义三套先行构筑与三份公开决策策略，`src/sim/matrix.ts` 运行 27 格矩阵与段落可行性检查。`npm run matrix` 生成 `docs/reports/phase1-matrix-data.*`；`npm run explore` 只在内存里临时改敌人数值做探索，不写回内容目录。`npm run experiment` 运行调参实验 1 的 9 个变体，`npm run experiment2` 运行实验 2 的 21 个变体。结论见 [模拟报告](../reports/phase1-matrix-report.md)、[实验 1 报告](../reports/phase1-experiment-1-report.md) 与 [实验 2 报告](../reports/phase1-experiment-2-report.md)。
 
 ## 七、Phase 1 还差什么
 

@@ -13,7 +13,8 @@
     "check": "npm run typecheck && npm test",
     "matrix": "node scripts/run-matrix.ts",
     "explore": "node scripts/explore-variants.ts",
-    "experiment": "node scripts/run-experiment.ts"
+    "experiment": "node scripts/run-experiment.ts",
+    "experiment2": "node scripts/run-experiment-2.ts"
   },
   "devDependencies": {
     "@types/node": "24.19.2",

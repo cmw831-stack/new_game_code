@@ -34,4 +34,5 @@ npm run matrix
 - [Phase 1 实现说明](docs/engine/phase1-implementation-notes.md)
 - [Phase 1 构筑矩阵模拟报告](docs/reports/phase1-matrix-report.md)
 - [Phase 1 调参实验 1 报告](docs/reports/phase1-experiment-1-report.md)
+- [Phase 1 调参实验 2 报告](docs/reports/phase1-experiment-2-report.md)
 - [进度与决策记录](PROGRESS.md)

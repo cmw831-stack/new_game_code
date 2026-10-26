@@ -26,13 +26,15 @@ export interface Variant {
   rules: Partial<RuleParams>;
   /** 玩家开场内力；省略为 20。 */
   playerQi?: number;
+  /** 按敌人配置单独指定的气血倍率，优先于 enemyHpMul。 */
+  enemyHpMulBy?: Record<string, number>;
 }
 
 export const BASELINE: Variant = { id: 'V0', name: '基线（V1.8）', enemyHpMul: 1, enemyBaseHp: 0, artOverrides: {}, rules: {} };
 
 export function battleInput(build: Build, enemy: string, seed: number, v: Variant = BASELINE): BattleInput {
   const config = findEnemy(enemy)!;
-  config.hpMax = Math.round(config.hpMax * v.enemyHpMul);
+  config.hpMax = Math.round(config.hpMax * (v.enemyHpMulBy?.[enemy] ?? v.enemyHpMul));
   const weapon = findWeapon(config.weaponId)!;
   weapon.base.hp += v.enemyBaseHp;
   return {
