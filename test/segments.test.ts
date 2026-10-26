@@ -89,3 +89,16 @@ test('固定段落：具名课题可强制标准配置只循环段落 A', () => 
   assert.equal(run.state.rngDraws, 0);
   assert.ok(of(run.events, 'intent').every((e) => e.data.segment === 'A'));
 });
+
+test('peekIntent：玩家承诺前看到的意图与本轮锁定的意图一致，且不改变状态', async () => {
+  const { peekIntent } = await import('../src/engine/round.ts');
+  let s = createBattle({ seed: 77, player: player(['return_breath']), enemy: { config: 'balanced_standard' } });
+  for (let i = 0; i < 8 && !s.over; i++) {
+    const before = structuredClone(s);
+    const peeked = peekIntent(s);
+    assert.deepEqual(s, before, 'peekIntent 不修改状态');
+    const r = runRound(s, { stance: 'guard' });
+    assert.deepEqual(r.state.intent, peeked);
+    s = r.state;
+  }
+});

@@ -16,6 +16,7 @@ import {
   type ModifierId,
   type Phase,
   type Power,
+  type RoundIntent,
   type RoundModifiers,
   type RoundResult,
   type Side,
@@ -452,31 +453,16 @@ class RoundContext {
     this.phase = 'intent';
     const s = this.s;
     const sc = s.script;
-    const segment = sc.segments[sc.segIndex]!;
-    const item = segment.items[sc.itemIndex]!;
-    const last = sc.itemIndex === segment.items.length - 1;
-    if (last && sc.nextSegIndex === null) {
-      if (sc.fixed) {
-        sc.nextSegIndex = 0;
-      } else {
-        const r = pick(s.rng, sc.segments.length);
-        s.rng = r.state;
-        s.rngDraws += 1;
-        sc.nextSegIndex = r.index;
-        this.emit('segmentDraw', 'enemy', null, { from: segment.id, next: sc.segments[r.index]!.id });
-      }
+    const r = resolveIntent(s);
+    if (r.draw) {
+      s.rng = r.draw.rng;
+      s.rngDraws += 1;
+      const nextSeg = sc.segments[r.draw.index]!;
+      this.emit('segmentDraw', 'enemy', null, { from: r.intent.segmentId, next: nextSeg.id, nextName: nextSeg.name });
     }
-    const next = last ? sc.segments[sc.nextSegIndex!]!.items[0]! : segment.items[sc.itemIndex + 1]!;
-    s.intent = {
-      stance: item.stance,
-      disabled: [...item.disabled],
-      segmentId: segment.id,
-      segmentName: segment.name,
-      itemIndex: sc.itemIndex,
-      segmentLength: segment.items.length,
-      next: structuredClone(next),
-    };
-    this.emit('intent', 'enemy', null, { stance: item.stance, segment: segment.id, item: sc.itemIndex, disabled: item.disabled.join(',') });
+    sc.nextSegIndex = r.nextSegIndex;
+    s.intent = r.intent;
+    this.emit('intent', 'enemy', null, { stance: r.intent.stance, segment: r.intent.segmentId, item: sc.itemIndex, disabled: r.intent.disabled.join(',') });
   }
 
   play(decision: Decision): void {
@@ -584,6 +570,53 @@ class RoundContext {
     this.emit('roundEnd', null, null, { round: s.round });
     s.round += 1;
   }
+}
+
+interface ResolvedIntent {
+  intent: RoundIntent;
+  nextSegIndex: number | null;
+  draw: { index: number; rng: number } | null;
+}
+
+/** 本轮将锁定的敌方意图；段落最后一项时同时确定下一段落。不修改状态。 */
+function resolveIntent(s: BattleState): ResolvedIntent {
+  const sc = s.script;
+  const segment = sc.segments[sc.segIndex]!;
+  const item = segment.items[sc.itemIndex]!;
+  const last = sc.itemIndex === segment.items.length - 1;
+  let nextSegIndex = sc.nextSegIndex;
+  let draw: ResolvedIntent['draw'] = null;
+  if (last && nextSegIndex === null) {
+    if (sc.fixed) {
+      nextSegIndex = 0;
+    } else {
+      const r = pick(s.rng, sc.segments.length);
+      draw = { index: r.index, rng: r.state };
+      nextSegIndex = r.index;
+    }
+  }
+  const next = last ? sc.segments[nextSegIndex!]!.items[0]! : segment.items[sc.itemIndex + 1]!;
+  return {
+    intent: {
+      stance: item.stance,
+      disabled: [...item.disabled],
+      segmentId: segment.id,
+      segmentName: segment.name,
+      itemIndex: sc.itemIndex,
+      segmentLength: segment.items.length,
+      next: structuredClone(next),
+    },
+    nextSegIndex,
+    draw,
+  };
+}
+
+/**
+ * 玩家承诺前界面上公开的本轮敌方意图，与 runRound 开始时锁定的意图完全一致。
+ * 段落最后一项时，下一段落在锁定时抽定并公开，所以这里也一并给出。
+ */
+export function peekIntent(state: BattleState): RoundIntent {
+  return resolveIntent(state).intent;
 }
 
 /**

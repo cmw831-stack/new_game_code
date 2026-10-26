@@ -27,10 +27,13 @@ docs/
   engine/      引擎实现说明（解释口径、运行方式）
   plans/       阶段计划（范围、技术方案、里程碑）
   reports/     模拟报告与原始数据
+app/           构筑实验室网页（Vite＋Preact），直接引用 src/ 的规则引擎
 src/
   rules/       纯数据类型与随机数
   content/     组件价表与内容目录（数据来自 docs/design）
   engine/      输入校验与一轮结算
+  narrate/     把事件翻译成中文说明（默认层／详细层）
+  sim/         构筑矩阵与批量模拟
 test/          验收测试；预期值来自文档手算
 PROGRESS.md    当前阶段、决策记录、待办与阻塞
 ```
@@ -39,6 +42,7 @@ PROGRESS.md    当前阶段、决策记录、待办与阻塞
 
 - Node 24 直接运行 `.ts`（类型擦除），没有构建步骤；只能用可擦除的 TypeScript 语法（不用 enum、namespace、参数属性）。导入路径写 `.ts` 扩展名。
 - 改动后运行 `npm run check`（类型检查＋全部测试）。
+- 网页：`npm run dev` 本机预览；`npm run artifact` 生成 `dist-artifact/wulin-lab.html`，发布到同一个 Claude 私有网页 https://claude.ai/artifact/VSYrBYHahLRS8DS1eizjJi （新会话里发布时要传这个 url，否则会建出新链接）。
 - 规则核心保持纯数据、纯函数：`runRound` 不修改输入状态。
 - 测试预期必须来自策划文档的手算或规则推导，并在测试名里注明出处；不要把引擎当前输出抄成预期。
 - 引擎默认值是当前策划书版本的规则与数值。旧版本文档中的手算用 `test/helpers.ts` 的 `battle18` 等显式参数复现，不要为了让旧算例通过而改默认值。

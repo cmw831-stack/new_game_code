@@ -3,7 +3,7 @@
 export * from './rules/types.ts';
 export { createBattle, ValidationError, RULES_VERSION, DEFAULT_LIMITS, DEFAULT_RULES, V18_RULES, OPENING_QI_CAP, encounterOpeningQi, MAX_ARTS, MAX_CAPACITY } from './engine/setup.ts';
 export type { ArtOverrides, BattleInput, FighterInput, EnemyInput } from './engine/setup.ts';
-export { runRound, runBattle } from './engine/round.ts';
+export { runRound, runBattle, peekIntent } from './engine/round.ts';
 export type { BattleRun, DecisionSource } from './engine/round.ts';
 export { compileArt, specProblems } from './content/components.ts';
 export type { ArtSpec } from './content/components.ts';
