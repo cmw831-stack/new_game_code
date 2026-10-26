@@ -25,6 +25,8 @@ docs/
   design/      正式策划书与配套资料（每个版本一个文件，旧版本保留）
   proposals/   评审提案、修订指令（不是正式规则）
   engine/      引擎实现说明（解释口径、运行方式）
+  plans/       阶段计划（范围、技术方案、里程碑）
+  reports/     模拟报告与原始数据
 src/
   rules/       纯数据类型与随机数
   content/     组件价表与内容目录（数据来自 docs/design）
