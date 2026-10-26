@@ -1,0 +1,8793 @@
+{
+ "rulesVersion": "rules-v1.9-phase1",
+ "contentVersion": "design-v1.9.1",
+ "commit": "b3b60be",
+ "seeds": [
+  1001,
+  1002,
+  1003,
+  1004,
+  1005,
+  1006,
+  1007,
+  1008,
+  1009,
+  1010,
+  1011,
+  1012,
+  1013,
+  1014,
+  1015,
+  1016,
+  1017,
+  1018,
+  1019,
+  1020
+ ],
+ "cells": [
+  {
+   "build": "cold_chain",
+   "enemy": "balanced_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 15,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 4,
+   "avgRoundsWin": 4,
+   "avgHpEndWin": 18.7,
+   "avgHpMin": 18.7,
+   "avgQiNet": -8,
+   "damageShare": {
+    "basic": 0.38461538461538464,
+    "cold_sword": 0.46153846153846156,
+    "break_chase": 0.15384615384615385
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 2
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "balanced_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 6,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 15,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 6.85,
+   "avgRoundsWin": 6.85,
+   "avgHpEndWin": 21.95,
+   "avgHpMin": 21.95,
+   "avgQiNet": -1,
+   "damageShare": {
+    "basic": 0.3076923076923077,
+    "cold_sword": 0.38461538461538464,
+    "break_chase": 0.3076923076923077
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 3
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "balanced_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 9,
+   "avgRoundsWin": 9,
+   "avgHpEndWin": 19.6,
+   "avgHpMin": 19.6,
+   "avgQiNet": 2,
+   "damageShare": {
+    "basic": 0.3076923076923077,
+    "cold_sword": 0.46153846153846156,
+    "break_chase": 0.23076923076923078
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "guard_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 29,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 32,
+      "cold_sword": 20
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 29,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 31,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 32,
+      "cold_sword": 20
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 32,
+      "cold_sword": 20
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 29,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 29,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 31,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 31,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 31,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 24,
+      "cold_sword": 21
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 7,
+   "defeats": 13,
+   "other": 0,
+   "winRate": 0.35,
+   "avgRounds": 8.2,
+   "avgRoundsWin": 8.571428571428571,
+   "avgHpEndWin": 3.142857142857143,
+   "avgHpMin": 1.1,
+   "avgQiNet": -5.35,
+   "damageShare": {
+    "basic": 0.5696594427244582,
+    "cold_sword": 0.43034055727554177
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "guard_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 18,
+      "cold_sword": 27,
+      "break_chase": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 8,
+     "hpMin": 8,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 8,
+     "hpMin": 8,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 18,
+      "cold_sword": 27,
+      "break_chase": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 8,
+     "hpMin": 8,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 18,
+      "cold_sword": 27,
+      "break_chase": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 8,
+     "hpMin": 8,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 19,
+      "cold_sword": 27,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 11.35,
+   "avgRoundsWin": 11.35,
+   "avgHpEndWin": 6,
+   "avgHpMin": 6,
+   "avgQiNet": -0.95,
+   "damageShare": {
+    "basic": 0.3663461538461538,
+    "cold_sword": 0.5153846153846153,
+    "break_chase": 0.11826923076923077
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 6
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "guard_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 30,
+      "break_chase": 2
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-B-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 30,
+      "break_chase": 2
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 22,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B-A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 30,
+      "break_chase": 2
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-A-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-B-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 30,
+      "break_chase": 2
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 30,
+      "break_chase": 2
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 22,
+      "cold_sword": 30
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 20,
+      "cold_sword": 26,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 18.55,
+   "avgRoundsWin": 18.55,
+   "avgHpEndWin": 7.8,
+   "avgHpMin": 7.8,
+   "avgQiNet": 7,
+   "damageShare": {
+    "basic": 0.40576923076923077,
+    "cold_sword": 0.5615384615384615,
+    "break_chase": 0.032692307692307694
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 14
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "resonance_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 13,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    }
+   ],
+   "wins": 0,
+   "defeats": 20,
+   "other": 0,
+   "winRate": 0,
+   "avgRounds": 4.65,
+   "avgRoundsWin": null,
+   "avgHpEndWin": null,
+   "avgHpMin": 0,
+   "avgQiNet": -6.7,
+   "damageShare": {
+    "basic": 0.3626707132018209,
+    "cold_sword": 0.4552352048558422,
+    "break_chase": 0.18209408194233687
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 2
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "resonance_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 10,
+      "cold_sword": 15,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 18,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 12,
+      "cold_sword": 20,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 0,
+   "defeats": 20,
+   "other": 0,
+   "winRate": 0,
+   "avgRounds": 6.65,
+   "avgRoundsWin": null,
+   "avgHpEndWin": null,
+   "avgHpMin": 0,
+   "avgQiNet": -2.1,
+   "damageShare": {
+    "basic": 0.3231197771587744,
+    "cold_sword": 0.5097493036211699,
+    "break_chase": 0.1671309192200557
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 3
+  },
+  {
+   "build": "cold_chain",
+   "enemy": "resonance_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 7,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 8,
+      "cold_sword": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 0,
+   "defeats": 20,
+   "other": 0,
+   "winRate": 0,
+   "avgRounds": 8,
+   "avgRoundsWin": null,
+   "avgHpEndWin": null,
+   "avgHpMin": 0,
+   "avgQiNet": 8.3,
+   "damageShare": {
+    "basic": 0.4,
+    "cold_sword": 0.6
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "balanced_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 34,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 8.45,
+   "avgRoundsWin": 8.45,
+   "avgHpEndWin": 24,
+   "avgHpMin": 24,
+   "avgQiNet": -7.1,
+   "damageShare": {
+    "basic": 0.8717948717948718,
+    "break_strike": 0.1282051282051282
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "balanced_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 19,
+      "basic": 14,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -3,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 10,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 19,
+      "basic": 14,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -3,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 10,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -3,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 10,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 19,
+      "basic": 14,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 19,
+      "basic": 14,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": -6,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 8.65,
+   "avgRoundsWin": 8.65,
+   "avgHpEndWin": 20.85,
+   "avgHpMin": 20.85,
+   "avgQiNet": -2.4,
+   "damageShare": {
+    "borrow_force": 0.4897435897435897,
+    "basic": 0.36025641025641025,
+    "break_strike": 0.15
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "balanced_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 15,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 11,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 0,
+     "damageBySource": {
+      "borrow_force": 21,
+      "basic": 12,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 15,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 15,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 15,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 24,
+     "hpMin": 24,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 19,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 13.6,
+   "avgRoundsWin": 13.6,
+   "avgHpEndWin": 22.4,
+   "avgHpMin": 22.4,
+   "avgQiNet": 3,
+   "damageShare": {
+    "borrow_force": 0.38461538461538464,
+    "basic": 0.4307692307692308,
+    "break_strike": 0.18461538461538463
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 10
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "guard_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 37,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 32,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 47,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 12,
+     "hpMin": 12,
+     "qiNet": -10,
+     "damageBySource": {
+      "basic": 45,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 47,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 12,
+     "hpMin": 12,
+     "qiNet": -10,
+     "damageBySource": {
+      "basic": 45,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 32,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 47,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 32,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 12,
+     "hpMin": 12,
+     "qiNet": -10,
+     "damageBySource": {
+      "basic": 45,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 12,
+     "hpMin": 12,
+     "qiNet": -10,
+     "damageBySource": {
+      "basic": 45,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 12,
+     "hpMin": 12,
+     "qiNet": -10,
+     "damageBySource": {
+      "basic": 45,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 13,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 47,
+      "break_strike": 5
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    }
+   ],
+   "wins": 9,
+   "defeats": 11,
+   "other": 0,
+   "winRate": 0.45,
+   "avgRounds": 11.4,
+   "avgRoundsWin": 13,
+   "avgHpEndWin": 14.666666666666666,
+   "avgHpMin": 6.6,
+   "avgQiNet": -7.2,
+   "damageShare": {
+    "basic": 0.8552631578947368,
+    "break_strike": 0.14473684210526316
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 6
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "guard_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 5,
+     "hpMin": 5,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 14,
+      "borrow_force": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 31,
+      "break_strike": 15,
+      "borrow_force": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-B-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 31,
+      "break_strike": 15,
+      "borrow_force": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 5,
+     "hpMin": 5,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 14,
+      "borrow_force": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 20,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 1,
+     "damageBySource": {
+      "basic": 30,
+      "break_strike": 14,
+      "borrow_force": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B-A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 31,
+      "break_strike": 15,
+      "borrow_force": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 5,
+     "hpMin": 5,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 14,
+      "borrow_force": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 5,
+     "hpMin": 5,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 14,
+      "borrow_force": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-A-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 18,
+     "hpEnd": 5,
+     "hpMin": 5,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 14,
+      "borrow_force": 9
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-B-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 4,
+     "hpMin": 4,
+     "qiNet": -1,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 10,
+     "hpMin": 10,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 27,
+      "break_strike": 13,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    }
+   ],
+   "wins": 19,
+   "defeats": 1,
+   "other": 0,
+   "winRate": 0.95,
+   "avgRounds": 17.5,
+   "avgRoundsWin": 17.36842105263158,
+   "avgHpEndWin": 6.7894736842105265,
+   "avgHpMin": 6.45,
+   "avgQiNet": -3.9,
+   "damageShare": {
+    "basic": 0.546242774566474,
+    "break_strike": 0.26011560693641617,
+    "borrow_force": 0.1936416184971098
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 13
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "guard_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 15,
+     "hpMin": 15,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 22,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 9,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 24,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-B-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 9,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 24,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 9,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 24,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 15,
+     "hpMin": 15,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 22,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 26,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": 10,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 28,
+      "break_strike": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B-A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 9,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 24,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 15,
+     "hpMin": 15,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 22,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 15,
+     "hpMin": 15,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 22,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-A-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 21,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 9,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 24,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-B-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 19,
+     "hpEnd": 15,
+     "hpMin": 15,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 22,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 24,
+      "basic": 20,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 18.5,
+   "avgRoundsWin": 18.5,
+   "avgHpEndWin": 15.65,
+   "avgHpMin": 15.65,
+   "avgQiNet": 5.55,
+   "damageShare": {
+    "borrow_force": 0.4115384615384615,
+    "basic": 0.4115384615384615,
+    "break_strike": 0.17692307692307693
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 14
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "resonance_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 41,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 26,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 39,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 11,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 41,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 39,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 26,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 39,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 26,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 11,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 41,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 11,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 41,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 9,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 29,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 10,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -7,
+     "damageBySource": {
+      "basic": 42,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -8,
+     "damageBySource": {
+      "basic": 39,
+      "break_strike": 7
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    }
+   ],
+   "wins": 9,
+   "defeats": 11,
+   "other": 0,
+   "winRate": 0.45,
+   "avgRounds": 9.95,
+   "avgRoundsWin": 10.555555555555555,
+   "avgHpEndWin": 14,
+   "avgHpMin": 6.3,
+   "avgQiNet": -7.25,
+   "damageShare": {
+    "basic": 0.8428405122235157,
+    "break_strike": 0.15715948777648428
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 6
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "resonance_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 0,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 11,
+      "borrow_force": 14
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 12,
+      "borrow_force": 11
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 21,
+      "break_strike": 9,
+      "borrow_force": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 18,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 14,
+      "borrow_force": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 11,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 21,
+      "break_strike": 9,
+      "borrow_force": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 11,
+      "borrow_force": 14
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 18,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 14,
+      "borrow_force": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 12,
+      "borrow_force": 11
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 21,
+      "break_strike": 9,
+      "borrow_force": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 18,
+     "hpEnd": 22,
+     "hpMin": 22,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 14,
+      "borrow_force": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B-A"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 11,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 12,
+      "borrow_force": 11
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 12,
+      "borrow_force": 11
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 12,
+      "borrow_force": 11
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 16,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 3,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 11,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 15,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 0,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 11,
+      "borrow_force": 14
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 25,
+      "break_strike": 11,
+      "borrow_force": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 14,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 11,
+      "borrow_force": 14
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": -4,
+     "damageBySource": {
+      "basic": 21,
+      "break_strike": 9,
+      "borrow_force": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 14.9,
+   "avgRoundsWin": 14.9,
+   "avgHpEndWin": 12,
+   "avgHpMin": 12,
+   "avgQiNet": -2.45,
+   "damageShare": {
+    "basic": 0.5052083333333334,
+    "break_strike": 0.23541666666666666,
+    "borrow_force": 0.259375
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 12
+  },
+  {
+   "build": "guard_counter",
+   "enemy": "resonance_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 15,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 12,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 7,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-B-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 15,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 12,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 20,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 7,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 12,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 22,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "borrow_force": 12,
+      "basic": 24,
+      "break_strike": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B-A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 15,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 15,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 15,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 16,
+      "break_strike": 8
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 17,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 20,
+      "break_strike": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 1,
+     "damageBySource": {
+      "borrow_force": 18,
+      "basic": 12,
+      "break_strike": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    }
+   ],
+   "wins": 11,
+   "defeats": 9,
+   "other": 0,
+   "winRate": 0.55,
+   "avgRounds": 15.85,
+   "avgRoundsWin": 18,
+   "avgHpEndWin": 6.7272727272727275,
+   "avgHpMin": 3.7,
+   "avgQiNet": 2.25,
+   "damageShare": {
+    "borrow_force": 0.4013605442176871,
+    "basic": 0.39909297052154197,
+    "break_strike": 0.19954648526077098
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 12
+  },
+  {
+   "build": "guard_break",
+   "enemy": "balanced_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 20,
+     "hpMin": 20,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 4,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": -9,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 4,
+   "avgRoundsWin": 4,
+   "avgHpEndWin": 18.7,
+   "avgHpMin": 18.7,
+   "avgQiNet": -9,
+   "damageShare": {
+    "basic": 0.358974358974359,
+    "break_strike": 0.1794871794871795,
+    "break_chase": 0.46153846153846156
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 2
+  },
+  {
+   "build": "guard_break",
+   "enemy": "balanced_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 17,
+     "hpMin": 17,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 19,
+     "hpMin": 19,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 15,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 21,
+     "hpMin": 21,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 8.55,
+   "avgRoundsWin": 8.55,
+   "avgHpEndWin": 19.6,
+   "avgHpMin": 19.6,
+   "avgQiNet": 6,
+   "damageShare": {
+    "basic": 0.36923076923076925,
+    "break_strike": 0.16923076923076924,
+    "break_chase": 0.46153846153846156
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "guard_break",
+   "enemy": "balanced_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 12,
+     "hpMin": 12,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 16,
+     "hpMin": 16,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 12,
+     "hpEnd": 18,
+     "hpMin": 18,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 15
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 12,
+   "avgRoundsWin": 12,
+   "avgHpEndWin": 15.5,
+   "avgHpMin": 15.5,
+   "avgQiNet": 4,
+   "damageShare": {
+    "basic": 0.41025641025641024,
+    "break_strike": 0.20512820512820512,
+    "break_chase": 0.38461538461538464
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 8
+  },
+  {
+   "build": "guard_break",
+   "enemy": "guard_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 20,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 18,
+      "break_strike": 8,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 20,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 18,
+      "break_strike": 8,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 18,
+      "break_strike": 8,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 18,
+      "break_strike": 8,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 20,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 20,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 18,
+      "break_strike": 8,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 18,
+      "break_strike": 8,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 6,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 18,
+      "break_strike": 8,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 7,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -6,
+     "damageBySource": {
+      "basic": 23,
+      "break_strike": 10,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 0,
+   "defeats": 20,
+   "other": 0,
+   "winRate": 0,
+   "avgRounds": 6.65,
+   "avgRoundsWin": null,
+   "avgHpEndWin": null,
+   "avgHpMin": 0,
+   "avgQiNet": -5.65,
+   "damageShare": {
+    "basic": 0.4922526817640048,
+    "break_strike": 0.22169249106078665,
+    "break_chase": 0.2860548271752086
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 3
+  },
+  {
+   "build": "guard_break",
+   "enemy": "guard_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 3,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 8,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 14,
+      "break_strike": 7,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 0,
+   "defeats": 20,
+   "other": 0,
+   "winRate": 0,
+   "avgRounds": 8,
+   "avgRoundsWin": null,
+   "avgHpEndWin": null,
+   "avgHpMin": 0,
+   "avgQiNet": 5.2,
+   "damageShare": {
+    "basic": 0.43373493975903615,
+    "break_strike": 0.20481927710843373,
+    "break_chase": 0.3614457831325301
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "guard_break",
+   "enemy": "guard_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A-A-B-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 24,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B-A-B"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 24,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-B-A-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 24,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A-B-B"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B-B-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 24,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B-B-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 25,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-B-A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A-A-A-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B-B-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 28,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 14,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B-A-B-B-A"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 22,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 24,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-B-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 24,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B-A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 24,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B-A-A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 25,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 4,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 14,
+      "break_chase": 10
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-B-B-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A-A-A-B"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-A-A-B"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B-B-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 23,
+     "hpEnd": 2,
+     "hpMin": 2,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 28,
+      "break_strike": 12,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A-B-B-A"
+    }
+   ],
+   "wins": 19,
+   "defeats": 1,
+   "other": 0,
+   "winRate": 0.95,
+   "avgRounds": 23.75,
+   "avgRoundsWin": 23.526315789473685,
+   "avgHpEndWin": 2,
+   "avgHpMin": 1.9,
+   "avgQiNet": 9.7,
+   "damageShare": {
+    "basic": 0.5405405405405406,
+    "break_strike": 0.23552123552123552,
+    "break_chase": 0.22393822393822393
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 18
+  },
+  {
+   "build": "guard_break",
+   "enemy": "resonance_standard",
+   "strategy": "always_attack",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 10,
+      "break_strike": 5,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 10,
+      "break_strike": 5,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 10,
+      "break_strike": 5,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 10,
+      "break_strike": 5,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 10,
+      "break_strike": 5,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 10,
+      "break_strike": 5,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 4,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -3,
+     "damageBySource": {
+      "basic": 10,
+      "break_strike": 5,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-B"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 5,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": -5,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 18
+     },
+     "enemyStarved": 0,
+     "segments": "A-A"
+    }
+   ],
+   "wins": 0,
+   "defeats": 20,
+   "other": 0,
+   "winRate": 0,
+   "avgRounds": 4.65,
+   "avgRoundsWin": null,
+   "avgHpEndWin": null,
+   "avgHpMin": 0,
+   "avgQiNet": -4.3,
+   "damageShare": {
+    "basic": 0.3439878234398782,
+    "break_strike": 0.1719939117199391,
+    "break_chase": 0.4840182648401826
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 2
+  },
+  {
+   "build": "guard_break",
+   "enemy": "resonance_standard",
+   "strategy": "read_windows",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1002,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1003,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1006,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1008,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1009,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1010,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1013,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1016,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "victory",
+     "rounds": 8,
+     "hpEnd": 14,
+     "hpMin": 14,
+     "qiNet": -2,
+     "damageBySource": {
+      "basic": 16,
+      "break_strike": 8,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1019,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    },
+    {
+     "seed": 1020,
+     "reason": "victory",
+     "rounds": 9,
+     "hpEnd": 6,
+     "hpMin": 6,
+     "qiNet": 5,
+     "damageBySource": {
+      "basic": 17,
+      "break_strike": 7,
+      "break_chase": 24
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A"
+    }
+   ],
+   "wins": 20,
+   "defeats": 0,
+   "other": 0,
+   "winRate": 1,
+   "avgRounds": 8.8,
+   "avgRoundsWin": 8.8,
+   "avgHpEndWin": 7.6,
+   "avgHpMin": 7.6,
+   "avgQiNet": 2.55,
+   "damageShare": {
+    "basic": 0.34270833333333334,
+    "break_strike": 0.15729166666666666,
+    "break_chase": 0.5
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 4
+  },
+  {
+   "build": "guard_break",
+   "enemy": "resonance_standard",
+   "strategy": "guard_first",
+   "battles": [
+    {
+     "seed": 1001,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-A"
+    },
+    {
+     "seed": 1002,
+     "reason": "defeat",
+     "rounds": 13,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A"
+    },
+    {
+     "seed": 1003,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1004,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1005,
+     "reason": "defeat",
+     "rounds": 10,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1006,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1007,
+     "reason": "defeat",
+     "rounds": 10,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1008,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B"
+    },
+    {
+     "seed": 1009,
+     "reason": "defeat",
+     "rounds": 13,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-A"
+    },
+    {
+     "seed": 1010,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    },
+    {
+     "seed": 1011,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-B-B"
+    },
+    {
+     "seed": 1012,
+     "reason": "defeat",
+     "rounds": 10,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1013,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1014,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 9,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-B-B"
+    },
+    {
+     "seed": 1015,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-B"
+    },
+    {
+     "seed": 1016,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A"
+    },
+    {
+     "seed": 1017,
+     "reason": "defeat",
+     "rounds": 12,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 6
+     },
+     "enemyStarved": 0,
+     "segments": "A-B-A-A"
+    },
+    {
+     "seed": 1018,
+     "reason": "defeat",
+     "rounds": 10,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1019,
+     "reason": "defeat",
+     "rounds": 10,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 8,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-B"
+    },
+    {
+     "seed": 1020,
+     "reason": "defeat",
+     "rounds": 11,
+     "hpEnd": 0,
+     "hpMin": 0,
+     "qiNet": 10,
+     "damageBySource": {
+      "basic": 12,
+      "break_strike": 6,
+      "break_chase": 12
+     },
+     "enemyStarved": 0,
+     "segments": "A-A-A-A"
+    }
+   ],
+   "wins": 0,
+   "defeats": 20,
+   "other": 0,
+   "winRate": 0,
+   "avgRounds": 11.15,
+   "avgRoundsWin": null,
+   "avgHpEndWin": null,
+   "avgHpMin": 0,
+   "avgQiNet": 9.05,
+   "damageShare": {
+    "basic": 0.449438202247191,
+    "break_strike": 0.2247191011235955,
+    "break_chase": 0.3258426966292135
+   },
+   "enemyStarvedPerBattle": 0,
+   "segmentSequences": 8
+  }
+ ],
+ "feasibility": [
+  {
+   "enemy": "balanced_standard",
+   "probe": "始终架招",
+   "segment": "A",
+   "rounds": 165,
+   "starved": 0
+  },
+  {
+   "enemy": "balanced_standard",
+   "probe": "始终架招",
+   "segment": "B",
+   "rounds": 75,
+   "starved": 0
+  },
+  {
+   "enemy": "balanced_standard",
+   "probe": "始终出招",
+   "segment": "A",
+   "rounds": 151,
+   "starved": 0
+  },
+  {
+   "enemy": "balanced_standard",
+   "probe": "始终出招",
+   "segment": "B",
+   "rounds": 58,
+   "starved": 0
+  },
+  {
+   "enemy": "guard_standard",
+   "probe": "始终架招",
+   "segment": "A",
+   "rounds": 158,
+   "starved": 0
+  },
+  {
+   "enemy": "guard_standard",
+   "probe": "始终架招",
+   "segment": "B",
+   "rounds": 82,
+   "starved": 0
+  },
+  {
+   "enemy": "guard_standard",
+   "probe": "始终出招",
+   "segment": "A",
+   "rounds": 108,
+   "starved": 0
+  },
+  {
+   "enemy": "guard_standard",
+   "probe": "始终出招",
+   "segment": "B",
+   "rounds": 25,
+   "starved": 0
+  },
+  {
+   "enemy": "resonance_standard",
+   "probe": "始终架招",
+   "segment": "A",
+   "rounds": 154,
+   "starved": 0
+  },
+  {
+   "enemy": "resonance_standard",
+   "probe": "始终架招",
+   "segment": "B",
+   "rounds": 67,
+   "starved": 0
+  },
+  {
+   "enemy": "resonance_standard",
+   "probe": "始终出招",
+   "segment": "A",
+   "rounds": 86,
+   "starved": 0
+  },
+  {
+   "enemy": "resonance_standard",
+   "probe": "始终出招",
+   "segment": "B",
+   "rounds": 7,
+   "starved": 0
+  },
+  {
+   "enemy": "swift_standard",
+   "probe": "始终架招",
+   "segment": "A",
+   "rounds": 158,
+   "starved": 0
+  },
+  {
+   "enemy": "swift_standard",
+   "probe": "始终架招",
+   "segment": "B",
+   "rounds": 82,
+   "starved": 0
+  },
+  {
+   "enemy": "swift_standard",
+   "probe": "始终出招",
+   "segment": "A",
+   "rounds": 138,
+   "starved": 0
+  },
+  {
+   "enemy": "swift_standard",
+   "probe": "始终出招",
+   "segment": "B",
+   "rounds": 53,
+   "starved": 0
+  },
+  {
+   "enemy": "blade_standard",
+   "probe": "始终架招",
+   "segment": "A",
+   "rounds": 125,
+   "starved": 0
+  },
+  {
+   "enemy": "blade_standard",
+   "probe": "始终架招",
+   "segment": "B",
+   "rounds": 56,
+   "starved": 0
+  },
+  {
+   "enemy": "blade_standard",
+   "probe": "始终出招",
+   "segment": "A",
+   "rounds": 86,
+   "starved": 0
+  },
+  {
+   "enemy": "blade_standard",
+   "probe": "始终出招",
+   "segment": "B",
+   "rounds": 7,
+   "starved": 0
+  }
+ ],
+ "rankings": {
+  "balanced_standard": [
+   "cold_chain",
+   "guard_break",
+   "guard_counter"
+  ],
+  "guard_standard": [
+   "cold_chain",
+   "guard_counter",
+   "guard_break"
+  ],
+  "resonance_standard": [
+   "guard_break",
+   "guard_counter",
+   "cold_chain"
+  ]
+ }
+}
