@@ -1,5 +1,7 @@
 import { artName, battleNames } from '../../../src/narrate/narrate.ts';
+import type { LabArchive } from '../../../src/edit/manual.ts';
 import { RoundLog } from '../components/RoundLog.tsx';
+import { ComparePanel } from '../components/ComparePanel.tsx';
 import { enemyName, loadoutName, tally, type Session } from '../lab.ts';
 
 const HEADLINE: Record<string, string> = {
@@ -10,7 +12,7 @@ const HEADLINE: Record<string, string> = {
   noDecision: '对局中止',
 };
 
-export function Result({ session, onRetry, onNewSeed, onHome }: { session: Session; onRetry: () => void; onNewSeed: () => void; onHome: () => void }) {
+export function Result({ session, archive, onRetry, onNewSeed, onHome }: { session: Session; archive: LabArchive; onRetry: () => void; onNewSeed: () => void; onHome: () => void }) {
   const { state, setup, rounds } = session;
   const over = state.over!;
   const t = tally(rounds);
@@ -37,6 +39,7 @@ export function Result({ session, onRetry, onNewSeed, onHome }: { session: Sessi
         <button type="button" class="ghost" onClick={onNewSeed}>换种子再打</button>
         <button type="button" class="ghost" onClick={onHome}>回到构筑</button>
       </div>
+      <ComparePanel session={session} archive={archive} />
       <h2>逐轮记录</h2>
       <RoundLog rounds={rounds} names={names} />
     </section>

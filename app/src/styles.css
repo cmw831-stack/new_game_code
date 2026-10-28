@@ -135,6 +135,13 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .filepick { position: relative; overflow: hidden; cursor: pointer; }
 .filepick input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 
+.compare select { font: inherit; color: inherit; background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 4px; margin: 0 4px; }
+.table-wrap { overflow-x: auto; }
+.cmp { border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; min-width: 100%; }
+.cmp th, .cmp td { border-bottom: 1px solid var(--line); padding: 3px 8px; text-align: center; white-space: nowrap; }
+.cmp tr.a td { border-bottom-style: dashed; }
+.cmp td.diff { background: color-mix(in srgb, var(--vermilion) 16%, transparent); font-weight: 700; }
+
 .seed { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 20px 0; }
 .seed input { width: 8em; font: inherit; color: inherit; background: var(--paper-2); border: 1px solid var(--line); padding: 4px 6px; border-radius: 4px; }
 

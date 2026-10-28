@@ -44,6 +44,7 @@ export function App() {
         {session && session.state.over && (
           <Result
             session={session}
+            archive={archive}
             onRetry={() => start(session.setup)}
             onNewSeed={() => start({ ...session.setup, seed: randomSeed() })}
             onHome={() => setSession(null)}
