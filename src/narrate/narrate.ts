@@ -9,12 +9,14 @@ export interface Names {
   enemy: string;
   /** 不在内容目录里的武学（玩家保存的秘籍版本）的名称。 */
   arts?: Record<string, string>;
+  /** 玩家装备的武学；给出时，默认层会说明本轮没有任何动静的武学为什么没发动。 */
+  playerArts?: readonly ArtDef[];
 }
 
 /** 一场对局的显示名称，包括双方装备的全部武学。 */
 export function battleNames(state: BattleState, player = '你'): Names {
   const arts = Object.fromEntries([...state.player.arts, ...state.enemy.arts].map((a) => [a.art.id, a.art.name]));
-  return { player, enemy: state.enemy.name, arts };
+  return { player, enemy: state.enemy.name, arts, playerArts: state.player.arts.map((a) => a.art) };
 }
 
 export type Tone = 'player' | 'enemy' | 'neutral' | 'warn' | 'end';
@@ -150,7 +152,34 @@ export function narrate(events: BattleEvent[], names: Names): Line[] {
         break;
     }
   }
+  const quiet = quietLine(events, names);
+  if (quiet) {
+    const end = lines.findIndex((l) => l.tone === 'end');
+    lines.splice(end < 0 ? lines.length : end, 0, quiet);
+  }
   return lines;
+}
+
+/**
+ * 本轮既没发动、也没有“未发动”记录的玩家武学，说明原因（教学细则 V1.2 4.4 节）：
+ * 变招暂停、战斗已在本轮结束（目标已败退或自己败退），否则是起势未成立。
+ */
+function quietLine(events: BattleEvent[], names: Names): Line | null {
+  if (!names.playerArts || names.playerArts.length === 0) return null;
+  const touched = new Set(events.filter((e) => e.side === 'player' && (e.type === 'cast' || e.type === 'skip')).map((e) => e.art));
+  const quiet = names.playerArts.filter((a) => !touched.has(a.id));
+  if (quiet.length === 0) return null;
+  const paused = new Set(events.filter((e) => e.type === 'change' && e.data.adjust === 'pause').map((e) => e.data.value as string));
+  const end = events.find((e) => e.type === 'battleEnd')?.data.reason;
+  const parts = quiet.map((a) => {
+    if (paused.has(a.id)) return `${a.name}（本轮变招暂停）`;
+    if (end === 'victory') return `${a.name}（${names.enemy}已败退，战斗结束）`;
+    if (end === 'defeat') return `${a.name}（${names.player}已败退）`;
+    if (end) return `${a.name}（对局中止）`;
+    return `${a.name}（起势未成立：需要${TRIGGER_TEXT[a.trigger.kind](a.trigger).replace(/时$|后$/, '')}）`;
+  });
+  const seq = (events.find((e) => e.type === 'roundEnd' || e.type === 'battleEnd')?.seq ?? events.at(-1)?.seq ?? 0) - 0.5;
+  return { seq, tone: 'neutral', text: `没有机会发动：${parts.join('、')}` };
 }
 
 /** 详细层：一条事件一行，保留根连锁与深度。 */

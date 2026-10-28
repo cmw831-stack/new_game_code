@@ -73,3 +73,44 @@ test('因果记录用秘籍自己的名字，而不是版本 ID（主计划 9.1 
   assert.ok(text.some((t) => t.startsWith('你·寒锋（付 4 内力）')), text.join('\n'));
   assert.ok(!text.some((t) => t.includes('m1@v1')), text.join('\n'));
 });
+
+// ---------- 停招原因细分（教学细则 V1.2 4.4 节） ----------
+
+test('起势未成立：没打崩对手时，崩势追击写明“需要对方架势崩溃”', async () => {
+  const { battleNames } = await import('../src/narrate/narrate.ts');
+  const s0 = battle18(player(['cold_sword', 'break_chase'], { qi: 8 }), { config: fixture({ hpMax: 30, postureMax: 20 }) });
+  const text = narrate(round(s0).events, battleNames(s0)).map((l) => l.text);
+  assert.ok(text.includes('没有机会发动：崩势追击（起势未成立：需要对方架势崩溃）'), text.join('\n'));
+});
+
+test('变招暂停的武学写明“本轮变招暂停”，不混同为起势未成立', async () => {
+  const { battleNames } = await import('../src/narrate/narrate.ts');
+  const s0 = battle18(player(['cold_sword', 'break_chase'], { qi: 8 }), { config: fixture({ hpMax: 30, postureMax: 10 }) });
+  const text = narrate(runRound(s0, { stance: 'attack', change: { pause: ['break_chase'] } }).events, battleNames(s0)).map((l) => l.text);
+  assert.ok(text.includes('没有机会发动：崩势追击（本轮变招暂停）'), text.join('\n'));
+});
+
+test('目标已败退：基础出招击败对手后，后续武学写明战斗已结束，且这行在结局之前', async () => {
+  const { battleNames } = await import('../src/narrate/narrate.ts');
+  const s0 = battle18(player(['cold_sword']), { config: fixture({ hpMax: 4 }) });
+  const text = narrate(round(s0).events, battleNames(s0)).map((l) => l.text);
+  const i = text.indexOf('没有机会发动：叠寒剑（测试对手已败退，战斗结束）');
+  assert.ok(i >= 0, text.join('\n'));
+  assert.ok(i < text.indexOf('你获胜'), text.join('\n'));
+});
+
+test('每门武学都有动静时不加这一行；安全上限写明“不算胜负”（教学细则 4.4 节）', async () => {
+  const { battleNames } = await import('../src/narrate/narrate.ts');
+  const s0 = battle18(player(['cold_sword', 'break_chase'], { qi: 8 }), { config: fixture({ hpMax: 30, postureMax: 10 }) });
+  assert.ok(!narrate(round(s0).events, battleNames(s0)).some((l) => l.text.startsWith('没有机会发动')));
+  const capped = battle18(player(['cold_sword', 'break_chase'], { qi: 8 }), { config: fixture({ hpMax: 30, postureMax: 10 }) }, 1, { limits: { eventsPerRoot: 5 } });
+  const text = narrate(round(capped).events, battleNames(capped)).map((l) => l.text);
+  assert.ok(text.includes('达到安全上限，对局中止（不算胜负）'), text.join('\n'));
+});
+
+test('状态已存在无增量：内力已满时归息诀写明没有收益，不写“发动失败”（教学细则 4.4 节）', () => {
+  const s0 = battle18(player(['return_breath'], { qi: 20 }), { config: fixture() });
+  const text = narrate(round(s0, 'guard').events, names).map((l) => l.text);
+  assert.ok(text.includes('你·归息诀没有发动：内力已满，没有收益'), text.join('\n'));
+  assert.ok(!text.some((t) => t.includes('失败')), text.join('\n'));
+});
