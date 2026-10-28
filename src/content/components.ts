@@ -23,6 +23,8 @@ export interface ArtSpec {
   followup: FollowupId | null;
   recovery: RecoveryId | null;
   perRound?: boolean;
+  /** 外层兵器限制：改良版沿用来源模板的剑类限制，换成通用主招也不解除（组件细则 7.1、第八章）。 */
+  swordOnly?: boolean;
 }
 
 const TRIGGER_COST: Record<TriggerId, number> = {
@@ -139,7 +141,7 @@ export function specProblems(spec: ArtSpec, weaponClass?: WeaponClass): string[]
     else if (spec.recovery === 'R_posture' && isAttack) problems.push('复架势只兼容回气或状态主招');
   }
   if (weaponClass && weaponClass !== 'sword') {
-    const swordOnly = action.swordOnly || (spec.followup ? FOLLOWUPS[spec.followup]?.def.swordOnly : false);
+    const swordOnly = spec.swordOnly || action.swordOnly || (spec.followup ? FOLLOWUPS[spec.followup]?.def.swordOnly : false);
     if (swordOnly) problems.push('该秘籍带剑专用组件，当前兵器不是剑');
   }
   return problems;
@@ -171,7 +173,7 @@ export function compileArt(spec: ArtSpec): ArtDef {
   const capacity = tier.capacity + (mod?.capacity ?? 0) + (fol?.capacity ?? 0) + (rec?.capacity ?? 0);
   let actionDef: ActionDef;
   if (action.kind === 'attack') {
-    actionDef = { kind: 'attack', type: action.attackType!, hits: tier.hits!.map((h) => ({ ...h })), swordOnly: action.swordOnly };
+    actionDef = { kind: 'attack', type: action.attackType!, hits: tier.hits!.map((h) => ({ ...h })), swordOnly: action.swordOnly || (spec.swordOnly ?? false) };
   } else if (action.kind === 'qi') {
     actionDef = { kind: 'qi', amount: tier.amount! };
   } else {
