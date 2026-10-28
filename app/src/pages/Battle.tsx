@@ -35,6 +35,9 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
   const names = battleNames(state);
 
   const commit = (stance: Stance) => {
+    // 重复按键不反复承诺同一轮（教学细则 V1.2 第六章）。
+    if (chosenRef.current === null) return;
+    chosenRef.current = null;
     setChosen(null);
     setPending(undefined);
     onChange(playRound(session, change ? { stance, change } : { stance }));
@@ -61,7 +64,10 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
         setChosen(chosenRef.current);
         setFocusTick((n) => n + 1);
       } else if (ev.key === 'Enter' && chosenRef.current && t?.tagName !== 'BUTTON') commit(chosenRef.current);
-      else if (ev.key === 'Escape') setChosen(null);
+      else if (ev.key === 'Escape') {
+        if (chosenRef.current) setChosen(null);
+        else setPending(undefined);
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);

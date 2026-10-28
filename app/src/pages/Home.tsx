@@ -1,3 +1,4 @@
+import { useState } from 'preact/hooks';
 import type { LabArchive } from '../../../src/edit/manual.ts';
 import { AFFIXES, MAX_AFFIXES } from '../../../src/content/affixes.ts';
 import { findEnemy } from '../../../src/content/catalog.ts';
@@ -24,6 +25,16 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
     setArts(arts);
   };
   const slotProblems = (i: number) => check.problems.filter((p) => p.slot === i);
+  // 排序同时提供拖动与上移／下移按钮（教学细则 V1.2 第六章）。
+  const [drag, setDrag] = useState<number | null>(null);
+  const [over, setOver] = useState<number | null>(null);
+  const drop = (to: number) => {
+    if (drag === null || drag === to || to >= s.arts.length) return;
+    const arts = [...s.arts];
+    const [moved] = arts.splice(drag, 1);
+    arts.splice(to, 0, moved!);
+    setArts(arts);
+  };
   const unequipped = [...ACQUIRED_ART_IDS, ...usableVersions(archive).map((v) => v.spec.id)].filter((id) => !s.arts.includes(id));
   const slots = Array.from({ length: check.maxArts }, (_, i) => s.arts[i]);
 
@@ -45,7 +56,7 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
         {BUILD_OPTIONS.map((b) => {
           const on = loadoutName(s.arts) === b.name;
           return (
-            <button type="button" class={`ghost small ${on ? 'on' : ''}`} onClick={() => setArts([...b.arts])} key={b.id} aria-pressed={on} title={b.note}>
+            <button type="button" class={`ghost small ${on ? 'on' : ''}`} onClick={() => setArts([...b.arts])} key={b.id} aria-pressed={on}>
               {b.name}
             </button>
           );
@@ -55,6 +66,9 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
         <button type="button" class="ghost small" onClick={onLessons}>课程</button>
       </div>
 
+      {BUILD_OPTIONS.find((b) => loadoutName(s.arts) === b.name) && (
+        <p class="small muted">这套预设想验证：{BUILD_OPTIONS.find((b) => loadoutName(s.arts) === b.name)!.note}</p>
+      )}
       <div class="loadout">
         <div class="loadout-head">
           <strong>{loadoutName(s.arts)}</strong>
@@ -71,7 +85,16 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
             const art = artOf(id, archive);
             const bad = slotProblems(i);
             return (
-              <li class={`slot ${bad.length ? 'bad' : ''}`} key={id + i}>
+              <li
+                class={`slot ${bad.length ? 'bad' : ''} ${drag === i ? 'dragging' : ''} ${over === i && drag !== i ? 'drop' : ''}`}
+                key={id + i}
+                draggable
+                onDragStart={(e) => { setDrag(i); e.dataTransfer?.setData('text/plain', String(i)); }}
+                onDragOver={(e) => { e.preventDefault(); setOver(i); }}
+                onDragLeave={() => setOver(null)}
+                onDrop={(e) => { e.preventDefault(); drop(i); setDrag(null); setOver(null); }}
+                onDragEnd={() => { setDrag(null); setOver(null); }}
+              >
                 <span class="slot-no">{i + 1}</span>
                 <div class="slot-body">
                   <strong>{art?.name ?? id}</strong>
@@ -122,13 +145,14 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
                       {after > check.maxCapacity && <span class="warn small"> · 装上后容量 {after}，超出上限</span>}
                       <div class="small">{describeArt(art)}</div>
                     </div>
-                    <button type="button" class="ghost small" onClick={() => setArts([...s.arts, id])} disabled={full} title={full ? '四个武学位已满，先卸下一门' : undefined} aria-label={`装上${art.name}`}>
+                    <button type="button" class="ghost small" onClick={() => setArts([...s.arts, id])} disabled={full} aria-label={`装上${art.name}`}>
                       装上
                     </button>
                   </li>
                 );
               })}
             </ul>
+            {s.arts.length >= check.maxArts && <p class="small muted">四个武学位已满，先卸下一门才能装上别的。</p>}
           </>
         )}
 
