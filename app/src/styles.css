@@ -100,6 +100,24 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .arts { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 8px; }
 .arts li { border-left: 2px solid var(--line); padding-left: 10px; }
 
+.presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.presets .on { border-color: var(--vermilion); color: var(--vermilion); }
+.loadout { background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; padding: 12px; }
+.loadout h3 { font-size: 15px; margin: 16px 0 4px; }
+.loadout-head { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-variant-numeric: tabular-nums; }
+.meter { height: 6px; margin: 8px 0; background: var(--paper); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+.meter-fill { display: block; height: 100%; background: var(--jade); }
+.meter-fill.over { background: var(--warn); }
+.slots { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 6px; }
+.slot { display: flex; gap: 10px; align-items: flex-start; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 8px; }
+.slot.empty { border-style: dashed; }
+.slot.bad { border-color: var(--warn); }
+.slot-no { font-weight: 700; color: var(--ink-2); min-width: 1.2em; }
+.slot-body { flex: 1; min-width: 0; }
+.slot-tools { display: flex; gap: 4px; flex-shrink: 0; }
+.arts li.pick { display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; }
+.arts li.pick button, .slot-tools button { white-space: nowrap; flex-shrink: 0; }
+
 .seed { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 20px 0; }
 .seed input { width: 8em; font: inherit; color: inherit; background: var(--paper-2); border: 1px solid var(--line); padding: 4px 6px; border-radius: 4px; }
 
@@ -162,4 +180,6 @@ kbd { font: 12px ui-monospace, monospace; border: 1px solid var(--line); border-
 @media (max-width: 720px) {
   .field, .columns, .stances { grid-template-columns: 1fr; }
   .auto { margin-left: 0; }
+  .slot { flex-wrap: wrap; }
+  .slot-tools { width: 100%; justify-content: flex-end; }
 }

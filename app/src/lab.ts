@@ -4,6 +4,7 @@ import { findArt, findEnemy } from '../../src/content/catalog.ts';
 import { createBattle, OPENING_QI_CAP } from '../../src/engine/setup.ts';
 import { runRound } from '../../src/engine/round.ts';
 import { BUILDS } from '../../src/sim/strategies.ts';
+import { checkLoadout, LAB_ART_IDS, type LoadoutCheck } from '../../src/edit/loadout.ts';
 import type { BattleEvent, BattleState, Stance } from '../../src/rules/types.ts';
 
 export interface BuildOption {
@@ -17,6 +18,24 @@ export const BUILD_OPTIONS: BuildOption[] = [
   { id: 'starter', name: '初始两门', arts: ['break_strike', 'return_breath'], note: '开局手稿给的两门：断势击破势，归息诀格挡回气' },
   ...BUILDS.map((b) => ({ id: b.id, name: b.name, arts: b.arts, note: b.question })),
 ];
+
+/** 实验室唯一的兵器（Phase 2 方案 2.2 节：只有铁剑）。 */
+export const LAB_WEAPON_ID = 'iron_sword';
+
+/**
+ * 已取得的武学。M3 接入十课教学与授业之前，实验室暂时开放先行六门；
+ * 接入后改为读取授业记录（见实现说明第四节）。
+ */
+export const ACQUIRED_ART_IDS: readonly string[] = LAB_ART_IDS;
+
+export function checkArts(arts: readonly string[]): LoadoutCheck {
+  return checkLoadout({ arts, weaponId: LAB_WEAPON_ID, acquired: ACQUIRED_ART_IDS });
+}
+
+/** 与某套预设完全相同（含优先级）时用预设名，否则是自由组合。 */
+export function loadoutName(arts: readonly string[]): string {
+  return BUILD_OPTIONS.find((b) => b.arts.length === arts.length && b.arts.every((id, i) => id === arts[i]))?.name ?? '自由组合';
+}
 
 export interface EnemyOption {
   id: string;
@@ -32,7 +51,8 @@ export const ENEMY_OPTIONS: EnemyOption[] = [
 ];
 
 export interface Setup {
-  buildId: string;
+  /** 优先级顺序。 */
+  arts: string[];
   enemyId: string;
   seed: number;
 }
@@ -63,17 +83,12 @@ export function enemyName(id: string): string {
   return findEnemy(id)?.name ?? id;
 }
 
-export function capacityOf(arts: string[]): number {
-  return arts.reduce((n, id) => n + (findArt(id)?.capacity ?? 0), 0);
-}
-
-/** 建立一场实验室对局：玩家满气血、满架势，开场内力按 V1.9 上限 10。 */
+/** 建立一场实验室对局：玩家满气血、满架势，开场内力按 V1.9 上限 10。构筑须先通过 checkArts。 */
 export function startSession(setup: Setup): Session {
-  const build = buildOf(setup.buildId);
   const state = createBattle({
-    battleId: `lab/${setup.buildId}/${setup.enemyId}/${setup.seed}`,
+    battleId: `lab/${setup.arts.join('+') || 'none'}/${setup.enemyId}/${setup.seed}`,
     seed: setup.seed,
-    player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: 'iron_sword', arts: build.arts, reserve: 0 },
+    player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: LAB_WEAPON_ID, arts: setup.arts, reserve: 0 },
     enemy: { config: setup.enemyId },
   });
   return { setup, state, rounds: [] };

@@ -118,7 +118,7 @@ function checkResources(label: string, r: { hp: number; hpMax: number; qi: numbe
   if (r.hp === 0) problems.push(`${label}开场气血不能为 0`);
 }
 
-function isSwordOnly(art: ArtDef): boolean {
+export function isSwordOnly(art: ArtDef): boolean {
   return (art.action.kind === 'attack' && art.action.swordOnly) || (art.followup?.swordOnly ?? false);
 }
 

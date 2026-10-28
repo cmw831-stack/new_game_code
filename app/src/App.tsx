@@ -1,11 +1,11 @@
 import { useState } from 'preact/hooks';
-import { randomSeed, startSession, type Session, type Setup } from './lab.ts';
+import { buildOf, randomSeed, startSession, type Session, type Setup } from './lab.ts';
 import { Home } from './pages/Home.tsx';
 import { Battle } from './pages/Battle.tsx';
 import { Result } from './pages/Result.tsx';
 
 export function App() {
-  const [setup, setSetup] = useState<Setup>({ buildId: 'cold_chain', enemyId: 'balanced_standard', seed: randomSeed() });
+  const [setup, setSetup] = useState<Setup>({ arts: [...buildOf('cold_chain').arts], enemyId: 'balanced_standard', seed: randomSeed() });
   const [session, setSession] = useState<Session | null>(null);
 
   const start = (s: Setup) => {

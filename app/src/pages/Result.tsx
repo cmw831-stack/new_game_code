@@ -1,6 +1,6 @@
 import { artName } from '../../../src/narrate/narrate.ts';
 import { RoundLog } from '../components/RoundLog.tsx';
-import { buildOf, enemyName, tally, type Session } from '../lab.ts';
+import { enemyName, loadoutName, tally, type Session } from '../lab.ts';
 
 const HEADLINE: Record<string, string> = {
   victory: '你赢了',
@@ -20,7 +20,7 @@ export function Result({ session, onRetry, onNewSeed, onHome }: { session: Sessi
     <section class="result">
       <h1 class={over.reason === 'victory' ? 'good' : 'warn'}>{HEADLINE[over.reason]}</h1>
       <p>
-        {buildOf(setup.buildId).name} 对 {enemyName(setup.enemyId)}，共 {rounds.length} 轮；你剩 {state.player.hp} 气血、{state.player.qi} 内力，对手剩 {state.enemy.hp} 气血。
+        {loadoutName(setup.arts)} 对 {enemyName(setup.enemyId)}，共 {rounds.length} 轮；你剩 {state.player.hp} 气血、{state.player.qi} 内力，对手剩 {state.enemy.hp} 气血。
       </p>
       <div class="columns">
         <div>
