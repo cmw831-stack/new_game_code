@@ -62,23 +62,28 @@ function templateSwordOnly(t: ArtSpec): boolean {
   return ACTIONS[t.action].swordOnly || t.followup === 'F_freeze_combo' || (t.swordOnly ?? false);
 }
 
+/** 把一个槽的值写进装配（就地修改）。 */
+export function setSlot(spec: ArtSpec, slot: SlotName, v: SlotValue): void {
+  switch (slot) {
+    case 'trigger':
+      spec.trigger = v.id as ArtSpec['trigger'];
+      if (v.param === undefined) delete spec.triggerParam;
+      else spec.triggerParam = v.param;
+      break;
+    case 'action':
+      spec.action = v.id as ArtSpec['action'];
+      spec.tier = v.tier ?? '甲';
+      break;
+    case 'modifier': spec.modifier = v.id as ArtSpec['modifier']; break;
+    case 'followup': spec.followup = v.id as ArtSpec['followup']; break;
+    case 'recovery': spec.recovery = v.id as ArtSpec['recovery']; break;
+  }
+}
+
 /** 从来源模板替换一个槽，得到改良草稿。草稿沿用来源的名称类别、每轮限次与剑类限制。 */
 export function replaceSlot(source: ArtSpec, slot: SlotName, v: SlotValue, draftId = `${source.id}~draft`): ArtSpec {
   const draft: ArtSpec = { ...source, id: draftId };
-  switch (slot) {
-    case 'trigger':
-      draft.trigger = v.id as ArtSpec['trigger'];
-      if (v.param === undefined) delete draft.triggerParam;
-      else draft.triggerParam = v.param;
-      break;
-    case 'action':
-      draft.action = v.id as ArtSpec['action'];
-      draft.tier = v.tier ?? '甲';
-      break;
-    case 'modifier': draft.modifier = v.id as ArtSpec['modifier']; break;
-    case 'followup': draft.followup = v.id as ArtSpec['followup']; break;
-    case 'recovery': draft.recovery = v.id as ArtSpec['recovery']; break;
-  }
+  setSlot(draft, slot, v);
   if (templateSwordOnly(source)) draft.swordOnly = true;
   return draft;
 }
