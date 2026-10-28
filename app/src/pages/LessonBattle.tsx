@@ -12,11 +12,17 @@ import { Battle } from './Battle.tsx';
 import { GRANT_NAME } from './Lessons.tsx';
 
 function fresh(l: BattleLesson): Session {
-  const state = createBattle({ battleId: `lesson/${l.id}`, seed: 1, player: structuredClone(l.player), enemy: l.enemy() });
-  return { setup: { arts: [], reserve: 0, enemyId: '', affixes: [], seed: 1 }, state, rounds: [] };
+  const input = { battleId: `lesson/${l.id}`, seed: 1, player: structuredClone(l.player), enemy: l.enemy() };
+  return { setup: { arts: [], reserve: 0, enemyId: '', affixes: [], seed: 1 }, input, state: createBattle(structuredClone(input)), rounds: [] };
 }
 
-export function LessonBattle({ lesson, onComplete, onExit }: { lesson: BattleLesson; onComplete: (id: LessonId) => void; onExit: () => void }) {
+export function LessonBattle({ lesson, onComplete, onExit, onRecord }: {
+  lesson: BattleLesson;
+  onComplete: (id: LessonId) => void;
+  onExit: () => void;
+  /** 一场课程对局结束或被放弃时记录。 */
+  onRecord?: (s: Session, lesson: string) => void;
+}) {
   const text = LESSON_TEXT[lesson.id as LessonId];
   const needsRead = lesson.id === 'teach_resonance_v1';
   const [read, setRead] = useState(!needsRead);
@@ -26,12 +32,18 @@ export function LessonBattle({ lesson, onComplete, onExit }: { lesson: BattleLes
 
   const update = (s: Session) => {
     setSession(s);
+    if (s.state.over && !session.state.over) onRecord?.(s, lesson.id);
     if (!done && lesson.done(s.rounds.flatMap((r) => r.events))) {
       setDone(true);
       onComplete(lesson.id as LessonId);
     }
   };
+  const leave = () => {
+    if (!session.state.over && session.rounds.length > 0) onRecord?.(session, lesson.id);
+  };
+  const exit = () => { leave(); onExit(); };
   const retry = () => {
+    leave();
     setSession(fresh(lesson));
     setDone(false);
     // 焦点留在“重试”上时，紧接着按 Enter 会再次重试，而不是确认姿态。
@@ -46,7 +58,7 @@ export function LessonBattle({ lesson, onComplete, onExit }: { lesson: BattleLes
         <p class="lead">{text.brief}</p>
         <div class="actions">
           <button type="button" class="primary" onClick={() => setRead(true)}>读过了，开始</button>
-          <button type="button" class="ghost" onClick={onExit}>回课程</button>
+          <button type="button" class="ghost" onClick={exit}>回课程</button>
         </div>
       </section>
     );
@@ -66,10 +78,10 @@ export function LessonBattle({ lesson, onComplete, onExit }: { lesson: BattleLes
         {!done && hint && <span class="small warn">{hint}</span>}
         <span class="actions">
           <button type="button" class="ghost small" onClick={retry}>按本课输入重试</button>
-          <button type="button" class="ghost small" onClick={onExit}>回课程</button>
+          <button type="button" class="ghost small" onClick={exit}>回课程</button>
         </span>
       </div>
-      {!over && <Battle session={session} onChange={update} onQuit={onExit} />}
+      {!over && <Battle session={session} onChange={update} onQuit={exit} />}
       {over && (
         <div class="lesson-end">
           <h2 class={done ? 'good' : 'warn'}>
@@ -79,7 +91,7 @@ export function LessonBattle({ lesson, onComplete, onExit }: { lesson: BattleLes
           {!done && <p>目标是：{lesson.goal}。按本课输入重试一次，不收任何代价。</p>}
           <div class="actions">
             <button type="button" class={done ? 'ghost' : 'primary'} onClick={retry}>按本课输入重试</button>
-            <button type="button" class={done ? 'primary' : 'ghost'} onClick={onExit}>回课程</button>
+            <button type="button" class={done ? 'primary' : 'ghost'} onClick={exit}>回课程</button>
           </div>
           <h2>逐轮记录</h2>
           <RoundLog rounds={session.rounds} names={battleNames(session.state)} />

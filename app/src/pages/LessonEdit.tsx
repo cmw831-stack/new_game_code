@@ -13,6 +13,7 @@ import { compareLessonInputs, pageLesson } from '../../../src/teach/lessons.ts';
 import { editResearch, type LessonId, type TeachingProgress } from '../../../src/teach/progress.ts';
 import { LESSON_TEXT } from '../teach.ts';
 import { LessonBattle } from './LessonBattle.tsx';
+import type { Session } from '../lab.ts';
 
 /** 本课唯一开放的改良：叠寒剑主招三连 → 已知破势主招，保留寒劲（教学细则 teach_edit_one_v1）。 */
 export function lessonDraft(): ArtSpec {
@@ -132,13 +133,13 @@ export function CompareLesson({ onSave, onExit }: { onSave: Save; onExit: () => 
   );
 }
 
-export function PageLesson({ onSave, onComplete, onExit }: { onSave: Save; onComplete: (id: LessonId) => void; onExit: () => void }) {
+export function PageLesson({ onSave, onComplete, onExit, onRecord }: { onSave: Save; onComplete: (id: LessonId) => void; onExit: () => void; onRecord?: (s: Session, lesson: string) => void }) {
   const [mod, setMod] = useState<string | null>(null);
   const [name, setName] = useState('');
   const [problems, setProblems] = useState<string[]>([]);
   const [spec, setSpec] = useState<ArtSpec | null>(null);
   const source = { kind: 'page' as const, pageId: PAGE_PREFACE.id };
-  if (spec) return <LessonBattle lesson={pageLesson(spec)} onComplete={onComplete} onExit={onExit} />;
+  if (spec) return <LessonBattle lesson={pageLesson(spec)} onComplete={onComplete} onExit={onExit} onRecord={onRecord} />;
   const fill = mod ? fillPage(PAGE_PREFACE, { modifier: { id: mod } }, 'page-draft', '折锋') : null;
   return (
     <section class="lesson">

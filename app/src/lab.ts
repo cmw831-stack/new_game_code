@@ -1,7 +1,7 @@
 // 实验室的数据层：预设构筑、对手列表、建立对局与结果统计。界面组件只调用这里与规则引擎。
 
 import { findArt, findEnemy } from '../../src/content/catalog.ts';
-import { createBattle, OPENING_QI_CAP } from '../../src/engine/setup.ts';
+import { createBattle, OPENING_QI_CAP, type BattleInput } from '../../src/engine/setup.ts';
 import { runRound } from '../../src/engine/round.ts';
 import { BUILDS } from '../../src/sim/strategies.ts';
 import { checkLoadout, LAB_ART_IDS, type LoadoutCheck } from '../../src/edit/loadout.ts';
@@ -93,6 +93,8 @@ export interface RoundRecord {
 
 export interface Session {
   setup: Setup;
+  /** 建立这场对局的完整输入（试玩记录据此重放）。 */
+  input: BattleInput;
   state: BattleState;
   rounds: RoundRecord[];
 }
@@ -114,13 +116,13 @@ export function enemyName(id: string): string {
 /** 建立一场实验室对局：玩家满气血、满架势，开场内力按 V1.9 上限 10。构筑须先通过 checkArts。 */
 export function startSession(setup: Setup, archive: LabArchive): Session {
   const arts = setup.arts.map((id) => findVersion(archive, id)?.spec ?? id);
-  const state = createBattle({
+  const input: BattleInput = {
     battleId: `lab/${setup.arts.join('+') || 'none'}/${setup.enemyId}${setup.affixes.length ? `+${setup.affixes.join('+')}` : ''}/${setup.seed}`,
     seed: setup.seed,
     player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: LAB_WEAPON_ID, arts, reserve: setup.reserve },
     enemy: { config: setup.enemyId, affixes: setup.affixes },
-  });
-  return { setup, state, rounds: [] };
+  };
+  return { setup, input, state: createBattle(structuredClone(input)), rounds: [] };
 }
 
 export function playRound(session: Session, decision: Decision): Session {
