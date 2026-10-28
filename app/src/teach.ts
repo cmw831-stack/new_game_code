@@ -40,9 +40,9 @@ export const LESSON_TEXT: Record<LessonId, LessonText> = {
     title: '蓄震守卫',
     brief: '对手装着蓄震诀：费用 2 内力；当你的一门主招对它接触至少两次后，它按接触次数反击，每次 2 气血。三连会触发它，单次打击不会。读完后自由选择，打完一整轮即可，不要求受伤或打赢。',
   },
-  teach_edit_one_v1: { title: '首份改良：替换一个槽', brief: '把叠寒剑的三连换成你已知的破势主招，保留寒劲，看费用、容量和效果的变化。', later: true },
-  teach_compare_versions_v1: { title: '版本对照', brief: '原版与改良版各打一轮蓄震守卫，并列比较，命名保存新版本。', later: true },
-  teach_manuscript_page_v1: { title: '卷首残页', brief: '从刚劲、震劲、柔劲中选一个补全残页，命名保存，再演练一轮。', later: true },
+  teach_edit_one_v1: { title: '首份改良：替换一个槽', brief: '把叠寒剑的三连换成你已知的破势主招，保留寒劲，看费用、容量和效果的变化。' },
+  teach_compare_versions_v1: { title: '版本对照', brief: '原版与改良版各打一轮蓄震守卫，并列比较，命名保存新版本。' },
+  teach_manuscript_page_v1: { title: '卷首残页', brief: '从刚劲、震劲、柔劲中选一个补全残页，命名保存，再演练一轮。' },
 };
 
 /** “我这次想验证的事”（教学细则 teach_intro_v1）。 */

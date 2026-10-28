@@ -27,6 +27,13 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons 
     <section class="home">
       <h1>选一套武学，找一个对手</h1>
       <p class="lead">每轮先看对手要做什么，再选出招、架招或调息。你装备的武学会自己接招。输了就看看是哪一步出的问题。</p>
+      {Object.keys(archive.teaching.lessons).length === 0 && (
+        <div class="lesson-goal">
+          <strong>第一次来？</strong>
+          <span class="small">建议先上课程：九课，约 30 分钟，从认识三种资源到改良一门武学、补全一页残稿。随时可以离开，没完成的课以后免费补做。</span>
+          <span class="actions"><button type="button" class="primary" onClick={onLessons}>开始第一课</button></span>
+        </div>
+      )}
 
       <h2>构筑</h2>
       <p class="small muted">从预设开始，或者自己组合。武学按从上到下的顺序结算，排在前面的先接招。</p>
