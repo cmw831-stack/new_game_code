@@ -11,12 +11,14 @@ export interface Names {
   arts?: Record<string, string>;
   /** 玩家装备的武学；给出时，默认层会说明本轮没有任何动静的武学为什么没发动。 */
   playerArts?: readonly ArtDef[];
+  /** 对手的公开词缀；受影响的结果后面标注来源（敌人细则 9.1 节）。 */
+  enemyAffixes?: readonly string[];
 }
 
 /** 一场对局的显示名称，包括双方装备的全部武学。 */
 export function battleNames(state: BattleState, player = '你'): Names {
   const arts = Object.fromEntries([...state.player.arts, ...state.enemy.arts].map((a) => [a.art.id, a.art.name]));
-  return { player, enemy: state.enemy.name, arts, playerArts: state.player.arts.map((a) => a.art) };
+  return { player, enemy: state.enemy.name, arts, playerArts: state.player.arts.map((a) => a.art), enemyAffixes: state.enemy.affixes };
 }
 
 export type Tone = 'player' | 'enemy' | 'neutral' | 'warn' | 'end';
@@ -96,6 +98,14 @@ function hitSummary(evs: BattleEvent[]): string {
   return parts.join('，');
 }
 
+/** 词缀改变了结果时标注来源：寒体下寒意已到 3 仍未冻结。 */
+function affixNote(evs: BattleEvent[], names: Names): string {
+  if (!names.enemyAffixes?.includes('AFX_COLD_BODY')) return '';
+  const cold = evs.filter((e) => e.type === 'cold' && e.side === 'enemy').at(-1);
+  if (!cold || evs.some((e) => e.type === 'freeze') || (cold.data.after as number) < 3) return '';
+  return '（冻结未生效：寒体，需 4 寒意）';
+}
+
 /** 默认层：按事件顺序，每个施放、跳过或关键状态一行。 */
 export function narrate(events: BattleEvent[], names: Names): Line[] {
   const byCast = new Map<number, BattleEvent[]>();
@@ -124,14 +134,16 @@ export function narrate(events: BattleEvent[], names: Names): Line[] {
         lines.push({ seq: e.seq, tone: tone(e.side), text: `${name}架招：取得护势${gain > 0 ? `，架势 +${gain}` : ''}` });
         break;
       }
-      case 'basicAttack':
-        lines.push({ seq: e.seq, tone: tone(e.side), text: `${name}出招：${hitSummary(byCast.get(e.cast!) ?? [])}` });
+      case 'basicAttack': {
+        const evs = byCast.get(e.cast!) ?? [];
+        lines.push({ seq: e.seq, tone: tone(e.side), text: `${name}出招：${hitSummary(evs)}${affixNote(evs, names)}` });
         break;
+      }
       case 'cast': {
         const evs = byCast.get(e.cast!) ?? [];
         const cost = e.data.cost as number;
         const summary = hitSummary(evs);
-        lines.push({ seq: e.seq, tone: tone(e.side), text: `${name}·${artName(e.art, names.arts)}${cost > 0 ? `（付 ${cost} 内力）` : ''}${summary ? `：${summary}` : ''}` });
+        lines.push({ seq: e.seq, tone: tone(e.side), text: `${name}·${artName(e.art, names.arts)}${cost > 0 ? `（付 ${cost} 内力）` : ''}${summary ? `：${summary}` : ''}${affixNote(evs, names)}` });
         break;
       }
       case 'qi':

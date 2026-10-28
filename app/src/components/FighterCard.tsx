@@ -1,4 +1,5 @@
 import type { FighterState } from '../../../src/rules/types.ts';
+import { findAffix } from '../../../src/content/affixes.ts';
 
 function Bar({ label, value, max, kind }: { label: string; value: number; max: number; kind: string }) {
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
@@ -29,6 +30,9 @@ export function FighterCard({ f, title }: { f: FighterState; title: string }) {
       <Bar label="气血" value={f.hp} max={f.hpMax} kind="hp" />
       <Bar label="内力" value={f.qi} max={f.qiMax} kind="qi" />
       <Bar label="架势" value={f.posture} max={f.postureMax} kind="posture" />
+      {f.affixes.length > 0 && (
+        <div class="chips">{f.affixes.map((id) => { const a = findAffix(id); return <span class="chip warn" key={id} title={a?.text}>词缀：{a?.name ?? id}</span>; })}</div>
+      )}
       <div class="chips">{chips.length ? chips.map((c) => <span class="chip" key={c}>{c}</span>) : <span class="small muted">无状态</span>}</div>
     </div>
   );

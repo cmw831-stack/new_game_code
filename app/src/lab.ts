@@ -80,6 +80,8 @@ export interface Setup {
   /** 追加攻击留力底线（战斗细则 V1.2 3.3 节）。 */
   reserve: number;
   enemyId: string;
+  /** 对手的公开词缀（敌人细则第 9 章），0–2 个。 */
+  affixes: string[];
   seed: number;
 }
 
@@ -113,10 +115,10 @@ export function enemyName(id: string): string {
 export function startSession(setup: Setup, archive: LabArchive): Session {
   const arts = setup.arts.map((id) => findVersion(archive, id)?.spec ?? id);
   const state = createBattle({
-    battleId: `lab/${setup.arts.join('+') || 'none'}/${setup.enemyId}/${setup.seed}`,
+    battleId: `lab/${setup.arts.join('+') || 'none'}/${setup.enemyId}${setup.affixes.length ? `+${setup.affixes.join('+')}` : ''}/${setup.seed}`,
     seed: setup.seed,
     player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: LAB_WEAPON_ID, arts, reserve: setup.reserve },
-    enemy: { config: setup.enemyId },
+    enemy: { config: setup.enemyId, affixes: setup.affixes },
   });
   return { setup, state, rounds: [] };
 }

@@ -4,6 +4,7 @@
 import { useState } from 'preact/hooks';
 import type { LabArchive } from '../../../src/edit/manual.ts';
 import { STANCE_NAME } from '../../../src/narrate/narrate.ts';
+import { findAffix } from '../../../src/content/affixes.ts';
 import { compareVersions, type Snapshot } from '../../../src/sim/compare.ts';
 import { ACQUIRED_ART_IDS, artOf, checkArts, enemyName, startSession, usableVersions, type Session } from '../lab.ts';
 
@@ -50,7 +51,7 @@ export function ComparePanel({ session, archive }: { session: Session; archive: 
         ，其余条件不变，按本局 {decisions.length} 轮的选择重新各打一遍。
       </p>
       <p class="small muted">
-        条件：对手 {enemyName(setup.enemyId)} · 种子 {setup.seed} · {a0.player.weapon.name} · 开场 {a0.player.hp} 气血／{a0.player.qi} 内力／{a0.player.posture} 架势 · 留力 {setup.reserve} · 选择 {decisions.map((d) => STANCE_NAME[d.stance] + (d.change ? '＊' : '')).join(' ')}
+        条件：对手 {enemyName(setup.enemyId)}{setup.affixes.length ? `（${setup.affixes.map((id) => findAffix(id)?.name ?? id).join('、')}）` : ''} · 种子 {setup.seed} · {a0.player.weapon.name} · 开场 {a0.player.hp} 气血／{a0.player.qi} 内力／{a0.player.posture} 架势 · 留力 {setup.reserve} · 选择 {decisions.map((d) => STANCE_NAME[d.stance] + (d.change ? '＊' : '')).join(' ')}
       </p>
       {bCheck.problems.map((p) => <p class="warn small" key={p.message}>B 不合法：{p.message}</p>)}
       <button type="button" class="ghost" disabled={!bCheck.ok} onClick={() => setShown(true)}>对照</button>

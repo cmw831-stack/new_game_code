@@ -1,4 +1,6 @@
 import type { LabArchive } from '../../../src/edit/manual.ts';
+import { AFFIXES, MAX_AFFIXES } from '../../../src/content/affixes.ts';
+import { findEnemy } from '../../../src/content/catalog.ts';
 import { describeArt } from '../../../src/narrate/narrate.ts';
 import { ACQUIRED_ART_IDS, artOf, BUILD_OPTIONS, checkArts, ENEMY_OPTIONS, loadoutName, randomSeed, usableVersions, type Setup } from '../lab.ts';
 
@@ -136,12 +138,36 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons 
       <h2>对手</h2>
       <div class="cards">
         {ENEMY_OPTIONS.map((e) => (
-          <button type="button" class={`card ${e.id === s.enemyId ? 'selected' : ''}`} onClick={() => set({ ...s, enemyId: e.id })} key={e.id} aria-pressed={e.id === s.enemyId} aria-label={`对手：${e.name}`}>
+          <button type="button" class={`card ${e.id === s.enemyId ? 'selected' : ''}`} onClick={() => set({ ...s, enemyId: e.id, affixes: [] })} key={e.id} aria-pressed={e.id === s.enemyId} aria-label={`对手：${e.name}`}>
             <strong>{e.name}</strong>
             <span class="small">{e.note}</span>
           </button>
         ))}
       </div>
+
+      {(() => {
+        const config = findEnemy(s.enemyId)!;
+        if (config.fixedSegment) return <p class="small muted">引导对手不带词缀。</p>;
+        const usable = AFFIXES.filter((a) => a.templates.includes(config.templateId));
+        const toggle = (id: string) => set({ ...s, affixes: s.affixes.includes(id) ? s.affixes.filter((x) => x !== id) : [...s.affixes, id] });
+        return (
+          <>
+            <h3>词缀（可选，最多 {MAX_AFFIXES} 个）</h3>
+            <div class="cards">
+              {usable.map((a) => {
+                const on = s.affixes.includes(a.id);
+                return (
+                  <button type="button" key={a.id} class={`card ${on ? 'selected' : ''}`} aria-pressed={on} disabled={!on && s.affixes.length >= MAX_AFFIXES} onClick={() => toggle(a.id)}>
+                    <strong>{a.name}</strong>
+                    <span class="small">{a.text}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <p class="small muted">词缀只改对手的公开数值，不增加新招式。首轮提案，待验证。</p>
+          </>
+        );
+      })()}
 
       <div class="seed">
         <label>

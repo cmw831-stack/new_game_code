@@ -166,6 +166,10 @@ export interface FighterState {
   coldThreshold: number;
   /** 冻结保护期间的寒意上限。 */
   coldCapProtected: number;
+  /** 崩溃后轮末架势恢复下限，占上限的百分比（默认 40；“铁衣”为 30）。 */
+  crashFloorPct: number;
+  /** 本场公开词缀 ID（只用于敌方）。 */
+  affixes: string[];
 }
 
 export interface ScriptState {

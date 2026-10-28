@@ -15,7 +15,7 @@ import { CompareLesson, EditOneLesson, PageLesson, type Save } from './pages/Les
 const initial = loadArchive();
 
 export function App() {
-  const [setup, setSetup] = useState<Setup>({ arts: [...buildOf('cold_chain').arts], reserve: 0, enemyId: 'balanced_standard', seed: randomSeed() });
+  const [setup, setSetup] = useState<Setup>({ arts: [...buildOf('cold_chain').arts], reserve: 0, enemyId: 'balanced_standard', affixes: [], seed: randomSeed() });
   const [session, setSession] = useState<Session | null>(null);
   const [view, setView] = useState<'home' | 'workshop' | 'lessons'>('home');
   const [lesson, setLesson] = useState<LessonId | null>(null);

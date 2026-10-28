@@ -3,6 +3,7 @@
 
 import { compileArt, specProblems, type ArtSpec } from '../content/components.ts';
 import { CONTENT_VERSION, findArt, findEnemy, findWeapon } from '../content/catalog.ts';
+import { findAffix, MAX_AFFIXES } from '../content/affixes.ts';
 import type { ArtDef, ArtInstance, BattleState, EnemyConfig, FighterState, Limits, RuleParams, Side, StatusState, Weapon } from '../rules/types.ts';
 
 export const RULES_VERSION = 'rules-v1.9-phase1';
@@ -71,6 +72,8 @@ export interface EnemyInput {
   /** 手算用例的明确兵器输入，例如战斗细则 11.4 节“出招威力 8／6”。 */
   weapon?: Weapon;
   status?: Partial<StatusState>;
+  /** 公开词缀 ID（敌人细则第 9 章），最多 2 个，同名不叠加。 */
+  affixes?: string[];
 }
 
 export interface BattleInput {
@@ -148,7 +151,13 @@ function resolveArts(label: string, entries: (string | ArtSpec)[], weapon: Weapo
   return out;
 }
 
-function fighter(side: Side, name: string, r: { hp: number; hpMax: number; qi: number; qiMax: number; posture: number; postureMax: number }, weapon: Weapon, arts: ArtInstance[], reserve: number, status: Partial<StatusState> | undefined, freezeThreshold: number): FighterState {
+interface FighterTuning {
+  freezeThreshold: number;
+  crashFloorPct: number;
+  affixes: string[];
+}
+
+function fighter(side: Side, name: string, r: { hp: number; hpMax: number; qi: number; qiMax: number; posture: number; postureMax: number }, weapon: Weapon, arts: ArtInstance[], reserve: number, status: Partial<StatusState> | undefined, tune: FighterTuning): FighterState {
   return {
     side,
     name,
@@ -164,9 +173,26 @@ function fighter(side: Side, name: string, r: { hp: number; hpMax: number; qi: n
     status: { ...emptyStatus(), ...status },
     actionSeq: 0,
     basicUsedThisRound: false,
-    coldThreshold: freezeThreshold,
-    coldCapProtected: freezeThreshold - 1,
+    coldThreshold: tune.freezeThreshold,
+    coldCapProtected: tune.freezeThreshold - 1,
+    crashFloorPct: tune.crashFloorPct,
+    affixes: tune.affixes,
   };
+}
+
+/** 词缀的合法性：最多 2 个、同名不叠加、适用模板；引导配置与只循环开场段落的检查点不带词缀（敌人细则 9.1 节）。 */
+export function affixProblems(affixes: readonly string[], config: EnemyConfig): string[] {
+  const problems: string[] = [];
+  if (affixes.length === 0) return problems;
+  if (affixes.length > MAX_AFFIXES) problems.push(`每个敌人最多 ${MAX_AFFIXES} 个词缀`);
+  if (new Set(affixes).size !== affixes.length) problems.push('同名词缀不叠加');
+  if (config.fixedSegment) problems.push(`${config.name}是引导或教学配置，不带词缀`);
+  for (const id of affixes) {
+    const a = findAffix(id);
+    if (!a) problems.push(`未知词缀：${id}`);
+    else if (!a.templates.includes(config.templateId)) problems.push(`${a.name}不用于${config.name}`);
+  }
+  return problems;
 }
 
 export function createBattle(input: BattleInput): BattleState {
@@ -185,7 +211,8 @@ export function createBattle(input: BattleInput): BattleState {
   const pArts = resolveArts('玩家', pi.arts, pWeapon, problems, overrides);
 
   // 敌人
-  const ei = input.enemy;
+  const ei = { ...input.enemy };
+  const affixes = [...(ei.affixes ?? [])];
   const config = typeof ei.config === 'string' ? findEnemy(ei.config) : structuredClone(ei.config);
   if (!config) problems.push(`未知敌人配置 ID：${String(ei.config)}`);
   let eWeapon: Weapon | undefined;
@@ -198,6 +225,13 @@ export function createBattle(input: BattleInput): BattleState {
       eWeapon.base = { hp: eWeapon.base.hp + config.basePowerBonus.hp, posture: eWeapon.base.posture + config.basePowerBonus.posture };
     }
     eArts = resolveArts('敌人', config.artIds, eWeapon, problems, overrides);
+    affixProblems(affixes, config).forEach((m) => problems.push(m));
+    if (affixes.includes('AFX_COLD_BODY')) config.hpMax = Math.floor((config.hpMax * 9) / 10);
+    if (affixes.includes('AFX_IRON_GUARD')) config.postureMax += 4;
+    if (affixes.includes('AFX_LIGHT_STEP')) config.postureMax -= 2;
+    if (affixes.includes('AFX_DEEP_QI')) config.qi = Math.min(config.qiMax, config.qi + 4);
+    if (affixes.includes('AFX_HEAVY_HAND') && eWeapon) eWeapon.base = { hp: eWeapon.base.hp - 1, posture: eWeapon.base.posture + 2 };
+    if (affixes.includes('AFX_WEARY') && ei.hp === undefined) ei.hp = Math.floor((config.hpMax * 7) / 10);
     eRes = {
       hp: ei.hp ?? config.hpMax,
       hpMax: config.hpMax,
@@ -219,13 +253,19 @@ export function createBattle(input: BattleInput): BattleState {
   if (problems.length > 0 || !pWeapon || !config || !eWeapon) throw new ValidationError(problems);
 
   const limits: Limits = { ...DEFAULT_LIMITS, ...input.limits };
+  // 身轻：开场获得一份身法准备，第 1 轮末到期。
+  const enemyStatus: Partial<StatusState> | undefined = affixes.includes('AFX_LIGHT_STEP') ? { step: { expiresRound: 1 }, ...ei.status } : ei.status;
   return {
     rulesVersion: RULES_VERSION,
     contentVersion: CONTENT_VERSION,
     battleId: input.battleId ?? `battle-${input.seed}`,
     round: 1,
-    player: fighter('player', pi.name ?? '玩家', pi, pWeapon, pArts, reserve, pi.status, rules.freezeThreshold),
-    enemy: fighter('enemy', config.name, eRes, eWeapon, eArts, 0, ei.status, rules.freezeThreshold),
+    player: fighter('player', pi.name ?? '玩家', pi, pWeapon, pArts, reserve, pi.status, { freezeThreshold: rules.freezeThreshold, crashFloorPct: 40, affixes: [] }),
+    enemy: fighter('enemy', config.name, eRes, eWeapon, eArts, 0, enemyStatus, {
+      freezeThreshold: rules.freezeThreshold + (affixes.includes('AFX_COLD_BODY') ? 1 : 0),
+      crashFloorPct: affixes.includes('AFX_IRON_GUARD') ? 30 : 40,
+      affixes,
+    }),
     script: {
       configId: config.id,
       segments: config.segments,

@@ -13,7 +13,7 @@ import { GRANT_NAME } from './Lessons.tsx';
 
 function fresh(l: BattleLesson): Session {
   const state = createBattle({ battleId: `lesson/${l.id}`, seed: 1, player: structuredClone(l.player), enemy: l.enemy() });
-  return { setup: { arts: [], reserve: 0, enemyId: '', seed: 1 }, state, rounds: [] };
+  return { setup: { arts: [], reserve: 0, enemyId: '', affixes: [], seed: 1 }, state, rounds: [] };
 }
 
 export function LessonBattle({ lesson, onComplete, onExit }: { lesson: BattleLesson; onComplete: (id: LessonId) => void; onExit: () => void }) {

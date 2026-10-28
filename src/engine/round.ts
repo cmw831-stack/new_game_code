@@ -558,7 +558,7 @@ class RoundContext {
         this.emit('expire', side, null, { status: 'step' });
       }
       if (f.status.crashedThisRound) {
-        const floor = Math.floor((f.postureMax * 2) / 5);
+        const floor = Math.floor((f.postureMax * f.crashFloorPct) / 100);
         if (f.posture < floor) this.gainPosture(side, floor - f.posture, 'crashRecovery');
         f.status.crashedThisRound = false;
       }
