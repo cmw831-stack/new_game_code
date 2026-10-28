@@ -33,6 +33,8 @@ export interface Variant {
   enemyBaseHpBy?: Record<string, number>;
   /** 按敌人配置追加的武学（排在原有武学之后）。 */
   enemyArtsAdd?: Record<string, string[]>;
+  /** 敌人的公开词缀（敌人细则第 9 章）。 */
+  affixes?: string[];
 }
 
 export const BASELINE: Variant = { id: 'V0', name: '基线（V1.9）', enemyHpMul: 1, enemyBaseHp: 0, artOverrides: {}, rules: {} };
@@ -51,7 +53,7 @@ export function battleInput(build: { id: string; arts: FighterInput['arts'] }, e
       hp: START.hp, hpMax: 30, qi: v.playerQi ?? START.qi, qiMax: 20, posture: START.posture, postureMax: 20,
       weaponId: 'iron_sword', arts: build.arts, reserve: 0,
     },
-    enemy: { config, weapon },
+    enemy: { config, weapon, affixes: v.affixes ?? [] },
     artOverrides: v.artOverrides,
     rules: v.rules,
   };
