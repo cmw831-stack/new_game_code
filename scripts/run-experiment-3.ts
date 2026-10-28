@@ -6,8 +6,7 @@ import { execSync } from 'node:child_process';
 import { findEnemy } from '../src/content/catalog.ts';
 import { RULES_VERSION } from '../src/engine/setup.ts';
 import { BASELINE, MATRIX_ENEMIES, runCell, SEEDS, type CellResult, type Variant } from '../src/sim/matrix.ts';
-import { BUILDS, STRATEGIES, type Strategy } from '../src/sim/strategies.ts';
-import type { BattleState } from '../src/rules/types.ts';
+import { BUILDS, CAUTIOUS, STRATEGIES, type Strategy } from '../src/sim/strategies.ts';
 
 /** 通过标准，运行前写定（负责人试玩反馈：只要出招就会赢）。 */
 export const PASS = {
@@ -17,20 +16,6 @@ export const PASS = {
   floorWins: 18,
 };
 
-function upcoming(s: BattleState): 'attack' | 'guard' | 'breathe' {
-  return s.script.segments[s.script.segIndex]!.items[s.script.itemIndex]!.stance;
-}
-
-/** 第四种公开打法：敌方架招时调息而不是攻进去。只用于本实验。 */
-const CAUTIOUS: Strategy = {
-  id: 'cautious',
-  name: '谨慎读窗口',
-  rule: '敌方出招时架招；敌方调息时出招；敌方架招时调息。',
-  decide: (s) => {
-    const e = upcoming(s);
-    return { stance: e === 'attack' ? 'guard' : e === 'breathe' ? 'attack' : 'breathe' };
-  },
-};
 const ALL_STRATEGIES: Strategy[] = [...STRATEGIES, CAUTIOUS];
 
 const STARTER = { id: 'starter', arts: ['break_strike', 'return_breath'] };

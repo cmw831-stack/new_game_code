@@ -74,3 +74,14 @@ export const STRATEGIES: Strategy[] = [
     decide: (s) => (upcomingEnemyStance(s) === 'breathe' ? { stance: 'attack' } : { stance: 'guard' }),
   },
 ];
+
+/** 第四种公开打法（调参实验 3 引入）：敌方架招时调息而不是攻进去。 */
+export const CAUTIOUS: Strategy = {
+  id: 'cautious',
+  name: '谨慎读窗口',
+  rule: '敌方出招时架招；敌方调息时出招；敌方架招时调息。',
+  decide: (s) => {
+    const e = upcomingEnemyStance(s);
+    return { stance: e === 'attack' ? 'guard' : e === 'breathe' ? 'attack' : 'breathe' };
+  },
+};

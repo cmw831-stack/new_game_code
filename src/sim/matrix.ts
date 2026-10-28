@@ -1,7 +1,7 @@
 // 批量模拟：27 格构筑矩阵（执行契约 V1.1 第五章）与段落资源可行性检查。
 // 普通模拟没有研究、银两或材料结算。
 
-import { createBattle, OPENING_QI_CAP, type ArtOverrides, type BattleInput } from '../engine/setup.ts';
+import { createBattle, OPENING_QI_CAP, type ArtOverrides, type BattleInput, type FighterInput } from '../engine/setup.ts';
 import { findEnemy, findWeapon } from '../content/catalog.ts';
 import { runBattle } from '../engine/round.ts';
 import type { BattleEvent, EndReason, RuleParams } from '../rules/types.ts';
@@ -37,7 +37,7 @@ export interface Variant {
 
 export const BASELINE: Variant = { id: 'V0', name: '基线（V1.9）', enemyHpMul: 1, enemyBaseHp: 0, artOverrides: {}, rules: {} };
 
-export function battleInput(build: Pick<Build, 'id' | 'arts'>, enemy: string, seed: number, v: Variant = BASELINE): BattleInput {
+export function battleInput(build: { id: string; arts: FighterInput['arts'] }, enemy: string, seed: number, v: Variant = BASELINE): BattleInput {
   const config = findEnemy(enemy)!;
   config.hpMax = Math.round(config.hpMax * (v.enemyHpMulBy?.[enemy] ?? v.enemyHpMul));
   config.artIds.push(...(v.enemyArtsAdd?.[enemy] ?? []));
@@ -113,7 +113,7 @@ function metrics(seed: number, events: BattleEvent[], reason: EndReason, rounds:
   return { seed, reason, rounds, hpEnd, hpMin, qiNet: qiEnd - qiStart, damageBySource, enemyStarved, segments: segs.join('-') };
 }
 
-export function runOne(build: Pick<Build, 'id' | 'arts'>, enemy: string, strategy: Pick<Strategy, 'decide'>, seed: number, v: Variant = BASELINE): BattleMetrics {
+export function runOne(build: { id: string; arts: FighterInput['arts'] }, enemy: string, strategy: Pick<Strategy, 'decide'>, seed: number, v: Variant = BASELINE): BattleMetrics {
   const s0 = createBattle(battleInput(build, enemy, seed, v));
   const run = runBattle(s0, strategy.decide);
   const over = run.state.over!;
@@ -122,7 +122,7 @@ export function runOne(build: Pick<Build, 'id' | 'arts'>, enemy: string, strateg
 
 const avg = (xs: number[]): number => (xs.length === 0 ? 0 : xs.reduce((a, b) => a + b, 0) / xs.length);
 
-export function runCell(build: Build, enemy: string, strategy: Strategy, seeds: number[] = SEEDS, v: Variant = BASELINE): CellResult {
+export function runCell(build: { id: string; arts: FighterInput['arts'] }, enemy: string, strategy: Strategy, seeds: number[] = SEEDS, v: Variant = BASELINE): CellResult {
   const battles = seeds.map((seed) => runOne(build, enemy, strategy, seed, v));
   const wins = battles.filter((b) => b.reason === 'victory');
   const defeats = battles.filter((b) => b.reason === 'defeat').length;

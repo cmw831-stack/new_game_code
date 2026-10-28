@@ -1,0 +1,427 @@
+{
+  "commit": "8bb116e",
+  "rules": "rules-v1.9-phase1",
+  "seeds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020
+  ],
+  "q3": [
+    {
+      "option": "base",
+      "name": "原样",
+      "winRates": {
+        "always_attack": 0,
+        "read_windows": 0,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "cold_break@0",
+      "name": "叠寒剑 → 叠寒剑·破势",
+      "winRates": {
+        "always_attack": 0,
+        "read_windows": 1,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "cold_plain@0",
+      "name": "叠寒剑 → 叠寒剑·无劲",
+      "winRates": {
+        "always_attack": 0,
+        "read_windows": 0,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "break_strike@0",
+      "name": "叠寒剑 → 断势击",
+      "winRates": {
+        "always_attack": 0,
+        "read_windows": 1,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "borrow_force@0",
+      "name": "叠寒剑 → 借力诀",
+      "winRates": {
+        "always_attack": 0,
+        "read_windows": 0.1,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "wind_step@0",
+      "name": "叠寒剑 → 踏风步",
+      "winRates": {
+        "always_attack": 0.6,
+        "read_windows": 0.8,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "break_strike@1",
+      "name": "崩势追击 → 断势击",
+      "winRates": {
+        "always_attack": 0,
+        "read_windows": 0,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "borrow_force@1",
+      "name": "崩势追击 → 借力诀",
+      "winRates": {
+        "always_attack": 0,
+        "read_windows": 0,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    },
+    {
+      "option": "wind_step@1",
+      "name": "崩势追击 → 踏风步",
+      "winRates": {
+        "always_attack": 0.8,
+        "read_windows": 0,
+        "guard_first": 0,
+        "cautious": 0
+      }
+    }
+  ],
+  "q12": [
+    {
+      "option": "base",
+      "name": "原样",
+      "routeByPotion": [
+        0,
+        4,
+        19
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 0.95,
+        "rounds": 23.526315789473685,
+        "hpEnd": 2
+      }
+    },
+    {
+      "option": "break_combo@0",
+      "name": "断势击 → 断势击·连击",
+      "routeByPotion": [
+        7,
+        20,
+        20
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 1,
+        "rounds": 18.55,
+        "hpEnd": 7.8
+      }
+    },
+    {
+      "option": "borrow_force@0",
+      "name": "断势击 → 借力诀",
+      "routeByPotion": [
+        0,
+        20,
+        20
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 1,
+        "rounds": 18.25,
+        "hpEnd": 7
+      }
+    },
+    {
+      "option": "cold_sword@0",
+      "name": "断势击 → 叠寒剑",
+      "routeByPotion": [
+        8,
+        20,
+        20
+      ],
+      "guard": {
+        "strategy": "read_windows",
+        "winRate": 1,
+        "rounds": 11.35,
+        "hpEnd": 6
+      }
+    },
+    {
+      "option": "wind_step@0",
+      "name": "断势击 → 踏风步",
+      "routeByPotion": [
+        0,
+        6,
+        11
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 0.55,
+        "rounds": 45.63636363636363,
+        "hpEnd": 4.545454545454546
+      }
+    },
+    {
+      "option": "borrow_force@1",
+      "name": "崩势追击 → 借力诀",
+      "routeByPotion": [
+        0,
+        20,
+        20
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 1,
+        "rounds": 14.8,
+        "hpEnd": 11
+      }
+    },
+    {
+      "option": "cold_sword@1",
+      "name": "崩势追击 → 叠寒剑",
+      "routeByPotion": [
+        4,
+        20,
+        20
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 1,
+        "rounds": 16.7,
+        "hpEnd": 10
+      }
+    },
+    {
+      "option": "wind_step@1",
+      "name": "崩势追击 → 踏风步",
+      "routeByPotion": [
+        6,
+        19,
+        19
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 0.95,
+        "rounds": 30.736842105263158,
+        "hpEnd": 8.947368421052632
+      }
+    },
+    {
+      "option": "borrow_force@2",
+      "name": "归息诀 → 借力诀",
+      "routeByPotion": [
+        20,
+        20,
+        20
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 1,
+        "rounds": 13.25,
+        "hpEnd": 14
+      }
+    },
+    {
+      "option": "wind_step@2",
+      "name": "归息诀 → 踏风步",
+      "routeByPotion": [
+        19,
+        20,
+        20
+      ],
+      "guard": {
+        "strategy": "guard_first",
+        "winRate": 1,
+        "rounds": 23.8,
+        "hpEnd": 12.4
+      }
+    }
+  ],
+  "q12tune": [
+    {
+      "guardHp": 52,
+      "breakRoute": [
+        0,
+        4,
+        19
+      ],
+      "perBuild": [
+        {
+          "build": "cold_chain",
+          "attack": 0.35,
+          "best": 1,
+          "rounds": 11.35,
+          "hpEnd": 6
+        },
+        {
+          "build": "guard_counter",
+          "attack": 0.45,
+          "best": 1,
+          "rounds": 18.5,
+          "hpEnd": 15.65
+        },
+        {
+          "build": "guard_break",
+          "attack": 0,
+          "best": 0.95,
+          "rounds": 23.526315789473685,
+          "hpEnd": 2
+        }
+      ]
+    },
+    {
+      "guardHp": 50,
+      "breakRoute": [
+        0,
+        4,
+        19
+      ],
+      "perBuild": [
+        {
+          "build": "cold_chain",
+          "attack": 0.55,
+          "best": 1,
+          "rounds": 10.25,
+          "hpEnd": 6.8
+        },
+        {
+          "build": "guard_counter",
+          "attack": 0.45,
+          "best": 1,
+          "rounds": 17.5,
+          "hpEnd": 6.85
+        },
+        {
+          "build": "guard_break",
+          "attack": 0,
+          "best": 0.95,
+          "rounds": 23.526315789473685,
+          "hpEnd": 2
+        }
+      ]
+    },
+    {
+      "guardHp": 48,
+      "breakRoute": [
+        0,
+        18,
+        20
+      ],
+      "perBuild": [
+        {
+          "build": "cold_chain",
+          "attack": 0.55,
+          "best": 1,
+          "rounds": 10.25,
+          "hpEnd": 7.7
+        },
+        {
+          "build": "guard_counter",
+          "attack": 0.6,
+          "best": 1,
+          "rounds": 16.05,
+          "hpEnd": 16.75
+        },
+        {
+          "build": "guard_break",
+          "attack": 0,
+          "best": 1,
+          "rounds": 20.55,
+          "hpEnd": 5.6
+        }
+      ]
+    },
+    {
+      "guardHp": 46,
+      "breakRoute": [
+        0,
+        18,
+        20
+      ],
+      "perBuild": [
+        {
+          "build": "cold_chain",
+          "attack": 0.55,
+          "best": 1,
+          "rounds": 9.2,
+          "hpEnd": 9.1
+        },
+        {
+          "build": "guard_counter",
+          "attack": 0.6,
+          "best": 1,
+          "rounds": 15.75,
+          "hpEnd": 8.55
+        },
+        {
+          "build": "guard_break",
+          "attack": 0,
+          "best": 1,
+          "rounds": 20.55,
+          "hpEnd": 5.6
+        }
+      ]
+    },
+    {
+      "guardHp": 44,
+      "breakRoute": [
+        0,
+        18,
+        20
+      ],
+      "perBuild": [
+        {
+          "build": "cold_chain",
+          "attack": 1,
+          "best": 1,
+          "rounds": 9.2,
+          "hpEnd": 9.1
+        },
+        {
+          "build": "guard_counter",
+          "attack": 0.65,
+          "best": 1,
+          "rounds": 15.75,
+          "hpEnd": 9.75
+        },
+        {
+          "build": "guard_break",
+          "attack": 0.45,
+          "best": 1,
+          "rounds": 20.55,
+          "hpEnd": 5.6
+        }
+      ]
+    }
+  ]
+}
