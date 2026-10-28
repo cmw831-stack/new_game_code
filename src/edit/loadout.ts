@@ -3,6 +3,7 @@
 // 界面在开打前调用本检查逐项说明原因；createBattle 仍是最终校验。
 
 import { findArt, findWeapon } from '../content/catalog.ts';
+import type { ArtDef } from '../rules/types.ts';
 import { isSwordOnly, MAX_ARTS, MAX_CAPACITY } from '../engine/setup.ts';
 
 /** Phase 2 先行六门（教学细则 V1.2 第一章）。 */
@@ -26,6 +27,8 @@ export interface LoadoutInput {
   weaponId: string;
   /** 已取得的武学 ID。 */
   acquired: readonly string[];
+  /** 玩家保存的秘籍版本（已编译）；按版本 ID 装备，视为已取得。 */
+  custom?: readonly ArtDef[];
 }
 
 export interface LoadoutCheck {
@@ -45,12 +48,13 @@ export function checkLoadout(input: LoadoutInput): LoadoutCheck {
     problems.push({ kind: 'tooMany', message: `最多装备 ${MAX_ARTS} 门武学，当前 ${input.arts.length} 门` });
   }
 
-  const acquired = new Set(input.acquired);
+  const custom = new Map((input.custom ?? []).map((a) => [a.id, a]));
+  const acquired = new Set([...input.acquired, ...custom.keys()]);
   const seen = new Set<string>();
   const parts: string[] = [];
   let capacity = weapon?.capacity ?? 0;
   input.arts.forEach((id, slot) => {
-    const art = findArt(id);
+    const art = custom.get(id) ?? findArt(id);
     if (!art) {
       problems.push({ kind: 'unknownArt', slot, message: `第 ${slot + 1} 位：未知武学 ${id}` });
       return;

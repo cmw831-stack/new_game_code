@@ -126,6 +126,15 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .change-list li { display: flex; gap: 4px; align-items: center; }
 .change-list li span { min-width: 6em; }
 
+.five { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 6px; }
+.five li { display: flex; gap: 10px; align-items: center; }
+.five li button { min-width: 4.5em; }
+.five li.on button { border-color: var(--vermilion); color: var(--vermilion); }
+.savebox { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 10px 0; }
+.savebox input, .savebox select { font: inherit; color: inherit; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; margin-left: 6px; max-width: 14em; }
+.filepick { position: relative; overflow: hidden; cursor: pointer; }
+.filepick input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
 .seed { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 20px 0; }
 .seed input { width: 8em; font: inherit; color: inherit; background: var(--paper-2); border: 1px solid var(--line); padding: 4px 6px; border-radius: 4px; }
 

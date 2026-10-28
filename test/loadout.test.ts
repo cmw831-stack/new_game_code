@@ -80,3 +80,13 @@ test('检查通过的构筑 createBattle 一定接受；不通过的（除未取
     else assert.throws(run, arts.join('、'));
   }
 });
+
+test('保存的秘籍版本按版本 ID 装备，计入容量与剑类限制（主计划 9.1 节；组件细则第八章教学寒劲破势容量 6）', async () => {
+  const { compileArt } = await import('../src/content/components.ts');
+  const { findTemplate, replaceSlot } = await import('../src/edit/variant.ts');
+  const art = compileArt(replaceSlot(findTemplate('cold_sword')!, 'action', { id: 'A_break', tier: '甲' }, 'm1@v1'));
+  const r = checkLoadout({ arts: ['m1@v1', 'break_chase', 'return_breath'], weaponId: 'iron_sword', acquired: STARTER_ART_IDS, custom: [art] });
+  assert.equal(r.capacity, 12);
+  assert.deepEqual(r.problems.map((p) => p.kind), ['notAcquired'], '崩势追击未取得；自己的秘籍视为已取得');
+  assert.deepEqual(checkLoadout({ arts: ['m1@v1'], weaponId: 'iron_blade', acquired: [], custom: [art] }).problems.map((p) => p.kind), ['swordOnly']);
+});

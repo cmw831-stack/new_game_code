@@ -1,4 +1,4 @@
-import { artName } from '../../../src/narrate/narrate.ts';
+import { artName, battleNames } from '../../../src/narrate/narrate.ts';
 import { RoundLog } from '../components/RoundLog.tsx';
 import { enemyName, loadoutName, tally, type Session } from '../lab.ts';
 
@@ -14,7 +14,7 @@ export function Result({ session, onRetry, onNewSeed, onHome }: { session: Sessi
   const { state, setup, rounds } = session;
   const over = state.over!;
   const t = tally(rounds);
-  const names = { player: '你', enemy: state.enemy.name };
+  const names = battleNames(state);
   const totalTaken = t.taken.reduce((n, [, v]) => n + v, 0);
   return (
     <section class="result">
@@ -25,11 +25,11 @@ export function Result({ session, onRetry, onNewSeed, onHome }: { session: Sessi
       <div class="columns">
         <div>
           <h2>你的伤害来自</h2>
-          <ul class="tally">{t.dealt.map(([k, v]) => <li key={k}>{artName(k === 'basic' ? null : k)}：{v}</li>)}</ul>
+          <ul class="tally">{t.dealt.map(([k, v]) => <li key={k}>{artName(k === 'basic' ? null : k, names.arts)}：{v}</li>)}</ul>
         </div>
         <div>
           <h2>你受的伤来自</h2>
-          {totalTaken === 0 ? <p class="small muted">一点伤都没受。</p> : <ul class="tally">{t.taken.map(([k, v]) => <li key={k}>{artName(k === 'basic' ? null : k)}：{v}</li>)}</ul>}
+          {totalTaken === 0 ? <p class="small muted">一点伤都没受。</p> : <ul class="tally">{t.taken.map(([k, v]) => <li key={k}>{artName(k === 'basic' ? null : k, names.arts)}：{v}</li>)}</ul>}
         </div>
       </div>
       <div class="actions">

@@ -55,3 +55,21 @@ test('默认层：变招写明调整了什么、本场还剩几次（战斗细�
   assert.equal(line({ priority: ['break_chase', 'cold_sword'] }), '你变招：本轮优先级改为 崩势追击 → 叠寒剑（本场还剩 1 次）');
   assert.equal(line({ reserve: 4 }), '你变招：本轮留力改为 4（本场还剩 1 次）');
 });
+
+test('组件中文名：档位跟在名后，空槽显示“无”（组件细则第三章、教学细则 4.2 节线框“主招[三连 → 破势]”）', async () => {
+  const { componentLabel } = await import('../src/narrate/narrate.ts');
+  assert.equal(componentLabel('A_break:甲'), '破势甲');
+  assert.equal(componentLabel('M_cold'), '寒劲');
+  assert.equal(componentLabel('T_qi:8'), '内力升过阈值 8');
+  assert.equal(componentLabel(null), '无');
+});
+
+test('因果记录用秘籍自己的名字，而不是版本 ID（主计划 9.1 节：名称负责展示）', async () => {
+  const { battleNames } = await import('../src/narrate/narrate.ts');
+  const { findTemplate, replaceSlot } = await import('../src/edit/variant.ts');
+  const spec = { ...replaceSlot(findTemplate('cold_sword')!, 'action', { id: 'A_break', tier: '甲' }, 'm1@v1'), name: '寒锋' };
+  const s0 = battle18(player([spec], { qi: 8 }), { config: fixture({ hpMax: 30, postureMax: 10 }) });
+  const text = narrate(round(s0).events, battleNames(s0)).map((l) => l.text);
+  assert.ok(text.some((t) => t.startsWith('你·寒锋（付 4 内力）')), text.join('\n'));
+  assert.ok(!text.some((t) => t.includes('m1@v1')), text.join('\n'));
+});

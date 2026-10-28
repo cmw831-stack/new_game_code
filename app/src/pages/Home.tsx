@@ -1,11 +1,17 @@
-import { useState } from 'preact/hooks';
-import { findArt } from '../../../src/content/catalog.ts';
+import type { LabArchive } from '../../../src/edit/manual.ts';
 import { describeArt } from '../../../src/narrate/narrate.ts';
-import { ACQUIRED_ART_IDS, BUILD_OPTIONS, checkArts, ENEMY_OPTIONS, loadoutName, randomSeed, type Setup } from '../lab.ts';
+import { ACQUIRED_ART_IDS, artOf, BUILD_OPTIONS, checkArts, ENEMY_OPTIONS, loadoutName, randomSeed, usableVersions, type Setup } from '../lab.ts';
 
-export function Home({ setup, onStart }: { setup: Setup; onStart: (s: Setup) => void }) {
-  const [s, set] = useState(setup);
-  const check = checkArts(s.arts);
+export function Home({ setup, archive, onChange, onStart, onWorkshop }: {
+  setup: Setup;
+  archive: LabArchive;
+  onChange: (s: Setup) => void;
+  onStart: (s: Setup) => void;
+  onWorkshop: () => void;
+}) {
+  const s = setup;
+  const set = onChange;
+  const check = checkArts(s.arts, archive);
   const setArts = (arts: string[]) => set({ ...s, arts });
   const move = (i: number, d: -1 | 1) => {
     const arts = [...s.arts];
@@ -13,7 +19,7 @@ export function Home({ setup, onStart }: { setup: Setup; onStart: (s: Setup) => 
     setArts(arts);
   };
   const slotProblems = (i: number) => check.problems.filter((p) => p.slot === i);
-  const unequipped = ACQUIRED_ART_IDS.filter((id) => !s.arts.includes(id));
+  const unequipped = [...ACQUIRED_ART_IDS, ...usableVersions(archive).map((v) => v.spec.id)].filter((id) => !s.arts.includes(id));
   const slots = Array.from({ length: check.maxArts }, (_, i) => s.arts[i]);
 
   return (
@@ -33,6 +39,7 @@ export function Home({ setup, onStart }: { setup: Setup; onStart: (s: Setup) => 
           );
         })}
         <button type="button" class="ghost small" onClick={() => setArts([])} disabled={s.arts.length === 0}>清空</button>
+        <button type="button" class="ghost small" onClick={onWorkshop}>武学工坊：改良与残页</button>
       </div>
 
       <div class="loadout">
@@ -48,7 +55,7 @@ export function Home({ setup, onStart }: { setup: Setup; onStart: (s: Setup) => 
         <ol class="slots">
           {slots.map((id, i) => {
             if (!id) return <li class="slot empty" key={`empty-${i}`}><span class="slot-no">{i + 1}</span><span class="muted">空位</span></li>;
-            const art = findArt(id);
+            const art = artOf(id, archive);
             const bad = slotProblems(i);
             return (
               <li class={`slot ${bad.length ? 'bad' : ''}`} key={id + i}>
@@ -91,7 +98,7 @@ export function Home({ setup, onStart }: { setup: Setup; onStart: (s: Setup) => 
             <h3>已取得、未装备</h3>
             <ul class="arts">
               {unequipped.map((id) => {
-                const art = findArt(id)!;
+                const art = artOf(id, archive)!;
                 const full = s.arts.length >= check.maxArts;
                 const after = check.capacity + art.capacity;
                 return (

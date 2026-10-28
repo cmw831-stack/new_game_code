@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { peekIntent } from '../../../src/engine/round.ts';
-import { describeArt, STANCE_NAME } from '../../../src/narrate/narrate.ts';
+import { battleNames, describeArt, STANCE_NAME } from '../../../src/narrate/narrate.ts';
 import { STRATEGIES } from '../../../src/sim/strategies.ts';
 import type { Stance } from '../../../src/rules/types.ts';
 import { FighterCard } from '../components/FighterCard.tsx';
@@ -29,7 +29,7 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
   const change = effectiveChange(state, pending);
   const intent = useMemo(() => peekIntent(state), [state]);
   const previews = useMemo(() => STANCES.map((s) => preview(state, s, change)), [state, change]);
-  const names = { player: '你', enemy: state.enemy.name };
+  const names = battleNames(state);
 
   const commit = (stance: Stance) => {
     setChosen(null);

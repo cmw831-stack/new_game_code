@@ -2,11 +2,19 @@
 // 依据：教学与界面细则 V1.2 第 4.4 节（停招原因必须区分，不能都写成“发动失败”）。
 
 import { findArt } from '../content/catalog.ts';
-import type { ActionDef, ArtDef, BattleEvent, Side, Stance, TriggerDef } from '../rules/types.ts';
+import type { ActionDef, ArtDef, BattleEvent, BattleState, Side, Stance, TriggerDef } from '../rules/types.ts';
 
 export interface Names {
   player: string;
   enemy: string;
+  /** 不在内容目录里的武学（玩家保存的秘籍版本）的名称。 */
+  arts?: Record<string, string>;
+}
+
+/** 一场对局的显示名称，包括双方装备的全部武学。 */
+export function battleNames(state: BattleState, player = '你'): Names {
+  const arts = Object.fromEntries([...state.player.arts, ...state.enemy.arts].map((a) => [a.art.id, a.art.name]));
+  return { player, enemy: state.enemy.name, arts };
 }
 
 export type Tone = 'player' | 'enemy' | 'neutral' | 'warn' | 'end';
@@ -36,20 +44,20 @@ const END_REASON: Record<string, string> = {
   noDecision: '没有提供下一轮决策',
 };
 
-export function artName(id: string | null): string {
+export function artName(id: string | null, arts?: Record<string, string>): string {
   if (!id) return '基础出招';
   const followup = id.endsWith(':followup');
   const base = followup ? id.slice(0, -':followup'.length) : id;
-  const name = findArt(base)?.name ?? base;
+  const name = arts?.[base] ?? findArt(base)?.name ?? base;
   return followup ? `${name}·变化` : name;
 }
 
 /** 变招说明：调整了什么，本场还剩几次。 */
-function changeText(d: BattleEvent['data']): string {
+function changeText(d: BattleEvent['data'], arts?: Record<string, string>): string {
   const v = d.value as string | number;
   const what =
-    d.adjust === 'pause' ? `本轮暂停${artName(v as string)}`
-    : d.adjust === 'priority' ? `本轮优先级改为 ${(v as string).split(',').map(artName).join(' → ')}`
+    d.adjust === 'pause' ? `本轮暂停${artName(v as string, arts)}`
+    : d.adjust === 'priority' ? `本轮优先级改为 ${(v as string).split(',').map((id) => artName(id, arts)).join(' → ')}`
     : `本轮留力改为 ${v}`;
   return `变招：${what}（本场还剩 ${d.changesLeft} 次）`;
 }
@@ -104,7 +112,7 @@ export function narrate(events: BattleEvent[], names: Names): Line[] {
         lines.push({ seq: e.seq, tone: 'neutral', text: `${names.enemy}下一段套路已定：${e.data.next}「${e.data.nextName}」` });
         break;
       case 'change':
-        lines.push({ seq: e.seq, tone: 'player', text: `${name}${changeText(e.data)}` });
+        lines.push({ seq: e.seq, tone: 'player', text: `${name}${changeText(e.data, names.arts)}` });
         break;
       case 'freezeSkip':
         lines.push({ seq: e.seq, tone: 'warn', text: `${name}被冻结，跳过本轮${STANCE_NAME[e.data.stance as Stance]}` });
@@ -121,7 +129,7 @@ export function narrate(events: BattleEvent[], names: Names): Line[] {
         const evs = byCast.get(e.cast!) ?? [];
         const cost = e.data.cost as number;
         const summary = hitSummary(evs);
-        lines.push({ seq: e.seq, tone: tone(e.side), text: `${name}·${artName(e.art)}${cost > 0 ? `（付 ${cost} 内力）` : ''}${summary ? `：${summary}` : ''}` });
+        lines.push({ seq: e.seq, tone: tone(e.side), text: `${name}·${artName(e.art, names.arts)}${cost > 0 ? `（付 ${cost} 内力）` : ''}${summary ? `：${summary}` : ''}` });
         break;
       }
       case 'qi':
@@ -129,7 +137,7 @@ export function narrate(events: BattleEvent[], names: Names): Line[] {
         break;
       case 'skip': {
         const reason = SKIP_REASON[e.data.reason as string]?.(e.data) ?? String(e.data.reason);
-        lines.push({ seq: e.seq, tone: 'warn', text: `${name}·${artName(e.art)}没有发动：${reason}` });
+        lines.push({ seq: e.seq, tone: 'warn', text: `${name}·${artName(e.art, names.arts)}没有发动：${reason}` });
         break;
       }
       case 'death':
@@ -152,19 +160,19 @@ export function describeEvent(e: BattleEvent, names: Names): string {
   const head = `#${e.seq} 根${e.root ?? '—'}${e.depth > 0 ? ` 深${e.depth}` : ''}`;
   const body = (() => {
     switch (e.type) {
-      case 'intent': return `敌方意图：${STANCE_NAME[d.stance as Stance]}（段落 ${d.segment} 第 ${(d.item as number) + 1} 项${d.disabled ? `，禁用 ${String(d.disabled).split(',').map(artName).join('、')}` : ''}）`;
+      case 'intent': return `敌方意图：${STANCE_NAME[d.stance as Stance]}（段落 ${d.segment} 第 ${(d.item as number) + 1} 项${d.disabled ? `，禁用 ${String(d.disabled).split(',').map((id) => artName(id, names.arts)).join('、')}` : ''}）`;
       case 'segmentDraw': return `抽取下一段落：${d.from} → ${d.next}「${d.nextName}」`;
       case 'decision': return `你承诺：${STANCE_NAME[d.stance as Stance]}`;
       case 'guard': return `${name}架招，架势 ${d.postureBefore} → ${d.postureAfter}，取得护势`;
       case 'freezeSkip': return `${name}被冻结跳过第 ${d.seq} 次基础行动`;
-      case 'qi': return `${name}内力 ${d.before} → ${d.after}（${d.source === 'regen' ? '轮初恢复' : d.source === 'breathe' ? '调息' : artName(d.source as string)}）`;
+      case 'qi': return `${name}内力 ${d.before} → ${d.after}（${d.source === 'regen' ? '轮初恢复' : d.source === 'breathe' ? '调息' : artName(d.source as string, names.arts)}）`;
       case 'posture': return `${name}架势 ${d.before} → ${d.after}（${d.source === 'crashRecovery' ? '崩溃后轮末恢复' : d.source}）`;
       case 'basicAttack': return `${name}基础出招`;
-      case 'cast': return `${name}发动 ${artName(e.art)}`;
+      case 'cast': return `${name}发动 ${artName(e.art, names.arts)}`;
       case 'pay': return `${name}支付 ${d.cost} 内力（${d.before} → ${d.after}）`;
-      case 'skip': return `${name}的 ${artName(e.art)} 未发动：${SKIP_REASON[d.reason as string]?.(d) ?? d.reason}`;
+      case 'skip': return `${name}的 ${artName(e.art, names.arts)} 未发动：${SKIP_REASON[d.reason as string]?.(d) ?? d.reason}`;
       case 'dodge': return `${name}以身法闪开第 ${(d.hitIndex as number) + 1} 击`;
-      case 'hit': return `${artName(e.art)} 第 ${(d.hitIndex as number) + 1} 击：威力 ${d.hpPower}／${d.posturePower}${d.blocked ? '，被格挡' : ''}，实际 ${d.hp} 气血、${d.posture} 架势（对方剩 ${d.targetHp}／${d.targetPosture}）`;
+      case 'hit': return `${artName(e.art, names.arts)} 第 ${(d.hitIndex as number) + 1} 击：威力 ${d.hpPower}／${d.posturePower}${d.blocked ? '，被格挡' : ''}，实际 ${d.hp} 气血、${d.posture} 架势（对方剩 ${d.targetHp}／${d.targetPosture}）`;
       case 'block': return `${name}护势格挡`;
       case 'crash': return `${name}架势崩溃`;
       case 'opening': return `${name}取得破绽`;
@@ -175,13 +183,13 @@ export function describeEvent(e: BattleEvent, names: Names): string {
       case 'ward': return `${name}取得护势`;
       case 'wardConsumed': return `${name}的护势已消费`;
       case 'step': return `${name}取得身法准备`;
-      case 'mainEnd': return `${artName(e.art)} 结束：有效接触 ${d.contacts}，伤血 ${d.hp}`;
-      case 'complete': return `${artName(e.art)} 完成`;
+      case 'mainEnd': return `${artName(e.art, names.arts)} 结束：有效接触 ${d.contacts}，伤血 ${d.hp}`;
+      case 'complete': return `${artName(e.art, names.arts)} 完成`;
       case 'death': return `${name}气血归零`;
       case 'expire': return `${name}的${d.status === 'ward' ? '护势' : '身法准备'}到期`;
       case 'roundEnd': return `第 ${d.round} 轮结束`;
       case 'battleEnd': return END_REASON[d.reason as string] ?? String(d.reason);
-      case 'change': return `${name}${changeText(d)}`;
+      case 'change': return `${name}${changeText(d, names.arts)}`;
     }
   })();
   return `${head}　${body}`;
@@ -226,4 +234,25 @@ export function describeArt(art: ArtDef): string {
   if (art.recovery) parts.push(art.recovery.kind === 'qiOnHpDamage' ? `造成气血伤害后回气 ${art.recovery.amount}` : `完成后架势 +${art.recovery.amount}`);
   if (art.perRound) parts.push('每轮一次');
   return parts.join('；');
+}
+
+// ---------- 组件名称 ----------
+
+const COMPONENT_NAME: Record<string, string> = {
+  T_contact: '基础出招接触', T_dodge: '闪避成功', T_block: '格挡成功', T_break: '对方架势崩溃', T_qi: '内力升过阈值', T_status: '对方状态',
+  A_single: '单击', A_combo: '连击', A_heavy: '重击', A_break: '破势', A_ward: '护势准备', A_step: '身法', A_qi: '回气', A_counter: '反击',
+  M_gang: '刚劲', M_soft: '柔劲', M_cold: '寒劲', M_shock: '震劲',
+  F_hit_single: '伤血后单击', F_freeze_combo: '冻结追击',
+  R_qi: '伤血回气', R_posture: '复架势',
+};
+
+/** 组件库条目或槽值的中文名，例如 "A_break:甲" → "破势甲"，null → "无"。 */
+export function componentLabel(key: string | null): string {
+  if (key === null) return '无';
+  const [id, param] = key.split(':');
+  const name = COMPONENT_NAME[id!] ?? id!;
+  if (param === undefined) return name;
+  if (param === 'cold2') return `${name}（寒意跨 2）`;
+  if (param === 'freeze') return `${name}（冻结出现）`;
+  return /^\d+$/.test(param) ? `${name} ${param}` : `${name}${param}`;
 }

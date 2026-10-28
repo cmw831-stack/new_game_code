@@ -5,7 +5,10 @@ import { createBattle, OPENING_QI_CAP } from '../../src/engine/setup.ts';
 import { runRound } from '../../src/engine/round.ts';
 import { BUILDS } from '../../src/sim/strategies.ts';
 import { checkLoadout, LAB_ART_IDS, type LoadoutCheck } from '../../src/edit/loadout.ts';
-import type { BattleEvent, BattleState, Decision, Stance } from '../../src/rules/types.ts';
+import { findVersion, versionProblems, type LabArchive, type ManualVersion } from '../../src/edit/manual.ts';
+import type { EditResearch } from '../../src/edit/variant.ts';
+import { compileArt } from '../../src/content/components.ts';
+import type { ArtDef, BattleEvent, BattleState, Decision, Stance } from '../../src/rules/types.ts';
 
 export interface BuildOption {
   id: string;
@@ -28,8 +31,29 @@ export const LAB_WEAPON_ID = 'iron_sword';
  */
 export const ACQUIRED_ART_IDS: readonly string[] = LAB_ART_IDS;
 
-export function checkArts(arts: readonly string[]): LoadoutCheck {
-  return checkLoadout({ arts, weaponId: LAB_WEAPON_ID, acquired: ACQUIRED_ART_IDS });
+/**
+ * 改良权限。M3 接入授业之前，实验室按教学授业 grant_edit_intro_v1 的结果开放：
+ * 断势击、叠寒剑精通，组件库有破势甲与连击乙（组件细则 V1.2 7.2 节“教学先授”）。
+ */
+export const LAB_RESEARCH: EditResearch = { mastered: ['break_strike', 'cold_sword'], library: ['A_break:甲', 'A_combo:乙'] };
+
+/** 当前规则下可以装备的已存版本。 */
+export function usableVersions(archive: LabArchive): ManualVersion[] {
+  return archive.versions.filter((v) => versionProblems(v).length === 0);
+}
+
+export function customArts(archive: LabArchive): ArtDef[] {
+  return usableVersions(archive).map((v) => compileArt(v.spec));
+}
+
+/** 武学 ID 或秘籍版本 ID 对应的武学。 */
+export function artOf(id: string, archive: LabArchive): ArtDef | undefined {
+  const v = findVersion(archive, id);
+  return v ? compileArt(v.spec) : findArt(id);
+}
+
+export function checkArts(arts: readonly string[], archive: LabArchive): LoadoutCheck {
+  return checkLoadout({ arts, weaponId: LAB_WEAPON_ID, acquired: ACQUIRED_ART_IDS, custom: customArts(archive) });
 }
 
 /** 与某套预设完全相同（含优先级）时用预设名，否则是自由组合。 */
@@ -86,11 +110,12 @@ export function enemyName(id: string): string {
 }
 
 /** 建立一场实验室对局：玩家满气血、满架势，开场内力按 V1.9 上限 10。构筑须先通过 checkArts。 */
-export function startSession(setup: Setup): Session {
+export function startSession(setup: Setup, archive: LabArchive): Session {
+  const arts = setup.arts.map((id) => findVersion(archive, id)?.spec ?? id);
   const state = createBattle({
     battleId: `lab/${setup.arts.join('+') || 'none'}/${setup.enemyId}/${setup.seed}`,
     seed: setup.seed,
-    player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: LAB_WEAPON_ID, arts: setup.arts, reserve: setup.reserve },
+    player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: LAB_WEAPON_ID, arts, reserve: setup.reserve },
     enemy: { config: setup.enemyId },
   });
   return { setup, state, rounds: [] };
