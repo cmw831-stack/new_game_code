@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-本文件给在本仓库工作的 Claude 会话看。每次开始工作前先读本文件和 [PROGRESS.md](PROGRESS.md)。
+本文件给在本仓库工作的 Claude 会话看。每次开始工作前先读本文件、[PROGRESS.md](PROGRESS.md) 和[持续开发目标](docs/plans/goal.md)。
 
 ## 项目
 
@@ -25,7 +25,7 @@ docs/
   design/      正式策划书与配套资料（每个版本一个文件，旧版本保留）
   proposals/   评审提案、修订指令（不是正式规则）
   engine/      引擎实现说明（解释口径、运行方式）
-  plans/       阶段计划（范围、技术方案、里程碑）
+  plans/       阶段计划（范围、技术方案、里程碑）；goal.md 是持续开发目标
   reports/     模拟报告与原始数据
 app/           构筑实验室网页（Vite＋Preact），直接引用 src/ 的规则引擎
 src/
