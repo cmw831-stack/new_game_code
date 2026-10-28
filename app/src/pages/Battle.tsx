@@ -4,6 +4,7 @@ import { battleNames, describeArt, STANCE_NAME } from '../../../src/narrate/narr
 import { STRATEGIES } from '../../../src/sim/strategies.ts';
 import type { Stance } from '../../../src/rules/types.ts';
 import { FighterCard } from '../components/FighterCard.tsx';
+import { STANCE_GLYPH } from '../glyphs.ts';
 import { IntentPanel } from '../components/IntentPanel.tsx';
 import { RoundLog } from '../components/RoundLog.tsx';
 import { ChangePanel, effectiveChange, type Change } from '../components/ChangePanel.tsx';
@@ -100,7 +101,7 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
               onClick={() => setChosen(p.stance)}
               aria-pressed={chosen === p.stance}
             >
-              <span class="stance-name"><kbd>{i + 1}</kbd> {STANCE_NAME[p.stance]}</span>
+              <span class="stance-name"><span class={`glyph ${p.stance}`} aria-hidden="true">{STANCE_GLYPH[p.stance]}</span><kbd>{i + 1}</kbd> {STANCE_NAME[p.stance]}</span>
               <span class="small">你：气血 {delta(state.player.hp, p.player.hp)}，内力 {delta(state.player.qi, p.player.qi)}，架势 {delta(state.player.posture, p.player.posture)}</span>
               <span class="small">对手：气血 {delta(state.enemy.hp, p.enemy.hp)}，架势 {delta(state.enemy.posture, p.enemy.posture)}</span>
               {p.outcome && <span class={`chip ${p.outcome === 'victory' ? 'good' : 'warn'}`}>{p.outcome === 'victory' ? '本轮获胜' : '本轮败退'}</span>}

@@ -60,7 +60,12 @@
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  /* 纸纹：两层极淡的墨晕，不影响文字对比。 */
+  background-image:
+    radial-gradient(ellipse at 12% 8%, color-mix(in srgb, var(--ink) 5%, transparent), transparent 55%),
+    radial-gradient(ellipse at 88% 92%, color-mix(in srgb, var(--ink) 4%, transparent), transparent 50%);
+  background-attachment: fixed;
   color: var(--ink);
   font: 1rem/1.6 "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
 }
@@ -73,12 +78,24 @@ body {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 
-.top { display: flex; align-items: baseline; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.top { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.seal { display: inline-grid; place-items: center; width: 1.9em; height: 1.9em; border: 2px solid currentColor; border-radius: 4px; font-weight: 700; line-height: 1; flex-shrink: 0; }
+.brand-seal { color: var(--vermilion); background: color-mix(in srgb, var(--vermilion) 10%, transparent); transform: rotate(-4deg); }
+.seal.attack { color: var(--vermilion); }
+.seal.guard { color: var(--jade); }
+.seal.breathe { color: var(--indigo); }
+.glyph { display: inline-block; font-size: 1.6rem; line-height: 1; margin-right: 8px; vertical-align: -0.15em; opacity: 0.85; }
+.glyph.attack { color: var(--vermilion); }
+.glyph.guard { color: var(--jade); }
+.glyph.breathe { color: var(--indigo); }
+.chip-glyph { display: inline-block; margin-right: 4px; font-weight: 700; }
 .brand { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.08em; }
 .tag { color: var(--vermilion); font-size: 0.8125rem; }
 
-h1 { font-size: 1.625rem; margin: 24px 0 8px; }
-h2 { font-size: 1.125rem; margin: 24px 0 8px; }
+h1 { font-size: 1.625rem; margin: 24px 0 8px; letter-spacing: 0.04em; }
+h2 { font-size: 1.125rem; margin: 24px 0 8px; padding-bottom: 4px; letter-spacing: 0.04em;
+  /* 一笔淡墨：从浓到淡的下划线。 */
+  background: linear-gradient(90deg, var(--ink) 0, color-mix(in srgb, var(--ink) 25%, transparent) 30%, transparent 70%) left bottom / 100% 2px no-repeat; }
 .lead { color: var(--ink-2); max-width: 46em; }
 .small { font-size: 0.8125rem; }
 .muted { color: var(--ink-2); }
@@ -94,7 +111,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .ghost.small { padding: 2px 8px; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
-.card { text-align: left; display: flex; flex-direction: column; gap: 4px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; padding: 12px; }
+.card { text-align: left; display: flex; flex-direction: column; gap: 4px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; padding: 12px; box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 8%, transparent); }
 .card.selected { border-color: var(--vermilion); box-shadow: inset 3px 0 0 var(--vermilion); }
 
 .arts { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 8px; }
@@ -168,7 +185,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .battle-bar button { margin-left: auto; }
 
 .field { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.fighter { background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; padding: 12px; }
+.fighter { background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; padding: 12px; box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 8%, transparent); }
 .fighter.enemy { border-top: 3px solid var(--vermilion); }
 .fighter.player { border-top: 3px solid var(--indigo); }
 .fighter-head { display: flex; gap: 8px; align-items: baseline; margin-bottom: 6px; }

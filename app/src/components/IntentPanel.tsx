@@ -1,5 +1,6 @@
 import { describeArt, STANCE_NAME } from '../../../src/narrate/narrate.ts';
 import type { BattleState, RoundIntent } from '../../../src/rules/types.ts';
+import { STANCE_GLYPH } from '../glyphs.ts';
 
 export function IntentPanel({ state, intent }: { state: BattleState; intent: RoundIntent }) {
   const segment = state.script.segments.find((s) => s.id === intent.segmentId)!;
@@ -13,6 +14,7 @@ export function IntentPanel({ state, intent }: { state: BattleState; intent: Rou
     <div class="intent">
       <div class="intent-main">
         <span class="intent-label">对手本轮</span>
+        <span class={`seal ${intent.stance}`} aria-hidden="true">{STANCE_GLYPH[intent.stance]}</span>
         <span class={`intent-stance ${intent.stance}`}>{STANCE_NAME[intent.stance]}</span>
         {enemyFirst && !skipped && <span class="chip warn">对手先手</span>}
         {skipped && <span class="chip good">已被冻结：本轮行动将被跳过</span>}

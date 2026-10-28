@@ -74,6 +74,7 @@ export function App() {
   return (
     <div class="shell">
       <header class="top">
+        <span class="seal brand-seal" aria-hidden="true">武</span>
         <span class="brand">武林·自创绝学</span>
         <span class="tag">构筑实验室 · 实验版本</span>
       </header>

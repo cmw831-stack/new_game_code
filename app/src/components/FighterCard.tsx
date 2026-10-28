@@ -1,5 +1,6 @@
 import type { FighterState } from '../../../src/rules/types.ts';
 import { findAffix } from '../../../src/content/affixes.ts';
+import { STATUS_GLYPH } from '../glyphs.ts';
 
 function Bar({ label, value, max, kind }: { label: string; value: number; max: number; kind: string }) {
   const pct = max > 0 ? Math.round((value / max) * 100) : 0;
@@ -14,13 +15,13 @@ function Bar({ label, value, max, kind }: { label: string; value: number; max: n
 
 export function FighterCard({ f, title }: { f: FighterState; title: string }) {
   const st = f.status;
-  const chips: string[] = [];
-  if (st.ward) chips.push(st.ward.source === 'basic' ? '护势（架招）' : '护势（武学）');
-  if (st.step) chips.push('身法准备');
-  if (st.cold > 0) chips.push(`寒意 ${st.cold}/${st.coldCapReduced ? f.coldCapProtected : f.coldThreshold}`);
-  if (st.freezePending) chips.push('已冻结：将跳过下一次行动');
-  if (st.protectedSeq !== null) chips.push('冻结保护中');
-  if (st.opening) chips.push('持有破绽');
+  const chips: [glyph: string, text: string][] = [];
+  if (st.ward) chips.push([STATUS_GLYPH.ward, st.ward.source === 'basic' ? '护势（架招）' : '护势（武学）']);
+  if (st.step) chips.push([STATUS_GLYPH.step, '身法准备']);
+  if (st.cold > 0) chips.push([STATUS_GLYPH.cold, `寒意 ${st.cold}/${st.coldCapReduced ? f.coldCapProtected : f.coldThreshold}`]);
+  if (st.freezePending) chips.push([STATUS_GLYPH.freeze, '已冻结：将跳过下一次行动']);
+  if (st.protectedSeq !== null) chips.push([STATUS_GLYPH.protect, '冻结保护中']);
+  if (st.opening) chips.push([STATUS_GLYPH.opening, '持有破绽']);
   return (
     <div class={`fighter ${f.side}`}>
       <div class="fighter-head">
@@ -38,7 +39,9 @@ export function FighterCard({ f, title }: { f: FighterState; title: string }) {
           })}
         </div>
       )}
-      <div class="chips">{chips.length ? chips.map((c) => <span class="chip" key={c}>{c}</span>) : <span class="small muted">无状态</span>}</div>
+      <div class="chips">
+        {chips.length ? chips.map(([g, c]) => <span class="chip" key={c}><span class="chip-glyph" aria-hidden="true">{g}</span>{c}</span>) : <span class="small muted">无状态</span>}
+      </div>
     </div>
   );
 }
