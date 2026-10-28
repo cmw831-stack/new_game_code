@@ -108,3 +108,15 @@ test('导入的失效版本保留记录，并说明为什么不能装备（主�
   assert.ok(problems.some((m) => m.includes('2 个槽不同')), problems.join('；'));
   assert.ok(problems.some((m) => m.includes('design-v1.8')), problems.join('；'));
 });
+
+test('教学进度随存档导出导入；没有这一项的旧存档视为未开始，伪造的授业被丢弃（教学细则 2.2 节）', () => {
+  const a = { ...emptyArchive(), teaching: { lessons: { teach_first_clash_v1: 'granted' as const }, grants: ['grant_chase_intro_v1' as const] } };
+  const r = importArchive(exportArchive(a));
+  assert.deepEqual(r.ok && r.archive.teaching, a.teaching);
+  const old = JSON.parse(exportArchive(emptyArchive()));
+  delete old.teaching;
+  const r2 = importArchive(JSON.stringify(old));
+  assert.deepEqual(r2.ok && r2.archive.teaching, { lessons: {}, grants: [] });
+  const forged = importArchive(JSON.stringify({ ...old, teaching: { lessons: {}, grants: ['grant_everything'] } }));
+  assert.deepEqual(forged.ok && forged.archive.teaching.grants, []);
+});

@@ -8,6 +8,7 @@ import { CONTENT_VERSION, findArt } from '../content/catalog.ts';
 import { RULES_VERSION } from '../engine/setup.ts';
 import { fillPage, findPage } from './page.ts';
 import { checkVariant, findTemplate, SLOT_NAMES, slotValue, type EditResearch } from './variant.ts';
+import { emptyProgress, sanitizeProgress, type TeachingProgress } from '../teach/progress.ts';
 
 export type ManualSource = { kind: 'template'; templateId: string } | { kind: 'page'; pageId: string };
 
@@ -30,13 +31,15 @@ export interface LabArchive {
   schema: 1;
   nextManualNo: number;
   versions: readonly ManualVersion[];
+  /** 教学进度与已结算授业。 */
+  teaching: TeachingProgress;
 }
 
 export const ARCHIVE_FORMAT = 'wulin-lab-archive';
 export const NAME_MAX = 16;
 
 export function emptyArchive(): LabArchive {
-  return { format: ARCHIVE_FORMAT, schema: 1, nextManualNo: 1, versions: [] };
+  return { format: ARCHIVE_FORMAT, schema: 1, nextManualNo: 1, versions: [], teaching: emptyProgress() };
 }
 
 export function versionId(manualId: string, version: number): string {
@@ -170,7 +173,9 @@ export function importArchive(text: string): ImportResult {
     const no = Number(v.manualId.slice(1));
     if (!(no < a.nextManualNo!)) return { ok: false, reason: '存档的秘籍编号计数不一致' };
   }
-  return { ok: true, archive: { format: ARCHIVE_FORMAT, schema: 1, nextManualNo: a.nextManualNo!, versions: (a.versions as ManualVersion[]).map((v) => Object.freeze(v)) } };
+  // 教学进度只保留认识的课与授业；较早的存档没有这一项，视为未开始。
+  const teaching = sanitizeProgress(a.teaching ?? null);
+  return { ok: true, archive: { format: ARCHIVE_FORMAT, schema: 1, nextManualNo: a.nextManualNo!, versions: (a.versions as ManualVersion[]).map((v) => Object.freeze(v)), teaching } };
 }
 
 /** 模板改良草稿的来源模板（供界面显示原版对照）。 */
