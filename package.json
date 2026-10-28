@@ -16,7 +16,8 @@
     "check": "npm run typecheck && npm test",
     "matrix": "node scripts/run-matrix.ts",
     "experiment3": "node scripts/run-experiment-3.ts",
-    "experiment4": "node scripts/run-experiment-4.ts"
+    "experiment4": "node scripts/run-experiment-4.ts",
+    "walk-lessons": "node scripts/walk-lessons.ts"
   },
   "devDependencies": {
     "@types/node": "24.19.2",

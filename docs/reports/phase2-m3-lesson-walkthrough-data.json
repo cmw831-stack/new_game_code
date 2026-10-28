@@ -1,0 +1,122 @@
+{
+  "commit": "424ac65",
+  "rules": "rules-v1.9-phase1",
+  "lessons": [
+    {
+      "id": "teach_first_clash_v1",
+      "name": "首战",
+      "recommendedDoneAt": 1,
+      "recommendedOver": "victory",
+      "done": 65,
+      "lost": 0,
+      "won": 0,
+      "stuck": 16,
+      "dead": 0
+    },
+    {
+      "id": "teach_guard_return_v1",
+      "name": "架招与归息",
+      "recommendedDoneAt": 1,
+      "recommendedOver": null,
+      "done": 38,
+      "lost": 0,
+      "won": 6,
+      "stuck": 37,
+      "dead": 4
+    },
+    {
+      "id": "teach_breath_v1",
+      "name": "调息",
+      "recommendedDoneAt": 2,
+      "recommendedOver": "victory",
+      "done": 49,
+      "lost": 0,
+      "won": 4,
+      "stuck": 28,
+      "dead": 0
+    },
+    {
+      "id": "teach_cold_chain_v1",
+      "name": "寒霜连锁",
+      "recommendedDoneAt": 1,
+      "recommendedOver": "victory",
+      "done": 65,
+      "lost": 0,
+      "won": 0,
+      "stuck": 16,
+      "dead": 0
+    },
+    {
+      "id": "teach_resonance_v1",
+      "name": "蓄震",
+      "recommendedDoneAt": 1,
+      "recommendedOver": "victory",
+      "done": 81,
+      "lost": 0,
+      "won": 0,
+      "stuck": 0,
+      "dead": 0
+    },
+    {
+      "id": "teach_manuscript_page_v1",
+      "name": "卷首残页（折锋（M_gang））",
+      "recommendedDoneAt": 1,
+      "recommendedOver": "victory",
+      "done": 65,
+      "lost": 0,
+      "won": 0,
+      "stuck": 16,
+      "dead": 0
+    },
+    {
+      "id": "teach_manuscript_page_v1",
+      "name": "卷首残页（折锋（M_shock））",
+      "recommendedDoneAt": 1,
+      "recommendedOver": "victory",
+      "done": 65,
+      "lost": 0,
+      "won": 0,
+      "stuck": 16,
+      "dead": 0
+    },
+    {
+      "id": "teach_manuscript_page_v1",
+      "name": "卷首残页（折锋（M_soft））",
+      "recommendedDoneAt": 1,
+      "recommendedOver": "victory",
+      "done": 65,
+      "lost": 0,
+      "won": 0,
+      "stuck": 16,
+      "dead": 0
+    },
+    {
+      "compare": "原三连寒劲",
+      "player": [
+        24,
+        7,
+        20
+      ],
+      "enemy": [
+        27,
+        10
+      ],
+      "resonance": 1,
+      "cost": 5
+    },
+    {
+      "compare": "单次破势寒劲",
+      "player": [
+        30,
+        8,
+        20
+      ],
+      "enemy": [
+        29,
+        8
+      ],
+      "resonance": 0,
+      "cost": 4
+    }
+  ]
+}
