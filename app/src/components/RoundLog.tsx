@@ -7,7 +7,7 @@ function RoundBlock({ r, names, open }: { r: RoundRecord; names: Names; open: bo
   const lines = narrate(r.events, names);
   return (
     <details class="round" open={open}>
-      <summary>第 {r.round} 轮 · 你{STANCE_NAME[r.stance]}</summary>
+      <summary>第 {r.round} 轮 · 你{STANCE_NAME[r.decision.stance]}{r.decision.change ? " · 变招" : ""}</summary>
       <ol class="lines">
         {lines.map((l) => <li class={`line ${l.tone}`} key={l.seq}>{l.text}</li>)}
       </ol>

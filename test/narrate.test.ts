@@ -4,6 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { describeArt, describeEvent, narrate } from '../src/narrate/narrate.ts';
 import { findArt } from '../src/content/catalog.ts';
+import { runRound } from '../src/engine/round.ts';
 import { battle18, fixture, items, player, round } from './helpers.ts';
 
 const names = { player: '你', enemy: '测试对手' };
@@ -44,4 +45,13 @@ test('详细层：每条事件都有文字，并带事件序号', () => {
 test('武学说明：叠寒剑与崩势追击', () => {
   assert.equal(describeArt(findArt('cold_sword')!), '自身基础出招接触后 → 3 击，每击 2／2；寒劲：每次接触积寒 1');
   assert.equal(describeArt(findArt('break_chase')!), '对方架势崩溃后 → 一击 4／0；刚劲：首次接触消费己方破绽，气血 +2；造成气血伤害后回气 2');
+});
+
+test('默认层：变招写明调整了什么、本场还剩几次（战斗细则 V1.2 4.4 节）', () => {
+  const s0 = battle18(player(['cold_sword', 'break_chase'], { qi: 8 }), { config: fixture({ hpMax: 30, postureMax: 10 }) });
+  const line = (change: Parameters<typeof runRound>[1]['change']) =>
+    narrate(runRound(s0, { stance: 'attack', change }).events, names).map((l) => l.text).find((t) => t.includes('变招'));
+  assert.equal(line({ pause: ['break_chase'] }), '你变招：本轮暂停崩势追击（本场还剩 1 次）');
+  assert.equal(line({ priority: ['break_chase', 'cold_sword'] }), '你变招：本轮优先级改为 崩势追击 → 叠寒剑（本场还剩 1 次）');
+  assert.equal(line({ reserve: 4 }), '你变招：本轮留力改为 4（本场还剩 1 次）');
 });

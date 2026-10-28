@@ -471,7 +471,12 @@ class RoundContext {
     if (s.round > s.limits.maxRounds) this.halt('roundLimit', null, `超过 ${s.limits.maxRounds} 轮`);
     this.lockIntent();
     this.emit('decision', 'player', null, { stance: decision.stance });
-    if (decision.change) this.emit('change', 'player', null, { changesLeft: s.changesLeft });
+    const c = decision.change;
+    if (c) {
+      const adjust = c.pause ? 'pause' : c.priority ? 'priority' : 'reserve';
+      const value = c.pause ? c.pause[0]! : c.priority ? c.priority.join(',') : c.reserve!;
+      this.emit('change', 'player', null, { changesLeft: s.changesLeft, adjust, value });
+    }
 
     // 共同准备：先提交双方未被跳过的架招，再依次结清各自的准备连锁。
     this.phase = 'prepare';
@@ -619,6 +624,25 @@ export function peekIntent(state: BattleState): RoundIntent {
   return resolveIntent(state).intent;
 }
 
+/** 变招一次只做一项调整（战斗细则 V1.2 4.4 节），且只能涉及已装备的武学。 */
+export function changeProblems(state: BattleState, change: NonNullable<Decision['change']>): string[] {
+  const problems: string[] = [];
+  const kinds = (['pause', 'priority', 'reserve'] as const).filter((k) => change[k] !== undefined);
+  if (kinds.length !== 1) problems.push('一次变招只能做一项调整：本轮优先级、暂停一门武学或本轮留力');
+  const equipped = state.player.arts.map((a) => a.art.id);
+  if (change.pause !== undefined && (change.pause.length !== 1 || !equipped.includes(change.pause[0]!))) {
+    problems.push('变招只能暂停一门已装备的武学');
+  }
+  if (change.priority !== undefined) {
+    const p = change.priority;
+    if (p.length !== equipped.length || new Set(p).size !== p.length || p.some((id) => !equipped.includes(id))) {
+      problems.push('本轮优先级必须是已装备武学的重新排列');
+    }
+  }
+  if (change.reserve !== undefined && (!Number.isInteger(change.reserve) || change.reserve < 0)) problems.push('留力必须是非负整数');
+  return problems;
+}
+
 /**
  * 结算一整轮，返回新状态与本轮事件。输入状态不会被修改，
  * 所以同一调用也是“本轮预览”：预览不推进原状态、正式随机数或事件序号。
@@ -629,6 +653,8 @@ export function runRound(state: BattleState, decision: Decision): RoundResult {
   let mods: RoundModifiers = { paused: [], priority: null, reserve: null };
   if (decision.change) {
     if (s.changesLeft <= 0) throw new ValidationError(['本场变招次数已用完']);
+    const problems = changeProblems(s, decision.change);
+    if (problems.length > 0) throw new ValidationError(problems);
     s.changesLeft -= 1;
     mods = {
       paused: decision.change.pause ?? [],

@@ -5,7 +5,7 @@ import { createBattle, OPENING_QI_CAP } from '../../src/engine/setup.ts';
 import { runRound } from '../../src/engine/round.ts';
 import { BUILDS } from '../../src/sim/strategies.ts';
 import { checkLoadout, LAB_ART_IDS, type LoadoutCheck } from '../../src/edit/loadout.ts';
-import type { BattleEvent, BattleState, Stance } from '../../src/rules/types.ts';
+import type { BattleEvent, BattleState, Decision, Stance } from '../../src/rules/types.ts';
 
 export interface BuildOption {
   id: string;
@@ -53,13 +53,15 @@ export const ENEMY_OPTIONS: EnemyOption[] = [
 export interface Setup {
   /** 优先级顺序。 */
   arts: string[];
+  /** 追加攻击留力底线（战斗细则 V1.2 3.3 节）。 */
+  reserve: number;
   enemyId: string;
   seed: number;
 }
 
 export interface RoundRecord {
   round: number;
-  stance: Stance;
+  decision: Decision;
   events: BattleEvent[];
 }
 
@@ -88,15 +90,15 @@ export function startSession(setup: Setup): Session {
   const state = createBattle({
     battleId: `lab/${setup.arts.join('+') || 'none'}/${setup.enemyId}/${setup.seed}`,
     seed: setup.seed,
-    player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: LAB_WEAPON_ID, arts: setup.arts, reserve: 0 },
+    player: { name: '你', hp: 30, hpMax: 30, qi: OPENING_QI_CAP, qiMax: 20, posture: 20, postureMax: 20, weaponId: LAB_WEAPON_ID, arts: setup.arts, reserve: setup.reserve },
     enemy: { config: setup.enemyId },
   });
   return { setup, state, rounds: [] };
 }
 
-export function playRound(session: Session, stance: Stance): Session {
-  const r = runRound(session.state, { stance });
-  return { ...session, state: r.state, rounds: [...session.rounds, { round: session.state.round, stance, events: r.events }] };
+export function playRound(session: Session, decision: Decision): Session {
+  const r = runRound(session.state, decision);
+  return { ...session, state: r.state, rounds: [...session.rounds, { round: session.state.round, decision, events: r.events }] };
 }
 
 export interface Preview {
@@ -107,8 +109,8 @@ export interface Preview {
 }
 
 /** 本轮预览：在状态副本上结算，不改变原状态。确定性规则下与实际结果一致。 */
-export function preview(state: BattleState, stance: Stance): Preview {
-  const r = runRound(state, { stance });
+export function preview(state: BattleState, stance: Stance, change?: Decision['change']): Preview {
+  const r = runRound(state, change ? { stance, change } : { stance });
   const o = r.state.over?.reason;
   return {
     stance,

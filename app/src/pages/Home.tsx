@@ -69,6 +69,23 @@ export function Home({ setup, onStart }: { setup: Setup; onStart: (s: Setup) => 
           })}
         </ol>
 
+        <div class="reserve">
+          <label>
+            追加攻击留力
+            <input
+              type="number"
+              min={0}
+              max={20}
+              value={s.reserve}
+              onInput={(ev) => {
+                const v = Number((ev.target as HTMLInputElement).value);
+                if (Number.isInteger(v) && v >= 0 && v <= 20) set({ ...s, reserve: v });
+              }}
+            />
+          </label>
+          <span class="small muted">武学自动追加攻击时，付款后内力会低于这个数就不出手。不影响基础出招、回气和防御。</span>
+        </div>
+
         {unequipped.length > 0 && (
           <>
             <h3>已取得、未装备</h3>

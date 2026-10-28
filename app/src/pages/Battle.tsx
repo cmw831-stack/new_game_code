@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'preact/hooks';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { peekIntent } from '../../../src/engine/round.ts';
 import { describeArt, STANCE_NAME } from '../../../src/narrate/narrate.ts';
 import { STRATEGIES } from '../../../src/sim/strategies.ts';
@@ -6,6 +6,7 @@ import type { Stance } from '../../../src/rules/types.ts';
 import { FighterCard } from '../components/FighterCard.tsx';
 import { IntentPanel } from '../components/IntentPanel.tsx';
 import { RoundLog } from '../components/RoundLog.tsx';
+import { ChangePanel, effectiveChange, type Change } from '../components/ChangePanel.tsx';
 import { playRound, preview, type Session } from '../lab.ts';
 
 const STANCES: Stance[] = ['attack', 'guard', 'breathe'];
@@ -18,30 +19,43 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
   const { state } = session;
   const [chosen, setChosen] = useState<Stance | null>(null);
   const [strategy, setStrategy] = useState(STRATEGIES[1]!.id);
+  const [pending, setPending] = useState<Change | undefined>(undefined);
+  const confirmRef = useRef<HTMLButtonElement>(null);
+  // 用数字键选姿态后把焦点移到确认按钮，Enter 就不会误触当前聚焦的其他按钮。
+  const [focusTick, setFocusTick] = useState(0);
+  useLayoutEffect(() => {
+    if (focusTick > 0) confirmRef.current?.focus();
+  }, [focusTick]);
+  const change = effectiveChange(state, pending);
   const intent = useMemo(() => peekIntent(state), [state]);
-  const previews = useMemo(() => STANCES.map((s) => preview(state, s)), [state]);
+  const previews = useMemo(() => STANCES.map((s) => preview(state, s, change)), [state, change]);
   const names = { player: '你', enemy: state.enemy.name };
 
   const commit = (stance: Stance) => {
     setChosen(null);
-    onChange(playRound(session, stance));
+    setPending(undefined);
+    onChange(playRound(session, change ? { stance, change } : { stance }));
   };
   const auto = (all: boolean) => {
     const strat = STRATEGIES.find((s) => s.id === strategy)!;
     let s = session;
     do {
-      s = playRound(s, strat.decide(s.state).stance);
+      s = playRound(s, { stance: strat.decide(s.state).stance });
     } while (all && !s.state.over);
     setChosen(null);
+    setPending(undefined);
     onChange(s);
   };
 
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
       const t = ev.target as HTMLElement | null;
-      if (t && (t.tagName === 'INPUT' || t.tagName === 'SELECT' || t.tagName === 'TEXTAREA')) return;
-      if (ev.key === '1' || ev.key === '2' || ev.key === '3') setChosen(STANCES[Number(ev.key) - 1]!);
-      else if (ev.key === 'Enter' && chosen) commit(chosen);
+      const typing = t && (t.tagName === 'SELECT' || t.tagName === 'TEXTAREA' || (t.tagName === 'INPUT' && !['radio', 'checkbox'].includes((t as HTMLInputElement).type)));
+      if (typing) return;
+      if (ev.key === '1' || ev.key === '2' || ev.key === '3') {
+        setChosen(STANCES[Number(ev.key) - 1]!);
+        setFocusTick((n) => n + 1);
+      } else if (ev.key === 'Enter' && chosen && t?.tagName !== 'BUTTON') commit(chosen);
       else if (ev.key === 'Escape') setChosen(null);
     };
     window.addEventListener('keydown', onKey);
@@ -52,7 +66,7 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
     <section class="battle">
       <div class="battle-bar">
         <span>第 {state.round} 轮</span>
-        <span class="muted small">种子 {session.setup.seed}</span>
+        <span class="muted small">种子 {session.setup.seed} · 留力 {state.player.reserve} · 变招剩 {state.changesLeft}</span>
         <button type="button" class="ghost small" onClick={onQuit}>放弃并返回</button>
       </div>
 
@@ -65,6 +79,7 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
 
       <div class="choose">
         <h2>你这一轮</h2>
+        <ChangePanel state={state} pending={pending} onPending={setPending} />
         <div class="stances">
           {previews.map((p, i) => (
             <button
@@ -82,7 +97,7 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
           ))}
         </div>
         <div class="actions">
-          <button type="button" class="primary" disabled={!chosen} onClick={() => chosen && commit(chosen)}>
+          <button type="button" class="primary" ref={confirmRef} disabled={!chosen} onClick={() => chosen && commit(chosen)}>
             {chosen ? `确认：${STANCE_NAME[chosen]}（Enter）` : '先选一种姿态（1／2／3）'}
           </button>
           <span class="auto">
@@ -93,7 +108,7 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
             <button type="button" class="ghost" onClick={() => auto(true)}>自动打完</button>
           </span>
         </div>
-        <p class="small muted">预览在状态副本上结算，与实际结果一致；它不会推进对局。</p>
+        <p class="small muted">自动策略不使用变招。预览在状态副本上结算，与实际结果一致；它不会推进对局。</p>
       </div>
 
       <div class="columns">

@@ -44,6 +44,16 @@ export function artName(id: string | null): string {
   return followup ? `${name}·变化` : name;
 }
 
+/** 变招说明：调整了什么，本场还剩几次。 */
+function changeText(d: BattleEvent['data']): string {
+  const v = d.value as string | number;
+  const what =
+    d.adjust === 'pause' ? `本轮暂停${artName(v as string)}`
+    : d.adjust === 'priority' ? `本轮优先级改为 ${(v as string).split(',').map(artName).join(' → ')}`
+    : `本轮留力改为 ${v}`;
+  return `变招：${what}（本场还剩 ${d.changesLeft} 次）`;
+}
+
 function who(side: Side | null, names: Names): string {
   return side === 'player' ? names.player : side === 'enemy' ? names.enemy : '';
 }
@@ -92,6 +102,9 @@ export function narrate(events: BattleEvent[], names: Names): Line[] {
     switch (e.type) {
       case 'segmentDraw':
         lines.push({ seq: e.seq, tone: 'neutral', text: `${names.enemy}下一段套路已定：${e.data.next}「${e.data.nextName}」` });
+        break;
+      case 'change':
+        lines.push({ seq: e.seq, tone: 'player', text: `${name}${changeText(e.data)}` });
         break;
       case 'freezeSkip':
         lines.push({ seq: e.seq, tone: 'warn', text: `${name}被冻结，跳过本轮${STANCE_NAME[e.data.stance as Stance]}` });
@@ -168,7 +181,7 @@ export function describeEvent(e: BattleEvent, names: Names): string {
       case 'expire': return `${name}的${d.status === 'ward' ? '护势' : '身法准备'}到期`;
       case 'roundEnd': return `第 ${d.round} 轮结束`;
       case 'battleEnd': return END_REASON[d.reason as string] ?? String(d.reason);
-      case 'change': return `你使用变招（剩余 ${d.changesLeft}）`;
+      case 'change': return `${name}${changeText(d)}`;
     }
   })();
   return `${head}　${body}`;
