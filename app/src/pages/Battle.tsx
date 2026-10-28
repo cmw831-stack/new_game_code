@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { peekIntent } from '../../../src/engine/round.ts';
 import { battleNames, describeArt, STANCE_NAME } from '../../../src/narrate/narrate.ts';
 import { STRATEGIES } from '../../../src/sim/strategies.ts';
@@ -18,6 +18,9 @@ function delta(from: number, to: number): string {
 export function Battle({ session, onChange, onQuit }: { session: Session; onChange: (s: Session) => void; onQuit: () => void }) {
   const { state } = session;
   const [chosen, setChosen] = useState<Stance | null>(null);
+  // 按键处理读这个引用：数字键与 Enter 连按时，新状态可能还没渲染。
+  const chosenRef = useRef<Stance | null>(null);
+  chosenRef.current = chosen;
   const [strategy, setStrategy] = useState(STRATEGIES[1]!.id);
   const [pending, setPending] = useState<Change | undefined>(undefined);
   const confirmRef = useRef<HTMLButtonElement>(null);
@@ -47,15 +50,17 @@ export function Battle({ session, onChange, onQuit }: { session: Session; onChan
     onChange(s);
   };
 
-  useEffect(() => {
+  // 用布局阶段注册，挂载后的第一次按键也能收到。
+  useLayoutEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
       const t = ev.target as HTMLElement | null;
       const typing = t && (t.tagName === 'SELECT' || t.tagName === 'TEXTAREA' || (t.tagName === 'INPUT' && !['radio', 'checkbox'].includes((t as HTMLInputElement).type)));
       if (typing) return;
       if (ev.key === '1' || ev.key === '2' || ev.key === '3') {
-        setChosen(STANCES[Number(ev.key) - 1]!);
+        chosenRef.current = STANCES[Number(ev.key) - 1]!;
+        setChosen(chosenRef.current);
         setFocusTick((n) => n + 1);
-      } else if (ev.key === 'Enter' && chosen && t?.tagName !== 'BUTTON') commit(chosen);
+      } else if (ev.key === 'Enter' && chosenRef.current && t?.tagName !== 'BUTTON') commit(chosenRef.current);
       else if (ev.key === 'Escape') setChosen(null);
     };
     window.addEventListener('keydown', onKey);

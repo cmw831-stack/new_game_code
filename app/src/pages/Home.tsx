@@ -2,12 +2,13 @@ import type { LabArchive } from '../../../src/edit/manual.ts';
 import { describeArt } from '../../../src/narrate/narrate.ts';
 import { ACQUIRED_ART_IDS, artOf, BUILD_OPTIONS, checkArts, ENEMY_OPTIONS, loadoutName, randomSeed, usableVersions, type Setup } from '../lab.ts';
 
-export function Home({ setup, archive, onChange, onStart, onWorkshop }: {
+export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons }: {
   setup: Setup;
   archive: LabArchive;
   onChange: (s: Setup) => void;
   onStart: (s: Setup) => void;
   onWorkshop: () => void;
+  onLessons: () => void;
 }) {
   const s = setup;
   const set = onChange;
@@ -40,6 +41,7 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop }: {
         })}
         <button type="button" class="ghost small" onClick={() => setArts([])} disabled={s.arts.length === 0}>清空</button>
         <button type="button" class="ghost small" onClick={onWorkshop}>武学工坊：改良与残页</button>
+        <button type="button" class="ghost small" onClick={onLessons}>课程</button>
       </div>
 
       <div class="loadout">

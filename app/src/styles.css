@@ -142,6 +142,16 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .cmp tr.a td { border-bottom-style: dashed; }
 .cmp td.diff { background: color-mix(in srgb, var(--vermilion) 16%, transparent); font-weight: 700; }
 
+.lesson-list { list-style: none; padding: 0; display: grid; gap: 8px; }
+.lesson-list li { display: flex; gap: 12px; justify-content: space-between; align-items: flex-start; background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
+.lesson-list li.done { border-left: 3px solid var(--good); }
+.lesson-list li.locked { opacity: 0.7; }
+.lesson-list li button { flex-shrink: 0; white-space: nowrap; }
+.lesson-list .chip { margin-left: 8px; }
+.lesson-goal { display: flex; flex-direction: column; gap: 4px; margin-top: 12px; padding: 10px 12px; border: 1px solid var(--indigo); border-radius: 6px; }
+.lesson-goal.met { border-color: var(--good); }
+.lesson-goal .actions { margin-top: 4px; }
+
 .seed { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 20px 0; }
 .seed input { width: 8em; font: inherit; color: inherit; background: var(--paper-2); border: 1px solid var(--line); padding: 4px 6px; border-radius: 4px; }
 
