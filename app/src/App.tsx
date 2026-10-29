@@ -16,7 +16,7 @@ import { CompareLesson, EditOneLesson, PageLesson, type Save } from './pages/Les
 const initial = loadArchive();
 
 export function App() {
-  const [setup, setSetup] = useState<Setup>({ arts: [...buildOf('cold_chain').arts], reserve: 0, enemyId: 'balanced_standard', affixes: [], seed: randomSeed() });
+  const [setup, setSetup] = useState<Setup>({ arts: [...buildOf('starter').arts], reserve: 0, enemyId: 'balanced_standard', affixes: [], seed: randomSeed() });
   const [session, setSession] = useState<Session | null>(null);
   const [view, setView] = useState<'home' | 'workshop' | 'lessons'>('home');
   const [lesson, setLesson] = useState<LessonId | null>(null);
@@ -84,7 +84,12 @@ export function App() {
           <Lessons
             progress={archive.teaching}
             onStart={startLesson}
+            versions={archive.versions.length}
             onIntroDone={() => teach((t) => completeLesson(enterLesson(t, 'teach_intro_v1'), 'teach_intro_v1'))}
+            onGraduate={() => {
+              teach((t) => completeLesson(enterLesson(t, 'teach_lab_graduation_v1'), 'teach_lab_graduation_v1'));
+              setView('home');
+            }}
             onBack={() => setView('home')}
           />
         )}

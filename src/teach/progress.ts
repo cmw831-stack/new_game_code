@@ -18,6 +18,8 @@ export const LESSON_IDS = [
   'teach_edit_one_v1',
   'teach_compare_versions_v1',
   'teach_manuscript_page_v1',
+  // 第十课：教学细则的 teach_first_departure_v1 需要 Phase 3 的据点与路线；Phase 2 改为结业页（Q14）。
+  'teach_lab_graduation_v1',
 ] as const;
 export type LessonId = (typeof LESSON_IDS)[number];
 
@@ -40,6 +42,7 @@ export const LESSON_GRANT: Record<LessonId, GrantId | null> = {
   teach_edit_one_v1: 'grant_edit_intro_v1',
   teach_compare_versions_v1: 'grant_page_preface_v1',
   teach_manuscript_page_v1: null,
+  teach_lab_graduation_v1: null,
 };
 
 /** 进入一课前需要已结算的授业（第三章“固定开始状态”与 2.2 节公开条件）。 */
@@ -55,6 +58,8 @@ export const LESSON_REQUIRES: Record<LessonId, readonly GrantId[]> = {
   teach_edit_one_v1: ['grant_cold_intro_v1', 'grant_chase_intro_v1', 'grant_step_intro_v1'],
   teach_compare_versions_v1: ['grant_edit_intro_v1'],
   teach_manuscript_page_v1: ['grant_page_preface_v1'],
+  // 结业：六项授业都已结算。
+  teach_lab_graduation_v1: ['grant_chase_intro_v1', 'grant_counter_intro_v1', 'grant_cold_intro_v1', 'grant_step_intro_v1', 'grant_edit_intro_v1', 'grant_page_preface_v1'],
 };
 
 /** 授业带来的武学（完整模板初识）。 */

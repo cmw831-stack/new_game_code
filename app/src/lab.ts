@@ -4,7 +4,8 @@ import { findArt, findEnemy } from '../../src/content/catalog.ts';
 import { createBattle, OPENING_QI_CAP, type BattleInput } from '../../src/engine/setup.ts';
 import { runRound } from '../../src/engine/round.ts';
 import { BUILDS } from '../../src/sim/strategies.ts';
-import { checkLoadout, LAB_ART_IDS, type LoadoutCheck } from '../../src/edit/loadout.ts';
+import { checkLoadout, type LoadoutCheck } from '../../src/edit/loadout.ts';
+import { acquiredArts, editResearch } from '../../src/teach/progress.ts';
 import { findVersion, versionProblems, type LabArchive, type ManualVersion } from '../../src/edit/manual.ts';
 import type { EditResearch } from '../../src/edit/variant.ts';
 import { compileArt } from '../../src/content/components.ts';
@@ -25,17 +26,15 @@ export const BUILD_OPTIONS: BuildOption[] = [
 /** 实验室唯一的兵器（Phase 2 方案 2.2 节：只有铁剑）。 */
 export const LAB_WEAPON_ID = 'iron_sword';
 
-/**
- * 已取得的武学。M3 接入十课教学与授业之前，实验室暂时开放先行六门；
- * 接入后改为读取授业记录（见实现说明第四节）。
- */
-export const ACQUIRED_ART_IDS: readonly string[] = LAB_ART_IDS;
+/** 已取得的武学：开场两门，加教学授业取得的模板（教学细则 V1.2 第一章；Q15）。 */
+export function acquiredFor(archive: LabArchive): string[] {
+  return acquiredArts(archive.teaching);
+}
 
-/**
- * 改良权限。M3 接入授业之前，实验室按教学授业 grant_edit_intro_v1 的结果开放：
- * 断势击、叠寒剑精通，组件库有破势甲与连击乙（组件细则 V1.2 7.2 节“教学先授”）。
- */
-export const LAB_RESEARCH: EditResearch = { mastered: ['break_strike', 'cold_sword'], library: ['A_break:甲', 'A_combo:乙'] };
+/** 改良权限：教学授业 grant_edit_intro_v1 结算后才有（组件细则 V1.2 7.2 节；Q15）。 */
+export function researchFor(archive: LabArchive): EditResearch {
+  return editResearch(archive.teaching);
+}
 
 /** 当前规则下可以装备的已存版本。 */
 export function usableVersions(archive: LabArchive): ManualVersion[] {
@@ -53,7 +52,7 @@ export function artOf(id: string, archive: LabArchive): ArtDef | undefined {
 }
 
 export function checkArts(arts: readonly string[], archive: LabArchive): LoadoutCheck {
-  return checkLoadout({ arts, weaponId: LAB_WEAPON_ID, acquired: ACQUIRED_ART_IDS, custom: customArts(archive) });
+  return checkLoadout({ arts, weaponId: LAB_WEAPON_ID, acquired: acquiredFor(archive), custom: customArts(archive) });
 }
 
 /** 与某套预设完全相同（含优先级）时用预设名，否则是自由组合。 */

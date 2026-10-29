@@ -6,7 +6,7 @@ import type { LabArchive } from '../../../src/edit/manual.ts';
 import { STANCE_NAME } from '../../../src/narrate/narrate.ts';
 import { findAffix } from '../../../src/content/affixes.ts';
 import { compareVersions, type Snapshot } from '../../../src/sim/compare.ts';
-import { ACQUIRED_ART_IDS, artOf, checkArts, enemyName, startSession, usableVersions, type Session } from '../lab.ts';
+import { acquiredFor, artOf, checkArts, enemyName, startSession, usableVersions, type Session } from '../lab.ts';
 
 const END: Record<string, string> = { victory: '获胜', defeat: '败退', safetyLimit: '中止', roundLimit: '中止', noDecision: '中止' };
 
@@ -24,7 +24,7 @@ const CELLS: Cell[] = [
 export function ComparePanel({ session, archive }: { session: Session; archive: LabArchive }) {
   const { setup } = session;
   const [slot, setSlot] = useState(0);
-  const candidates = [...ACQUIRED_ART_IDS, ...usableVersions(archive).map((v) => v.spec.id)].filter((id) => !setup.arts.includes(id));
+  const candidates = [...acquiredFor(archive), ...usableVersions(archive).map((v) => v.spec.id)].filter((id) => !setup.arts.includes(id));
   const [pick, setPick] = useState(candidates[0] ?? '');
   const [shown, setShown] = useState(false);
   const name = (id: string) => artOf(id, archive)?.name ?? id;

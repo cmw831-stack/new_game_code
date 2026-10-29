@@ -3,7 +3,7 @@ import type { LabArchive } from '../../../src/edit/manual.ts';
 import { AFFIXES, MAX_AFFIXES } from '../../../src/content/affixes.ts';
 import { findEnemy } from '../../../src/content/catalog.ts';
 import { describeArt } from '../../../src/narrate/narrate.ts';
-import { ACQUIRED_ART_IDS, artOf, BUILD_OPTIONS, checkArts, ENEMY_OPTIONS, loadoutName, randomSeed, usableVersions, type Setup } from '../lab.ts';
+import { acquiredFor, artOf, BUILD_OPTIONS, checkArts, ENEMY_OPTIONS, loadoutName, randomSeed, usableVersions, type Setup } from '../lab.ts';
 
 export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons, battles, onExportLog }: {
   setup: Setup;
@@ -35,7 +35,7 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
     arts.splice(to, 0, moved!);
     setArts(arts);
   };
-  const unequipped = [...ACQUIRED_ART_IDS, ...usableVersions(archive).map((v) => v.spec.id)].filter((id) => !s.arts.includes(id));
+  const unequipped = [...acquiredFor(archive), ...usableVersions(archive).map((v) => v.spec.id)].filter((id) => !s.arts.includes(id));
   const slots = Array.from({ length: check.maxArts }, (_, i) => s.arts[i]);
 
   return (
@@ -45,7 +45,7 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
       {Object.keys(archive.teaching.lessons).length === 0 && (
         <div class="lesson-goal">
           <strong>第一次来？</strong>
-          <span class="small">建议先上课程：九课，约 30 分钟，从认识三种资源到改良一门武学、补全一页残稿。随时可以离开，没完成的课以后免费补做。</span>
+          <span class="small">建议先上课程：十课，约 30 分钟，从认识三种资源到改良一门武学、补全一页残稿。随时可以离开，没完成的课以后免费补做。</span>
           <span class="actions"><button type="button" class="primary" onClick={onLessons}>开始第一课</button></span>
         </div>
       )}
@@ -66,6 +66,9 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
         <button type="button" class="ghost small" onClick={onLessons}>课程</button>
       </div>
 
+      {check.problems.some((p) => p.kind === 'notAcquired') && (
+        <p class="small warn">有武学还没取得。武学在课程中按授业逐门取得：首战得崩势追击，架招课得借力诀，调息课得叠寒剑，蓄震课得踏风步。</p>
+      )}
       {BUILD_OPTIONS.find((b) => loadoutName(s.arts) === b.name) && (
         <p class="small muted">这套预设想验证：{BUILD_OPTIONS.find((b) => loadoutName(s.arts) === b.name)!.note}</p>
       )}

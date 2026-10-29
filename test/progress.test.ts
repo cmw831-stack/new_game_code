@@ -75,3 +75,13 @@ test('读取存档：不认识的课程与授业被丢弃，不凭空授予', ()
 test('战斗课定义与授业表一致', () => {
   for (const l of BATTLE_LESSONS) assert.equal(l.grant, LESSON_GRANT[l.id as LessonId], l.id);
 });
+
+test('结业页（Phase 2 代替第十课，Q14）：六项授业全部结算后才开放，完成后不再授予任何东西', () => {
+  const almost = run(['teach_first_clash_v1', 'teach_guard_return_v1', 'teach_breath_v1', 'teach_resonance_v1', 'teach_edit_one_v1']);
+  assert.deepEqual(missingFor(almost, 'teach_lab_graduation_v1'), ['grant_page_preface_v1']);
+  const all = run(['teach_compare_versions_v1'], almost);
+  assert.deepEqual(missingFor(all, 'teach_lab_graduation_v1'), []);
+  const done = run(['teach_lab_graduation_v1'], all);
+  assert.equal(lessonStatus(done, 'teach_lab_graduation_v1'), 'conditionMet');
+  assert.deepEqual(done.grants, all.grants);
+});

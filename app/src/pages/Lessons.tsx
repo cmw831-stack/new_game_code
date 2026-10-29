@@ -16,14 +16,43 @@ export const GRANT_NAME: Record<GrantId, string> = {
   grant_page_preface_v1: '卷首残页·折锋',
 };
 
-export function Lessons({ progress, onStart, onIntroDone, onBack }: {
+export function Lessons({ progress, versions, onStart, onIntroDone, onGraduate, onBack }: {
   progress: TeachingProgress;
+  /** 已保存的秘籍版本数。 */
+  versions: number;
+  onGraduate: () => void;
   onStart: (id: LessonId) => void;
   onIntroDone: () => void;
   onBack: () => void;
 }) {
   const [intro, setIntro] = useState(false);
   const [goal, setGoal] = useState<string | null>(null);
+  const [graduation, setGraduation] = useState(false);
+
+  if (graduation) {
+    return (
+      <section class="lessons">
+        <h1>{LESSON_TEXT.teach_lab_graduation_v1.title}</h1>
+        <p class="lead">课程到这里结束。下面是你在课程里得到的东西，它们都会留在实验室里。</p>
+        <ul class="arts">
+          <li><strong>已取得的武学</strong>：{acquiredArts(progress).map((id) => findArt(id)!.name).join('、')}</li>
+          <li><strong>授业</strong>：{progress.grants.map((g) => GRANT_NAME[g]).join('；')}</li>
+          <li><strong>已保存的秘籍版本</strong>：{versions} 个（在“武学工坊”查看、装备或另存新版本）</li>
+        </ul>
+        <h2>接下来可以做什么</h2>
+        <ul class="arts">
+          <li>自己组一套武学，挑高架势守卫或蓄震守卫打；一直出招多半会输，看意图打才会赢。</li>
+          <li>输了以后，到武学工坊改一处，再用结果页的 A／B 对照比较两版。</li>
+          <li>给对手加上词缀，看同一套武学还管不管用。</li>
+        </ul>
+        <p class="small muted">正式的“首次出门”需要据点、钱包和路线，留到 Phase 3。</p>
+        <div class="actions">
+          <button type="button" class="primary" onClick={() => { setGraduation(false); onGraduate(); }}>进入实验室</button>
+          <button type="button" class="ghost" onClick={() => setGraduation(false)}>回课程</button>
+        </div>
+      </section>
+    );
+  }
 
   if (intro) {
     return (
@@ -75,7 +104,7 @@ export function Lessons({ progress, onStart, onIntroDone, onBack }: {
                 type="button"
                 class={done ? 'ghost' : 'primary'}
                 disabled={missing.length > 0 || !!t.later}
-                onClick={() => (id === 'teach_intro_v1' ? setIntro(true) : onStart(id))}
+                onClick={() => (id === 'teach_intro_v1' ? setIntro(true) : id === 'teach_lab_graduation_v1' ? setGraduation(true) : onStart(id))}
               >
                 {done ? '再做一次' : st === 'inProgress' ? '继续' : '开始'}
               </button>

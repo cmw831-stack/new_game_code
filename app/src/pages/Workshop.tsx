@@ -8,7 +8,9 @@ import { exportArchive, importArchive, saveVersion, sourceName, versionProblems,
 import { fillPage, PAGE_PREFACE } from '../../../src/edit/page.ts';
 import { checkVariant, componentKey, findTemplate, replaceSlot, SLOT_LABEL, SLOT_NAMES, slotValue, type SlotName, type SlotValue } from '../../../src/edit/variant.ts';
 import { componentLabel, describeArt } from '../../../src/narrate/narrate.ts';
-import { LAB_RESEARCH } from '../lab.ts';
+import { researchFor } from '../lab.ts';
+import { pageOpen } from '../../../src/teach/progress.ts';
+import type { EditResearch } from '../../../src/edit/variant.ts';
 import type { SaveStatus } from '../store.ts';
 
 const PREFIX: Record<SlotName, string> = { trigger: 'T_', action: 'A_', modifier: 'M_', followup: 'F_', recovery: 'R_' };
@@ -23,9 +25,9 @@ function parseKey(key: string | null): SlotValue {
 }
 
 /** 某槽可换成的组件：全局组件库中该槽类型的条目，可选槽另有“无”；不含当前值。 */
-function optionsFor(source: ArtSpec, slot: SlotName): (string | null)[] {
+function optionsFor(research: EditResearch, source: ArtSpec, slot: SlotName): (string | null)[] {
   const current = componentKey(slot, slotValue(source, slot));
-  const keys: (string | null)[] = LAB_RESEARCH.library.filter((k) => k.startsWith(PREFIX[slot]));
+  const keys: (string | null)[] = research.library.filter((k) => k.startsWith(PREFIX[slot]));
   if (OPTIONAL.includes(slot)) keys.unshift(null);
   return keys.filter((k) => k !== current);
 }
@@ -82,21 +84,22 @@ export function Workshop({ archive, onArchive, onEquip, onBack, saveStatus, load
   saveStatus: SaveStatus;
   loadProblem: string | null;
 }) {
-  const [sourceId, setSourceId] = useState(LAB_RESEARCH.mastered[1]!);
+  const research = researchFor(archive);
+  const [sourceId, setSourceId] = useState(research.mastered[1] ?? 'cold_sword');
   const [slot, setSlot] = useState<SlotName>('action');
   const source = findTemplate(sourceId)!;
-  const options = optionsFor(source, slot);
+  const options = optionsFor(research, source, slot);
   const [pick, setPick] = useState<string | null | undefined>(undefined);
   const chosen = pick !== undefined && options.includes(pick) ? pick : options[0];
   const draft = chosen === undefined ? null : replaceSlot(source, slot, parseKey(chosen));
-  const check = draft ? checkVariant(sourceId, draft, LAB_RESEARCH) : null;
+  const check = draft ? checkVariant(sourceId, draft, research) : null;
   const [pageMod, setPageMod] = useState<string>('M_gang');
   const pageFill = fillPage(PAGE_PREFACE, { modifier: { id: pageMod } }, 'page-draft', '折锋');
   const [importMsg, setImportMsg] = useState<string | null>(null);
 
   const save = (src: ManualSource, spec: ArtSpec | null) => (name: string, note: string, manualId: string | undefined): string[] => {
     if (!spec) return ['草稿还不完整'];
-    const r = saveVersion(archive, { manualId, name, note, source: src, spec, savedAt: new Date().toISOString() }, LAB_RESEARCH);
+    const r = saveVersion(archive, { manualId, name, note, source: src, spec, savedAt: new Date().toISOString() }, research);
     if (!r.ok) return r.problems;
     onArchive(r.archive);
     return [];
@@ -129,9 +132,12 @@ export function Workshop({ archive, onArchive, onEquip, onBack, saveStatus, load
       {loadProblem && <p class="warn small">{loadProblem}</p>}
 
       <h2>改良：替换一个槽</h2>
-      <p class="small muted">精通的武学可以替换一个槽，原书不变。现在已精通：{LAB_RESEARCH.mastered.map((id) => findArt(id)!.name).join('、')}；组件库：{LAB_RESEARCH.library.map(componentLabel).join('、')}。</p>
+      {research.mastered.length === 0 ? (
+        <p class="small muted">还没有精通的武学。完成课程“首份改良：替换一个槽”后，断势击与叠寒剑精通，这里开放单槽改良。</p>
+      ) : (<>
+      <p class="small muted">精通的武学可以替换一个槽，原书不变。现在已精通：{research.mastered.map((id) => findArt(id)!.name).join('、')}；组件库：{research.library.map(componentLabel).join('、')}。</p>
       <div class="presets">
-        {LAB_RESEARCH.mastered.map((id) => (
+        {research.mastered.map((id) => (
           <button type="button" key={id} class={`ghost small ${id === sourceId ? 'on' : ''}`} aria-pressed={id === sourceId} onClick={() => { setSourceId(id); setPick(undefined); }}>
             {findArt(id)!.name}
           </button>
@@ -141,7 +147,7 @@ export function Workshop({ archive, onArchive, onEquip, onBack, saveStatus, load
         <ol class="five">
           {SLOT_NAMES.map((s) => {
             const cur = componentLabel(componentKey(s, slotValue(source, s)));
-            const n = optionsFor(source, s).length;
+            const n = optionsFor(research, source, s).length;
             return (
               <li key={s} class={s === slot ? 'on' : ''}>
                 <button type="button" class="ghost small" disabled={n === 0} aria-pressed={s === slot} onClick={() => { setSlot(s); setPick(undefined); }}>
@@ -171,8 +177,12 @@ export function Workshop({ archive, onArchive, onEquip, onBack, saveStatus, load
           </>
         )}
       </div>
+      </>)}
 
       <h2>手稿残页：{PAGE_PREFACE.name}</h2>
+      {!pageOpen(archive.teaching) ? (
+        <p class="small muted">完成课程“版本对照”后开放卷首残页。</p>
+      ) : (<>
       <p class="small muted">起势：基础出招接触（固定）；主招：单击乙 3／2（固定）；劲力从下面三个中选一个。变化、收势：无。</p>
       <div class="cards">
         {(PAGE_PREFACE.blanks.modifier ?? []).map((c) => {
@@ -187,6 +197,7 @@ export function Workshop({ archive, onArchive, onEquip, onBack, saveStatus, load
         })}
       </div>
       {pageFill.ok && <SaveBox archive={archive} source={{ kind: 'page', pageId: PAGE_PREFACE.id }} onSave={save({ kind: 'page', pageId: PAGE_PREFACE.id }, pageFill.spec)} />}
+      </>)}
 
       <h2>我的秘籍</h2>
       {archive.versions.length === 0 && <p class="small muted">还没有保存任何版本。</p>}

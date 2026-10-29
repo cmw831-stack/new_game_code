@@ -42,6 +42,7 @@ export const LESSON_TEXT: Record<LessonId, LessonText> = {
   },
   teach_edit_one_v1: { title: '首份改良：替换一个槽', brief: '把叠寒剑的三连换成你已知的破势主招，保留寒劲，看费用、容量和效果的变化。' },
   teach_compare_versions_v1: { title: '版本对照', brief: '原版与改良版各打一轮蓄震守卫，并列比较，命名保存新版本。' },
+  teach_lab_graduation_v1: { title: '结业', brief: '回顾学到的武学、精通与残页，然后进入自由实验室：自己组构筑、改良、对照，挑战带词缀的对手。' },
   teach_manuscript_page_v1: { title: '卷首残页', brief: '从刚劲、震劲、柔劲中选一个补全残页，命名保存，再演练一轮。' },
 };
 
