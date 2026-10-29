@@ -646,13 +646,38 @@ export function changeProblems(state: BattleState, change: NonNullable<Decision[
   return problems;
 }
 
+function cloneFighter(f: FighterState): FighterState {
+  const st = f.status;
+  return {
+    ...f,
+    status: { ...st, ward: st.ward && { ...st.ward }, step: st.step && { ...st.step }, opening: st.opening && { ...st.opening } },
+  };
+}
+
+/**
+ * runRound 的工作副本。规则参数、诊断上限、武学定义、兵器、段落与词缀在结算中只读，与输入共享；
+ * 其余可变部分逐层复制（比整体 structuredClone 快约三倍，E2 求解器大量调用）。
+ * 共享部分不得在任何地方原地修改；“预览不改变输入”由 test/invariants.test.ts 检查。
+ */
+function cloneState(s: BattleState): BattleState {
+  return {
+    ...s,
+    player: cloneFighter(s.player),
+    enemy: cloneFighter(s.enemy),
+    script: { ...s.script },
+    roundUsage: [...s.roundUsage],
+    intent: s.intent && { ...s.intent },
+    over: s.over && { ...s.over },
+  };
+}
+
 /**
  * 结算一整轮，返回新状态与本轮事件。输入状态不会被修改，
  * 所以同一调用也是“本轮预览”：预览不推进原状态、正式随机数或事件序号。
  */
 export function runRound(state: BattleState, decision: Decision): RoundResult {
   if (state.over) throw new ValidationError(['战斗已经结束']);
-  const s = structuredClone(state);
+  const s = cloneState(state);
   let mods: RoundModifiers = { paused: [], priority: null, reserve: null };
   if (decision.change) {
     if (s.changesLeft <= 0) throw new ValidationError(['本场变招次数已用完']);

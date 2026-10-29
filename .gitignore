@@ -11,3 +11,4 @@ Thumbs.db
 dist-artifact/
 .stryker-tmp/
 __pycache__/
+.e2-tmp/
