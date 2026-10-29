@@ -30,14 +30,18 @@ if (engineOnly) {
   process.exit(0);
 }
 
-function oracle(c: OracleCase): OracleResult | { crash: string } {
-  const p = spawnSync('python3', ['oracle/run.py'], { input: JSON.stringify(c), encoding: 'utf8' });
-  if (p.status !== 0) return { crash: (p.stderr || p.stdout).slice(-400) };
-  try {
-    return JSON.parse(p.stdout) as OracleResult;
-  } catch {
-    return { crash: `输出不是 JSON：${p.stdout.slice(0, 200)}` };
+/** 分批交给参考实现（scripts/e1/oracle_batch.py 逐行调用 oracle/run.py 的 simulate），避免每局启动一次 Python。 */
+function oracleAll(cs: OracleCase[]): (OracleResult | { crash: string })[] {
+  const out: (OracleResult | { crash: string })[] = [];
+  for (let i = 0; i < cs.length; i += 5000) {
+    const chunk = cs.slice(i, i + 5000);
+    const p = spawnSync('python3', ['-I', 'scripts/e1/oracle_batch.py'], { input: chunk.map((c) => JSON.stringify(c)).join('\n') + '\n', encoding: 'utf8', maxBuffer: 1 << 30 });
+    if (p.status !== 0) throw new Error(`参考实现批量运行失败：${p.stderr.slice(-400)}`);
+    const lines = p.stdout.trim().split('\n');
+    if (lines.length !== chunk.length) throw new Error(`参考实现输出 ${lines.length} 行，应为 ${chunk.length}`);
+    for (const l of lines) out.push(JSON.parse(l) as OracleResult | { crash: string });
   }
+  return out;
 }
 
 interface Diff { index: number; round: number; field: string; engine: unknown; oracle: unknown }
@@ -51,8 +55,11 @@ function firstDiff(index: number, a: OracleResult, b: OracleResult): Diff | null
   for (let r = 0; r < n; r++) {
     const x = a.rounds[r], y = b.rounds[r];
     if (!x || !y) return { index, round: r + 1, field: 'rounds', engine: a.rounds.length, oracle: b.rounds.length };
+    // 对局结束的那一轮只比较资源与结局：终局后的护势、身法等状态没有规则含义（oracle-io.md 第四节裁决 J1）。
+    const terminal = x.over !== null || y.over !== null;
     for (const side of ['player', 'enemy'] as const) {
       for (const k of Object.keys(x[side]) as (keyof OracleRound['player'])[]) {
+        if (terminal && !['hp', 'qi', 'posture'].includes(k)) continue;
         if (x[side][k] !== y[side]?.[k]) return { index, round: r + 1, field: `${side}.${k}`, engine: x[side][k], oracle: y[side]?.[k] };
       }
     }
@@ -63,9 +70,10 @@ function firstDiff(index: number, a: OracleResult, b: OracleResult): Diff | null
 
 const diffs: Diff[] = [];
 const crashes: { index: number; crash: string }[] = [];
+const oracleResults = oracleAll(cases);
 for (const [i, c] of cases.entries()) {
   const e = runEngineCase(c);
-  const o = oracle(c);
+  const o = oracleResults[i]!;
   if ('crash' in o) { crashes.push({ index: i, crash: o.crash }); continue; }
   const d = firstDiff(i, e, o);
   if (d) diffs.push(d);
