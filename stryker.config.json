@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "目标 V2 E1 第 4 步：规则核心的变异测试基线。用法：npx stryker run",
+  "testRunner": "command",
+  "commandRunner": { "command": "node --test test/acceptance.test.ts test/handcalc.test.ts test/handcalc-v19.test.ts test/segments.test.ts test/change.test.ts test/affixes.test.ts test/lessons.test.ts test/invariants.test.ts test/content.test.ts test/variant.test.ts test/page.test.ts test/loadout.test.ts" },
+  "mutate": ["src/engine/round.ts", "src/engine/setup.ts", "src/content/components.ts"],
+  "coverageAnalysis": "off",
+  "concurrency": 6,
+  "timeoutMS": 60000,
+  "reporters": ["clear-text", "json", "progress"],
+  "jsonReporter": { "fileName": "docs/reports/e1-mutation-data.json" },
+  "tempDirName": ".stryker-tmp",
+  "ignorePatterns": ["dist", "dist-artifact", "docs", "oracle", ".stryker-tmp"]
+}

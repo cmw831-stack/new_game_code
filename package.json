@@ -21,6 +21,7 @@
     "affix-matrix": "node scripts/run-affix-matrix.ts"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "8.7.1",
     "@types/node": "24.19.2",
     "fast-check": "3.23.2",
     "typescript": "5.9.3",
