@@ -10,3 +10,4 @@ Thumbs.db
 .env.*
 dist-artifact/
 .stryker-tmp/
+__pycache__/
