@@ -8,7 +8,7 @@
   "concurrency": 6,
   "timeoutMS": 60000,
   "reporters": ["clear-text", "json", "progress"],
-  "jsonReporter": { "fileName": "docs/reports/e1-mutation-data.json" },
+  "jsonReporter": { "fileName": ".stryker-tmp/mutation.json" },
   "tempDirName": ".stryker-tmp",
   "ignorePatterns": ["dist", "dist-artifact", "docs", "oracle", ".stryker-tmp"]
 }
