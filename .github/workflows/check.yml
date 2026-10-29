@@ -1,8 +1,9 @@
 name: check
 
+# 目标 V2 E0：开发分支的每次推送也在干净环境运行检查，结果以 GitHub 上的记录为准。
 on:
   push:
-    branches: [main]
+    branches: ['**']
   pull_request:
 
 jobs:
