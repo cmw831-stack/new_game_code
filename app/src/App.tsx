@@ -42,7 +42,8 @@ export function App() {
     if (session && !session.state.over) record(session, 'lab');
     setSession(null);
   };
-  const exportLog = () => download(`wulin-playtest-${new Date().toISOString().slice(0, 10)}.json`, exportPlaytest(playlog, archive, new Date().toISOString()));
+  const [exportMsg, setExportMsg] = useState<string | null>(null);
+  const exportLog = async () => setExportMsg(await download(`wulin-playtest-${new Date().toISOString().slice(0, 10)}.json`, exportPlaytest(playlog, archive, new Date().toISOString())));
 
   const start = (s: Setup) => {
     setSetup(s);
@@ -79,7 +80,7 @@ export function App() {
         <span class="tag">构筑实验室 · 实验版本</span>
       </header>
       <main>
-        {!session && view === 'home' && <Home setup={setup} archive={archive} onChange={setSetup} onStart={start} onWorkshop={() => setView('workshop')} onLessons={() => setView('lessons')} battles={playlog.entries.length} onExportLog={exportLog} />}
+        {!session && view === 'home' && <Home setup={setup} archive={archive} onChange={setSetup} onStart={start} onWorkshop={() => setView('workshop')} onLessons={() => setView('lessons')} battles={playlog.entries.length} onExportLog={exportLog} exportMsg={exportMsg} />}
         {!session && view === 'lessons' && lesson === null && (
           <Lessons
             progress={archive.teaching}

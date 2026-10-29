@@ -5,7 +5,7 @@ import { findEnemy } from '../../../src/content/catalog.ts';
 import { describeArt } from '../../../src/narrate/narrate.ts';
 import { acquiredFor, artOf, BUILD_OPTIONS, checkArts, ENEMY_OPTIONS, loadoutName, randomSeed, usableVersions, type Setup } from '../lab.ts';
 
-export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons, battles, onExportLog }: {
+export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons, battles, onExportLog, exportMsg }: {
   setup: Setup;
   archive: LabArchive;
   onChange: (s: Setup) => void;
@@ -14,6 +14,7 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
   onLessons: () => void;
   battles: number;
   onExportLog: () => void;
+  exportMsg: string | null;
 }) {
   const s = setup;
   const set = onChange;
@@ -222,6 +223,7 @@ export function Home({ setup, archive, onChange, onStart, onWorkshop, onLessons,
       <p class="small muted">
         试玩记录：已记 {battles} 场（每场的输入与每轮选择，可按同输入重放；只保存在本浏览器，最多 200 场）。
         <button type="button" class="ghost small" onClick={onExportLog} disabled={battles === 0 && archive.versions.length === 0}>导出试玩记录</button>
+        {exportMsg && <span class="small"> {exportMsg}</span>}
       </p>
     </section>
   );

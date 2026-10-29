@@ -11,7 +11,7 @@ import { componentLabel, describeArt } from '../../../src/narrate/narrate.ts';
 import { researchFor } from '../lab.ts';
 import { pageOpen } from '../../../src/teach/progress.ts';
 import type { EditResearch } from '../../../src/edit/variant.ts';
-import type { SaveStatus } from '../store.ts';
+import { download, type SaveStatus } from '../store.ts';
 
 const PREFIX: Record<SlotName, string> = { trigger: 'T_', action: 'A_', modifier: 'M_', followup: 'F_', recovery: 'R_' };
 const OPTIONAL: SlotName[] = ['modifier', 'followup', 'recovery'];
@@ -105,14 +105,8 @@ export function Workshop({ archive, onArchive, onEquip, onBack, saveStatus, load
     return [];
   };
 
-  const download = () => {
-    const blob = new Blob([exportArchive(archive)], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'wulin-lab-archive.json';
-    a.click();
-    URL.revokeObjectURL(a.href);
-  };
+  const exportFile = async () => setImportMsg(await download('wulin-lab-archive.json', exportArchive(archive)));
+
   const upload = async (file: File | undefined) => {
     if (!file) return;
     const r = importArchive(await file.text());
@@ -221,7 +215,7 @@ export function Workshop({ archive, onArchive, onEquip, onBack, saveStatus, load
       </ul>
 
       <div class="actions">
-        <button type="button" class="ghost" onClick={download}>导出存档</button>
+        <button type="button" class="ghost" onClick={exportFile}>导出存档</button>
         <label class="ghost filepick">
           导入存档
           <input type="file" accept="application/json,.json" onChange={(e) => upload((e.target as HTMLInputElement).files?.[0])} />

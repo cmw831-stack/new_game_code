@@ -48,12 +48,38 @@ export function storePlaylog(log: PlayLog): void {
   }
 }
 
-/** 让浏览器下载一个文本文件。 */
-export function download(name: string, text: string): void {
+interface Downloads {
+  save(req: { filename: string; data: string }): Promise<{ status: 'saved' | 'delivered' }>;
+}
+interface ClaudeHost {
+  use(name: 'downloads'): Promise<Downloads | null>;
+}
+
+/**
+ * 把一个文本文件交给浏览者保存，返回给界面显示的一句结果。
+ * 在 claude.ai 的私有网页里，页面不能直接下载，要通过 downloads 能力请浏览者确认；
+ * 在本机开发时没有这个宿主，就用普通的浏览器下载。
+ */
+export async function download(name: string, text: string): Promise<string> {
+  const host = (window as unknown as { claude?: ClaudeHost }).claude;
+  if (host) {
+    const downloads = await host.use('downloads');
+    if (!downloads) return '这个页面现在不能保存文件。可以把页面在 claude.ai 里打开后再试。';
+    try {
+      await downloads.save({ filename: name, data: text });
+      return `已交给浏览器保存：${name}`;
+    } catch (e) {
+      const code = (e as { code?: string }).code;
+      if (code === 'declined') return '已取消保存。';
+      if (code === 'rate_limited') return '已有一个保存确认还没处理，请稍后再试。';
+      return '这个页面现在不能保存文件。';
+    }
+  }
   const blob = new Blob([text], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = name;
   a.click();
   URL.revokeObjectURL(a.href);
+  return `已下载：${name}`;
 }
