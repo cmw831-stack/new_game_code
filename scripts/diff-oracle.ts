@@ -2,13 +2,13 @@
 // 用法：
 //   node scripts/diff-oracle.ts [条数] [种子]          对拍并写 docs/reports/e1-diff-data.md／.json
 //   node scripts/diff-oracle.ts --engine-only [条数]   只跑本引擎，看生成器的分布
-// 不一致时只报告，不修改任何一边；裁决见 docs/engine/oracle-io.md 第四节。
+// 不一致时只报告，不修改任何一边；裁决见 docs/engine/oracle-io.md 第五节。
 
-import { spawnSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import fc from 'fast-check';
 import { oracleCase } from '../src/sim/oracle-gen.ts';
-import { runEngineCase, type OracleCase, type OracleResult, type OracleRound } from '../src/sim/oracle-io.ts';
+import { runEngineCase } from '../src/sim/oracle-io.ts';
+import { firstDiff, oracleAll, type Diff } from './e1/oracle-diff.ts';
 
 const args = process.argv.slice(2);
 const engineOnly = args[0] === '--engine-only';
@@ -28,44 +28,6 @@ if (engineOnly) {
   }
   console.log(tally, `平均 ${(rounds / cases.length).toFixed(1)} 轮`);
   process.exit(0);
-}
-
-/** 分批交给参考实现（scripts/e1/oracle_batch.py 逐行调用 oracle/run.py 的 simulate），避免每局启动一次 Python。 */
-function oracleAll(cs: OracleCase[]): (OracleResult | { crash: string })[] {
-  const out: (OracleResult | { crash: string })[] = [];
-  for (let i = 0; i < cs.length; i += 5000) {
-    const chunk = cs.slice(i, i + 5000);
-    const p = spawnSync('python3', ['-I', 'scripts/e1/oracle_batch.py'], { input: chunk.map((c) => JSON.stringify(c)).join('\n') + '\n', encoding: 'utf8', maxBuffer: 1 << 30 });
-    if (p.status !== 0) throw new Error(`参考实现批量运行失败：${p.stderr.slice(-400)}`);
-    const lines = p.stdout.trim().split('\n');
-    if (lines.length !== chunk.length) throw new Error(`参考实现输出 ${lines.length} 行，应为 ${chunk.length}`);
-    for (const l of lines) out.push(JSON.parse(l) as OracleResult | { crash: string });
-  }
-  return out;
-}
-
-interface Diff { index: number; round: number; field: string; engine: unknown; oracle: unknown }
-
-/** 第一处不一致：轮次与字段。 */
-function firstDiff(index: number, a: OracleResult, b: OracleResult): Diff | null {
-  if ('error' in a || 'error' in b) {
-    return 'error' in a && 'error' in b ? null : { index, round: 0, field: 'error', engine: 'error' in a ? a.error : '合法', oracle: 'error' in b ? b.error : '合法' };
-  }
-  const n = Math.max(a.rounds.length, b.rounds.length);
-  for (let r = 0; r < n; r++) {
-    const x = a.rounds[r], y = b.rounds[r];
-    if (!x || !y) return { index, round: r + 1, field: 'rounds', engine: a.rounds.length, oracle: b.rounds.length };
-    // 对局结束的那一轮只比较资源与结局：终局后的护势、身法等状态没有规则含义（oracle-io.md 第四节裁决 J1）。
-    const terminal = x.over !== null || y.over !== null;
-    for (const side of ['player', 'enemy'] as const) {
-      for (const k of Object.keys(x[side]) as (keyof OracleRound['player'])[]) {
-        if (terminal && !['hp', 'qi', 'posture'].includes(k)) continue;
-        if (x[side][k] !== y[side]?.[k]) return { index, round: r + 1, field: `${side}.${k}`, engine: x[side][k], oracle: y[side]?.[k] };
-      }
-    }
-    if (x.over !== y.over) return { index, round: r + 1, field: 'over', engine: x.over, oracle: y.over };
-  }
-  return null;
 }
 
 const diffs: Diff[] = [];

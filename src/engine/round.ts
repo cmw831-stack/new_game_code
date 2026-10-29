@@ -487,7 +487,10 @@ class RoundContext {
       const f = this.f(side);
       const before = f.posture;
       f.posture = Math.min(f.postureMax, f.posture + GUARD_POSTURE);
-      if (!f.status.ward) f.status.ward = { source: 'basic', expiresRound: s.round, lockedCast: null, lockedRoot: null };
+      // 整链护势规则下，架招一定建立本轮基础护势，取代已有的技能护势（负责人决定 Q17，2026-10-29）；
+      // 单招护势规则下两种护势保护范围相同，保留原护势、不刷新期限（战斗细则 5.2 节）。
+      const basic = { source: 'basic' as const, expiresRound: s.round, lockedCast: null, lockedRoot: null };
+      if (!f.status.ward || s.rules.wardScope === 'chain') f.status.ward = basic;
       guards.push({ side, before });
     }
     for (const { side, before } of guards) {

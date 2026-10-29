@@ -15,5 +15,9 @@ jobs:
         with:
           node-version: 24
           cache: npm
+      # E1 对拍：test/differential.test.ts 调用 oracle/ 中的独立参考实现（Python 3.13 标准库）。
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
       - run: npm ci
       - run: npm run check
